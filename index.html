@@ -230,9 +230,7 @@
     <div class="section-label" data-i18n="zh" style="display:none;">最新内容</div>
     <div class="section-title" data-i18n="en">Recent Research</div>
     <div class="section-title" data-i18n="zh" style="display:none;">近期研究</div>
-    <div class="article-list">
-      <div class="article-item" style="color:#aaaaaa;">No articles yet.</div>
-    </div>
+    <div class="article-list" id="home-article-list" data-i18n-empty="No articles yet."></div>
   </div>
 </section>
 
@@ -294,6 +292,43 @@
     });
   }
   // 汉堡菜单
+  // 动态加载最新文章（Home Recent Research）
+  (function() {
+    var list = document.getElementById('home-article-list');
+    if (!list) return;
+    fetch('/research/articles.json')
+      .then(function(r) { return r.json(); })
+      .then(function(articles) {
+        if (!Array.isArray(articles) || articles.length === 0) {
+          list.innerHTML = '<div class="article-item" style="color:#aaaaaa;">No articles yet.</div>';
+          return;
+        }
+        // 按日期倒序，取最新 3 篇
+        var sorted = articles.slice().sort(function(a, b) {
+          return b.date.localeCompare(a.date);
+        });
+        var latest = sorted.slice(0, 3);
+        var lang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
+        var html = '';
+        latest.forEach(function(a) {
+          var title = a.title;
+          var cat = a['category_' + lang] || a.category;
+          var date = a.date;
+          html += '<div class="article-item">' +
+            '<div class="article-meta-row">' +
+            '<span class="article-category">' + cat + '</span>' +
+            '<span class="article-date">' + date + '</span>' +
+            '</div>' +
+            '<a href="' + a.url + '" class="article-title-link">' + title + '</a>' +
+            '</div>';
+        });
+        list.innerHTML = html;
+      })
+      .catch(function() {
+        list.innerHTML = '<div class="article-item" style="color:#aaaaaa;">No articles yet.</div>';
+      });
+  })();
+
   var menuBtn = document.getElementById('nav-menu-btn');
   var navLinks = document.getElementById('nav-links');
   if (menuBtn && navLinks) {
