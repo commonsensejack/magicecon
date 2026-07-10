@@ -369,12 +369,11 @@
   if (btn) {
     btn.addEventListener('click', function() {
       var path = window.location.pathname;
-      var isZh = path.startsWith('/zh');
+      var isZh = path.indexOf('/zh/') !== -1 || path === '/zh';
       if (isZh) {
-        window.location.href = path.replace('/zh', '');
+        window.location.href = path === '/zh/' || path === '/zh' ? '/' : path.replace('/zh/', '/');
       } else {
-        var target = path === '/' ? '/zh/' : path + 'zh/';
-        window.location.href = target;
+        window.location.href = path === '/' || path === '' ? '/zh/' : path + 'zh/';
       }
     });
   }
