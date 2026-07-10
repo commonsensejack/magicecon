@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research Library | Magic Econ</title>
+  <title data-i18n="en">Research Library | Magic Econ</title><title data-i18n="zh" style="display:none;">研究资料库 | Magic Econ</title>
   <meta name="description" content="All research outputs from Magic Econ, organized by category — investment research, market observation, and learning notes.">
   <meta name="author" content="Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
@@ -102,17 +102,17 @@
 
 <main class="page-library">
   <div class="library-header">
-    <div class="library-label">Research Library</div>
-    <h1 class="library-title">Research Library</h1>
+    <div class="library-label"><span data-i18n="en">Research Library</span><span data-i18n="zh" style="display:none;">研究资料库</span></div>
+    <h1 class="library-title"><span data-i18n="en">Research Library</span><span data-i18n="zh" style="display:none;">研究资料库</span></h1>
     <div class="library-divider"></div>
-    <p class="library-desc">Explore Magic Econ's independent research, including equity analysis, market perspectives, and investment frameworks.</p>
+    <p class="library-desc"><span data-i18n="en">Explore Magic Econ's independent research, including equity analysis, market perspectives, and investment frameworks.</span><span data-i18n="zh" style="display:none;">探索 Magic Econ 的独立研究，涵盖公司分析、市场观察与投资框架。</span></p>
   </div>
 
   <div class="filter-bar" id="filter-bar">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="research">Research</button>
-    <button class="filter-btn" data-filter="market">Market</button>
-    <button class="filter-btn" data-filter="learning">Learning</button>
+    <button class="filter-btn active" data-filter="all" data-label-en="All" data-label-zh="全部">All</button>
+    <button class="filter-btn" data-filter="research" data-label-en="Research" data-label-zh="研究">Research</button>
+    <button class="filter-btn" data-filter="market" data-label-en="Market" data-label-zh="市场">Market</button>
+    <button class="filter-btn" data-filter="learning" data-label-en="Learning" data-label-zh="学习">Learning</button>
   </div>
 
   <div class="research-article-list" id="article-list"></div>
@@ -134,6 +134,7 @@
 
 <script>
 var allArticles = [];
+var currentLang = 'en';
 
 function renderArticles(filter) {
   var list = document.getElementById('article-list');
@@ -142,7 +143,8 @@ function renderArticles(filter) {
     return (a.category_slug || '').toLowerCase() === filter;
   });
   if (filtered.length === 0) {
-    list.innerHTML = '<div class="no-articles">No articles in this category yet.</div>';
+    var noLabel = currentLang === 'zh' ? '该分类暂无文章。' : 'No articles in this category yet.';
+    list.innerHTML = '<div class="no-articles">' + noLabel + '</div>';
     return;
   }
   var html = '';
@@ -172,6 +174,7 @@ function bindFilters() {
 (function() {
   var KEY = 'magicecon-lang';
   function applyLang(lang) {
+    currentLang = lang;
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       el.style.display = (el.getAttribute('data-i18n') === lang) ? '' : 'none';
@@ -186,10 +189,19 @@ function bindFilters() {
       var base = a.getAttribute('data-base');
       if (base && langNav[base]) a.setAttribute('href', langNav[base][lang] || langNav[base].en);
     });
+    // 更新 filter 按钮文字
+    document.querySelectorAll('.filter-btn').forEach(function(b) {
+      b.textContent = lang === 'zh' ? b.getAttribute('data-label-zh') : b.getAttribute('data-label-en');
+    });
     var btn = document.getElementById('lang-toggle');
     if (btn) btn.textContent = lang === 'zh' ? 'EN / 中' : '中 / EN';
   }
+  // 永远默认英文，不记忆
   applyLang('en');
+  // 立即更新 filter 按钮文字
+  document.querySelectorAll('.filter-btn').forEach(function(b) {
+    b.textContent = b.getAttribute('data-label-en');
+  });
   var btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.addEventListener('click', function() {
