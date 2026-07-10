@@ -169,7 +169,6 @@ body, #body-wrap {
 
 /* ── 顶部导航 ── */
 #nav {
-  position: relative;
   background: rgba(255,255,255,0.95) !important;
   border-bottom: 1px solid #eaeaea;
   backdrop-filter: blur(8px);
@@ -181,76 +180,8 @@ body, #body-wrap {
 #nav .site-name { font-weight: 600; font-size: 1.1em; }
 .nav-fixed #nav { box-shadow: 0 1px 12px rgba(0,0,0,0.08); }
 
-/* ── 手机端导航：不让标题截断，汉堡菜单正常显示 ── */
-@media (max-width: 768px) {
-  #nav .site-name { font-size: 0.88em; }
-  #nav #blog-info {
-    white-space: normal;
-    overflow: visible;
-    line-height: 1.3;
-  }
-  #nav .menus_items { display: none; }
-  #toggle-menu { display: inline-block !important; }
-}
-#toggle-menu .site-page {
-  font-size: 1.1rem;
-  padding: 6px 8px;
-  color: #1a1a1a !important;
-}
-#nav.hide-menu #toggle-menu { display: inline-block !important; }
-#nav.hide-menu .menus_items { display: none; }
-
-/* ── 手机侧栏样式 ── */
-#sidebar-menus {
-  background: #ffffff;
-  border-right: 1px solid #eaeaea;
-}
-#sidebar-menus .menus_items .menus_item a {
-  color: #1a1a1a !important;
-  padding: 12px 20px;
-  font-size: 0.92em;
-  border-bottom: 1px solid #f5f5f5;
-}
-#sidebar-menus .menus_items .menus_item a:hover {
-  background: #f9f9f9;
-  color: #1a1a1a !important;
-}
-#sidebar-menus .menus_items .menus_item:first-child a { border-top: 1px solid #f5f5f5; }
-#menu-mask { background: rgba(0,0,0,0.3); }
-#sidebar-menus .site-data { display: none; }
-#sidebar-menus .avatar-img { display: none; }
-
-/* ── 桌面端导航：语言切换器在右侧 ── */
-#lang-toggle {
-  position: absolute;
-  right: 36px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.82em;
-  letter-spacing: 0.05em;
-  color: #6b7280;
-  user-select: none;
-  z-index: 91;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-#lang-toggle a {
-  color: #9ca3af;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-#lang-toggle a.active { color: #1a1a1a; font-weight: 600; }
-#lang-toggle a:hover { color: #1a1a1a; }
-#lang-toggle .sep { color: #d1d5db; }
-@media (max-width: 768px) {
-  #lang-toggle { right: 56px; font-size: 0.75em; }
-}
-
-/* ── 移除非研究感元素（桌面端隐藏侧栏，手机端保留汉堡菜单） ── */
-@media (min-width: 769px) {
-  #sidebar { display: none !important; }
-}
+/* ── 移除非研究感元素 ── */
+#sidebar { display: none !important; }
 .aside-list { display: none !important; }
 .card-tags, .card-categories, .card-archives, .card-webinfo { display: none !important; }
 
@@ -447,7 +378,7 @@ body, #body-wrap {
   text-transform: uppercase;
 }
 
-/* ── 最新研究区块 ── */
+/* ── 最新研���区块 ── */
 #home-latest {
   max-width: 960px;
   margin: 0 auto;
@@ -663,7 +594,7 @@ body, #body-wrap {
   .page-card-header h1 { font-size: 1.6em !important; }
 }
 </style>
-<meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/research/"><i class="fa-fw fas fa-search"></i><span> Research</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> Contact</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Magic Econ | Independent Research Platform</span></a><a class="nav-page-title" href="/"><span class="site-name">Welcome to Magic Econ</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/research/"><i class="fa-fw fas fa-search"></i><span> Research</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> Contact</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Welcome to Magic Econ</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-06T09:00:00.000Z" title="发表于 2026-07-06 17:00">2026-07-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-10T06:51:22.650Z" title="更新于 2026-07-10 14:51">2026-07-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Research/">Research</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout hide-aside" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Welcome-to-Magic-Econ"><a href="#Welcome-to-Magic-Econ" class="headerlink" title="Welcome to Magic Econ"></a>Welcome to Magic Econ</h1><p><strong>Magic Econ — Independent Research Platform</strong></p>
+<meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/research/"><i class="fa-fw fas fa-search"></i><span> 研究</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> 联系</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Magic Econ | Independent Research Platform</span></a><a class="nav-page-title" href="/"><span class="site-name">Welcome to Magic Econ</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/research/"><i class="fa-fw fas fa-search"></i><span> 研究</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> 联系</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Welcome to Magic Econ</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-06T09:00:00.000Z" title="发表于 2026-07-06 17:00">2026-07-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-10T06:51:22.650Z" title="更新于 2026-07-10 14:51">2026-07-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Research/">Research</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout hide-aside" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Welcome-to-Magic-Econ"><a href="#Welcome-to-Magic-Econ" class="headerlink" title="Welcome to Magic Econ"></a>Welcome to Magic Econ</h1><p><strong>Magic Econ — Independent Research Platform</strong></p>
 <p>这是一个专注于市场、经济与投资框架的独立研究平台。</p>
 <hr>
 <h2 id="关于这个平台"><a href="#关于这个平台" class="headerlink" title="关于这个平台"></a>关于这个平台</h2><p>Magic Econ 不是一个普通博客。</p>
@@ -674,7 +605,7 @@ body, #body-wrap {
 <li><strong>企业价值</strong> — 商业模式、竞争壁垒、长期现金流</li>
 <li><strong>经济周期</strong> — 利率、通胀、全球宏观逻辑</li>
 <li><strong>资本流动</strong> — 资金在哪里、去向何方</li>
-<li><strong>人性与预期</strong> — 市场定价的本质是预期差</li>
+<li><strong>���性与预期</strong> — 市场定价的本质是预期差</li>
 </ul>
 <hr>
 <h2 id="核心标语"><a href="#核心标语" class="headerlink" title="核心标语"></a>核心标语</h2><blockquote>
@@ -687,7 +618,7 @@ body, #body-wrap {
 <p><strong>Learning · 学习思考</strong> — 经济学、读书笔记、投资哲学</p>
 <hr>
 <p>Think Clearly. Research Deeply. Invest Wisely.</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.magicecon.com">Common Sense Jack</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.magicecon.com/2026/07/06/welcome-to-magic-econ/">https://www.magicecon.com/2026/07/06/welcome-to-magic-econ/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://www.magicecon.com" target="_blank">Magic Econ | Independent Research Platform</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/07/06/how-to-use-this-blog/" title="研究资料库使用指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">研究资料库使用指南</div></div><div class="info-2"><div class="info-item-1">研究资料库使用指南Magic Econ 的研究产出按三个主题分类，便于按需检索。  分类结构Research · 投资研究 深度分析方法论、行业研究与公司分析。 Market · 市场观察 宏观经济周期、资产配置思路与市场变化随笔。 Learning · 学习思考 经济学概念、读书笔记与投资哲学沉淀。  阅读建议 按分类浏览，找到感兴趣的主题 文章之间常有逻辑关联，建议从框架类文章开始 欢迎通过 Email 进行讨论   免责声明本站所有内容仅为个人研究记录，不构成任何投资建议。 </div></div></div></a></nav></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By Common Sense Jack</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div><div class="footer_custom_text"><div class="footer-custom">
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.magicecon.com">Common Sense Jack</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.magicecon.com/2026/07/06/welcome-to-magic-econ/">https://www.magicecon.com/2026/07/06/welcome-to-magic-econ/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://www.magicecon.com" target="_blank">Magic Econ | Independent Research Platform</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/07/06/how-to-use-this-blog/" title="研究资料库使用指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">研究资料库使用指南</div></div><div class="info-2"><div class="info-item-1">研究资料库使用指南Magic Econ 的研究产出按三个主题分类，便于按需检索。  分类结构Research · 投资研究 深度分析方法论、行业研究与公司分析。 Market · 市场观察 宏观经济周期、资产配置思路与市场变化随笔。 Learning · 学习思考 经济学概念、读书笔记与投资哲学沉淀。  阅读建议 按分类浏览，找到感兴趣的主题 文章之间常有逻辑关联，建议从框架类文章开始 欢迎通过 Email 进行讨论   免责声明本站所有内容仅为个人研究记录，不构成任何投资建议。 </div></div></div></a></nav></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By Common Sense Jack</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div><div class="footer_custom_text"><div class="footer-custom">
   <p class="footer-philosophy">
     <em>The goal is not to predict markets, but to understand them.</em>
   </p>
@@ -702,16 +633,4 @@ body, #body-wrap {
     <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></span> visitors
   </p>
 </div>
-</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"></div><script>
-// 注入语言切换器
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('nav');
-  if (nav) {
-    var el = document.createElement('div');
-    el.id = 'lang-toggle';
-    el.innerHTML = '<a href="#" class="active">\u4e2d</a><span class="sep"> / </span><a href="#">EN</a>';
-    nav.appendChild(el);
-  }
-});
-</script>
-<script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

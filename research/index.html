@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research Library | Magic Econ</title>
-  <meta name="description" content="Magic Econ research library — investment research, market observation, and learning resources.">
+  <meta name="description" content="All research outputs from Magic Econ, organized by category — investment research, market observation, and learning notes.">
   <meta name="author" content="Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://www.magicecon.com/research/">
@@ -20,30 +20,34 @@
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .nav-logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #111111; }
     .nav-logo span { font-weight: 400; color: #666666; margin-left: 6px; font-size: 0.85em; }
-    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a { font-size: 0.875rem; color: #444444; letter-spacing: 0.02em; transition: color 0.15s; }
     .nav-links a:hover { color: #111111; }
-    .lang-toggle { padding: 6px 14px; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #444444; background: transparent; border: 1px solid #dddddd; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-    .lang-toggle:hover { color: #111111; border-color: #999999; }
     @media (max-width: 640px) { .nav-links { gap: 20px; } .nav-links a { font-size: 0.8rem; } }
 
-    .page-header { padding: 80px 0 48px; border-bottom: 1px solid #eeeeee; }
-    .page-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #aaaaaa; margin-bottom: 14px; }
-    .page-title { font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -0.03em; color: #111111; line-height: 1.1; margin-bottom: 20px; }
-    .page-divider { width: 48px; height: 1.5px; background: #111111; margin-bottom: 24px; }
-    .page-desc { font-size: 1.05rem; color: #555555; font-weight: 300; line-height: 1.7; max-width: 560px; }
+    .page-library { max-width: 1200px; margin: 0 auto; padding: 80px 40px 120px; }
+    .library-header { margin-bottom: 72px; }
+    .library-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #aaaaaa; margin-bottom: 14px; }
+    .library-title { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -0.03em; color: #111111; line-height: 1.1; margin-bottom: 20px; }
+    .library-divider { width: 48px; height: 1.5px; background: #111111; margin-bottom: 24px; }
+    .library-desc { font-size: 1.05rem; color: #555555; line-height: 1.8; font-weight: 300; max-width: 600px; }
 
-    .library-section { padding: 64px 0; }
-    .library-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #eeeeee; border: 1px solid #eeeeee; }
-    .lib-card { background: #ffffff; padding: 48px 40px; display: block; transition: background 0.2s; position: relative; }
-    .lib-card:hover { background: #fafafa; }
-    .lib-card:hover .lib-card-arrow { transform: translateX(4px); }
-    .lib-card-num { font-size: 0.7rem; letter-spacing: 0.15em; color: #cccccc; margin-bottom: 24px; }
-    .lib-card-name { font-size: 1.5rem; font-weight: 700; color: #111111; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
-    .lib-card-name span { font-size: 0.8em; font-weight: 400; color: #666666; letter-spacing: 0; }
-    .lib-card-desc { font-size: 0.875rem; color: #555555; line-height: 1.7; margin-bottom: 24px; }
-    .lib-card-arrow { font-size: 0.9rem; color: #aaaaaa; transition: transform 0.2s; }
-    @media (max-width: 900px) { .library-grid { grid-template-columns: 1fr; } }
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid #eeeeee; }
+    .filter-btn { padding: 10px 20px; font-size: 0.8rem; letter-spacing: 0.05em; color: #666666; background: transparent; border: 1px solid #dddddd; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .filter-btn:hover { color: #111111; border-color: #999999; }
+    .filter-btn.active { color: #ffffff; background: #111111; border-color: #111111; }
+
+    .research-article-list { display: flex; flex-direction: column; }
+    .research-article-item { display: grid; grid-template-columns: 140px 1fr; gap: 32px; padding: 32px 0; border-bottom: 1px solid #eeeeee; }
+    .research-article-item:first-child { border-top: 1px solid #eeeeee; }
+    .article-date { font-size: 0.8rem; color: #888888; padding-top: 2px; }
+    .article-body { display: flex; flex-direction: column; gap: 8px; }
+    .article-category-tag { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; }
+    .article-title-link { font-size: clamp(17px, 2vw, 22px); font-weight: 600; color: #111111; letter-spacing: -0.015em; line-height: 1.4; transition: color 0.15s; }
+    .article-title-link:hover { color: #555555; }
+    .article-summary { font-size: 0.9rem; color: #777777; line-height: 1.7; font-weight: 300; margin-top: 4px; }
+
+    .no-articles { padding: 60px 0; text-align: center; color: #aaaaaa; font-size: 0.9rem; }
 
     .site-footer { padding: 48px 0; border-top: 1px solid #eeeeee; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -53,78 +57,55 @@
     .footer-links a:hover { color: #111111; }
     .footer-copy { font-size: 0.75rem; color: #888888; margin-top: 24px; }
 
-    [lang="zh"] [data-i18n="en"] { display: none !important; }
-    [lang="en"] [data-i18n="zh"] { display: none !important; }
+    @media (max-width: 768px) {
+      .page-library { padding: 48px 24px 80px; }
+      .research-article-item { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
+      .article-date { font-size: 0.75rem; }
+    }
   </style>
 </head>
-<body lang="en">
+<body>
 
 <nav class="site-nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">Magic Econ<span data-i18n="en">| Independent Research Platform</span><span data-i18n="zh" style="display:none;">| 独立投资研究平台</span></a>
+      <a href="/" class="nav-logo">Magic Econ<span>| Independent Research</span></a>
       <ul class="nav-links">
-        <li><a href="/" data-i18n="en">Home</a><a href="/" data-i18n="zh" style="display:none;">首页</a></li>
-        <li><a href="/research/" style="color:#111111;font-weight:600;" data-i18n="en">Research</a><a href="/research/" style="color:#111111;font-weight:600;" data-i18n="zh" style="display:none;">研究</a></li>
-        <li><a href="/about/" data-i18n="en">About</a><a href="/about/" data-i18n="zh" style="display:none;">关于</a></li>
-        <li><a href="/contact/" data-i18n="en">Contact</a><a href="/contact/" data-i18n="zh" style="display:none;">联系</a></li>
-        <li><button class="lang-toggle" id="lang-toggle" onclick="switchLang()">中 / EN</button></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/research/" style="color:#111111;font-weight:600;">Research</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<header class="page-header">
-  <div class="container">
-    <div class="page-label" data-i18n="en">Research Library</div>
-    <div class="page-label" data-i18n="zh" style="display:none;">研究资料库</div>
-    <h1 class="page-title" data-i18n="en">Research Library</h1>
-    <h1 class="page-title" data-i18n="zh" style="display:none;">研究资料库</h1>
-    <div class="page-divider"></div>
-    <p class="page-desc" data-i18n="en">All research outputs, organized by category. Explore companies, markets, and frameworks.</p>
-    <p class="page-desc" data-i18n="zh" style="display:none;">全部研究产出，按主题分类。探索企业、市场与分析框架。</p>
+<main class="page-library">
+  <div class="library-header">
+    <div class="library-label">Research Library</div>
+    <h1 class="library-title">Research Library</h1>
+    <div class="library-divider"></div>
+    <p class="library-desc">All research outputs from Magic Econ, organized by category. Equity research, market observation, and learning notes.</p>
   </div>
-</header>
 
-<section class="library-section">
-  <div class="container">
-    <div class="library-grid">
-      <a href="/library/research/" class="lib-card">
-        <div class="lib-card-num">01</div>
-        <div class="lib-card-name" data-i18n="en">Research</div>
-        <div class="lib-card-name" data-i18n="zh" style="display:none;">投资研究</div>
-        <div class="lib-card-desc" data-i18n="en">Explore companies, industries and investment ideas. Fundamental analysis and business understanding.</div>
-        <div class="lib-card-desc" data-i18n="zh" style="display:none;">探索企业、行业与投资机会。基于基本面分析与商业理解。</div>
-        <div class="lib-card-arrow">→</div>
-      </a>
-      <a href="/library/market/" class="lib-card">
-        <div class="lib-card-num">02</div>
-        <div class="lib-card-name" data-i18n="en">Market</div>
-        <div class="lib-card-name" data-i18n="zh" style="display:none;">市场观察</div>
-        <div class="lib-card-desc" data-i18n="en">Understand economic cycles and market trends. Macro analysis and capital flow dynamics.</div>
-        <div class="lib-card-desc" data-i18n="zh" style="display:none;">理解经济周期与市场趋势。宏观分析与资本流动。</div>
-        <div class="lib-card-arrow">→</div>
-      </a>
-      <a href="/library/learning/" class="lib-card">
-        <div class="lib-card-num">03</div>
-        <div class="lib-card-name" data-i18n="en">Learning</div>
-        <div class="lib-card-name" data-i18n="zh" style="display:none;">学习思考</div>
-        <div class="lib-card-desc" data-i18n="en">Build investment knowledge and frameworks. Economics fundamentals and mental models.</div>
-        <div class="lib-card-desc" data-i18n="zh" style="display:none;">构建投资知识体系与分析框架。经济学基础与思维模型。</div>
-        <div class="lib-card-arrow">→</div>
-      </a>
-    </div>
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="research">Research</button>
+    <button class="filter-btn" data-filter="market">Market</button>
+    <button class="filter-btn" data-filter="learning">Learning</button>
   </div>
-</section>
+
+  <div class="research-article-list" id="article-list"></div>
+</main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-philosophy"><em data-i18n="en">The goal is not to predict markets, but to understand them.</em><em data-i18n="zh" style="display:none;">目标不是预测市场，而是理解市场。</em></div>
+      <div class="footer-philosophy"><em>The goal is not to predict markets, but to understand them.</em></div>
       <ul class="footer-links">
-        <li><a href="/about/" data-i18n="en">About</a><a href="/about/" data-i18n="zh" style="display:none;">关于</a></li>
-        <li><a href="/research/" data-i18n="en">Research</a><a href="/research/" data-i18n="zh" style="display:none;">研究</a></li>
-        <li><a href="/contact/" data-i18n="en">Contact</a><a href="/contact/" data-i18n="zh" style="display:none;">联系</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
     <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
@@ -132,28 +113,52 @@
 </footer>
 
 <script>
-(function() {
-  var KEY = 'magicecon-lang';
-  function applyLang(lang) {
-    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    document.querySelectorAll('[data-i18n]').forEach(function(el) {
-      el.style.display = (el.getAttribute('data-i18n') === lang) ? '' : 'none';
-    });
-    var btn = document.getElementById('lang-toggle');
-    if (btn) btn.textContent = lang === 'zh' ? 'EN / 中' : '中 / EN';
+var allArticles = [];
+
+function renderArticles(filter) {
+  var list = document.getElementById('article-list');
+  if (!list) return;
+  var filtered = filter === 'all' ? allArticles : allArticles.filter(function(a) {
+    return (a.category_slug || '').toLowerCase() === filter;
+  });
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="no-articles">No articles in this category yet.</div>';
+    return;
   }
-  // 永远默认英文，不记忆
-  applyLang('en');
-  var btn = document.getElementById('lang-toggle');
-  if (btn) {
+  var html = '';
+  filtered.forEach(function(a) {
+    html += '<div class="research-article-item">'
+      + '<div class="article-date">' + (a.date || '') + '</div>'
+      + '<div class="article-body">'
+      + '<div class="article-category-tag">' + (a.category || '') + '</div>'
+      + '<a class="article-title-link" href="' + (a.url || '#') + '">' + (a.title || 'Untitled') + '</a>'
+      + (a.summary ? '<div class="article-summary">' + a.summary + '</div>' : '')
+      + '</div></div>';
+  });
+  list.innerHTML = html;
+}
+
+function bindFilters() {
+  var btns = document.querySelectorAll('.filter-btn');
+  btns.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var cur = localStorage.getItem(KEY) || 'en';
-      var next = cur === 'en' ? 'zh' : 'en';
-      localStorage.setItem(KEY, next);
-      applyLang(next);
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      renderArticles(btn.getAttribute('data-filter'));
     });
-  }
-})();
+  });
+}
+
+fetch('/articles.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    allArticles = data;
+    renderArticles('all');
+    bindFilters();
+  })
+  .catch(function() {
+    document.getElementById('article-list').innerHTML = '<div class="no-articles">Failed to load. Please refresh.</div>';
+  });
 </script>
 
 </body>
