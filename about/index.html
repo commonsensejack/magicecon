@@ -26,7 +26,7 @@
     .nav-links a:hover { color: #111111; }
     .lang-toggle { padding: 6px 14px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; color: #444444; background: transparent; border: 1px solid #dddddd; cursor: pointer; font-family: inherit; transition: all 0.15s; }
     .lang-toggle:hover { color: #111111; border-color: #999999; }
-    
+
     .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 12px; margin: -12px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
     .nav-menu-btn span { display: block; width: 22px; height: 2px; background: #111111; margin: 5px 0; transition: 0.3s; pointer-events: none; }
     @media (max-width: 640px) {
@@ -46,30 +46,27 @@
     .about-hero-title { font-size: clamp(40px, 8vw, 72px); font-weight: 800; letter-spacing: -0.04em; color: #111111; line-height: 1; margin-bottom: 20px; }
     .about-hero-sub { font-size: 1rem; color: #888888; font-weight: 300; line-height: 1.7; }
 
-    .about-section { margin-bottom: 36px; }
+    .about-section { margin-bottom: 28px; }
     .about-en { font-size: 1rem; color: #333333; line-height: 1.9; font-weight: 300; }
     .about-zh { font-size: 1rem; color: #444444; line-height: 1.9; font-weight: 300; }
     .about-divider { width: 40px; height: 1px; background: #dddddd; margin: 48px 0; }
 
     .about-section-title { font-size: clamp(24px, 4vw, 36px); font-weight: 700; color: #111111; letter-spacing: -0.02em; line-height: 1.2; margin: 72px 0 36px; }
+    .about-section-title-sm { font-size: clamp(18px, 3vw, 24px); font-weight: 700; color: #111111; letter-spacing: -0.01em; line-height: 1.3; margin: 48px 0 24px; }
 
-    .about-lead { font-size: 1.1rem; color: #222222; line-height: 1.8; font-weight: 400; margin-bottom: 8px; }
+    .about-lead { font-size: 1.05rem; color: #222222; line-height: 1.8; font-weight: 400; margin-bottom: 8px; }
     .about-lead-zh { font-size: 1.05rem; color: #333333; line-height: 1.8; font-weight: 300; margin-bottom: 8px; }
 
-    .about-philosophy-label { font-size: 0.9rem; color: #555555; font-weight: 400; margin-bottom: 6px; }
-    .about-philosophy-label-zh { font-size: 0.9rem; color: #555555; font-weight: 400; margin-bottom: 6px; }
-    .about-philosophy-list { margin-bottom: 28px; }
-    .about-philosophy-item { padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
-    .about-philosophy-item:last-child { border-bottom: none; }
+    .about-numbered { margin-bottom: 12px; }
+    .about-numbered-item { display: flex; gap: 12px; margin-bottom: 16px; }
+    .about-num { font-size: 0.8rem; font-weight: 700; color: #111111; min-width: 20px; padding-top: 2px; }
+    .about-num-text-en { font-size: 1rem; color: #333333; line-height: 1.7; font-weight: 300; flex: 1; }
+    .about-num-text-zh { font-size: 1rem; color: #444444; line-height: 1.7; font-weight: 300; flex: 1; }
 
-    .about-focus-label { font-size: 0.9rem; color: #555555; margin-bottom: 6px; }
-    .about-focus-label-zh { font-size: 0.9rem; color: #555555; margin-bottom: 6px; }
-    .about-focus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #eeeeee; }
-    .about-focus-item { padding: 20px 24px; border-bottom: 1px solid #eeeeee; border-right: 1px solid #eeeeee; }
-    .about-focus-item:nth-child(2n) { border-right: none; }
-    .about-focus-item:nth-last-child(-n+2) { border-bottom: none; }
-    .about-focus-en { font-size: 0.9rem; color: #222222; font-weight: 500; margin-bottom: 4px; }
-    .about-focus-zh { font-size: 0.9rem; color: #333333; font-weight: 300; }
+    .about-bullet { margin-bottom: 8px; }
+    .about-bullet-item { margin-bottom: 14px; }
+    .about-bullet-en { font-size: 1rem; color: #333333; line-height: 1.7; font-weight: 300; }
+    .about-bullet-zh { font-size: 1rem; color: #444444; line-height: 1.7; font-weight: 300; }
 
     .about-quote { border-left: 2px solid #111111; padding: 24px 0 24px 28px; margin: 32px 0; }
     .about-quote-en { font-size: 1.05rem; color: #222222; line-height: 1.7; font-weight: 400; margin-bottom: 4px; }
@@ -82,7 +79,6 @@
     .about-disclaimer { font-size: 0.875rem; color: #666666; line-height: 1.8; font-weight: 300; padding: 28px; border: 1px solid #eeeeee; background: #fafafa; }
     .about-disclaimer p { margin-bottom: 8px; }
 
-    .about-contact { margin-top: 8px; }
     .about-email { margin-top: 20px; }
     .about-email a { font-size: 1.1rem; color: #111111; text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
     .about-email a:hover { color: #555555; }
@@ -97,10 +93,6 @@
 
     @media (max-width: 640px) {
       .about-page { padding: 48px 24px 80px; }
-      .about-focus-grid { grid-template-columns: 1fr; }
-      .about-focus-item { border-right: none; }
-      .about-focus-item:nth-last-child(-n+2) { border-bottom: 1px solid #eeeeee; }
-      .about-focus-item:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -128,6 +120,7 @@
 
 <main class="about-page">
 
+  <!-- Hero -->
   <div class="about-hero">
     <div class="about-hero-label" data-i18n="en">About Magic Econ</div>
     <div class="about-hero-label" data-i18n="zh" style="display:none;">关于 Magic Econ</div>
@@ -136,135 +129,152 @@
     <div class="about-hero-sub" data-i18n="zh" style="display:none;">独立投资研究平台</div>
   </div>
 
+  <!-- Intro 1 -->
   <div class="about-section">
-    <p class="about-en" data-i18n="en">Magic Econ is an independent research platform focused on understanding businesses, markets, and the economy through fundamental analysis and long-term thinking.</p>
-    <p class="about-zh" data-i18n="zh">Magic Econ 是一个专注于理解企业、市场与经济运行规律的独立研究平台。</p>
+    <p class="about-en" data-i18n="en">Magic Econ is an independent research platform focused on understanding businesses, markets, and the economy through fundamental analysis and long-term thinking. We are dedicated to hedge fund research, asset management analysis, and financial think-tank services, building systematic and rigorous investment frameworks for institutional and individual investors.</p>
+    <p class="about-zh" data-i18n="zh">Magic Econ 是专注于对冲基金研究、资产管理分析及金融智库服务的独立平台，以基本面分析为核心，坚持长期视角，深耕企业、市场与经济的底层运行逻辑，为机构及个人投资者搭建系统、严谨的投资分析框架。</p>
   </div>
 
+  <!-- Intro 2 -->
   <div class="about-section">
-    <p class="about-en" data-i18n="en">The purpose of this platform is to organize research, document investment thoughts, and build a more disciplined framework for understanding the world of investing.</p>
-    <p class="about-zh" data-i18n="zh">我们通过基本面分析与长期视角，研究企业价值创造过程、市场运行逻辑以及影响长期投资结果的关键因素。</p>
+    <p class="about-en" data-i18n="en">In a financial market saturated with information and noise, we reject short-term oriented behaviors such as trend-chasing, market prediction, and investment advice. Instead, we focus on the core principles of "value understanding and rational decision-making," helping long-term value investors break free from short-term volatility and build a clear investment cognition system.</p>
+    <p class="about-zh" data-i18n="zh">面对信息繁杂、噪音充斥的金融市场，我们摒弃热点追逐、市场预测及投资建议等短期导向行为，聚焦"价值理解、理性决策"的核心，通过研究成果沉淀与深度思考输出，助力长期价值投资者跳出短期波动，构建清晰的投资认知体系。</p>
   </div>
 
-  <div class="about-section">
-    <p class="about-en" data-i18n="en">Rather than focusing on short-term market movements, Magic Econ aims to explore how businesses create value, how capital is allocated, and how economic forces shape long-term investment outcomes.</p>
-    <p class="about-zh" data-i18n="zh">创建这个平台的目的，是整理研究成果，记录投资思考，并建立一套更加系统、理性的投资分析框架。</p>
-  </div>
+  <div class="about-divider"></div>
 
-  <div class="about-section">
-    <p class="about-en" data-i18n="en">Compared to paying attention to short-term market fluctuations, Magic Econ focuses more on:</p>
-    <p class="about-zh" data-i18n="zh">相比关注短期市场波动，Magic Econ 更关注：</p>
-  </div>
+  <!-- Our Focus -->
+  <h2 class="about-section-title">
+    <span data-i18n="en">Our Focus</span>
+    <span data-i18n="zh" style="display:none;">核心关注</span>
+  </h2>
+  <p class="about-lead" data-i18n="en">We focus on the core factors that drive long-term investment returns, setting aside short-term market fluctuations. Our three primary areas of focus:</p>
+  <p class="about-lead-zh" data-i18n="zh">我们聚焦影响投资长期收益的核心要素，摒弃短期市场涨跌干扰，重点关注三大方向：</p>
 
-  <div class="about-philosophy-list">
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">How businesses create value.</div>
-      <div class="about-zh" data-i18n="zh">企业如何创造价值；</div>
+  <div class="about-numbered">
+    <div class="about-numbered-item">
+      <div class="about-num" data-i18n="en">01</div>
+      <div class="about-num" data-i18n="zh" style="display:none;">01</div>
+      <div>
+        <div class="about-num-text-en" data-i18n="en"><strong>Business Value Creation:</strong> We analyze business models, competitive moats, and long-term profitability logic, focusing on the core drivers of business value creation while filtering out short-term stock price volatility.</div>
+        <div class="about-num-text-zh" data-i18n="zh"><strong>企业价值创造：</strong>拆解企业商业模式、竞争壁垒与长期盈利逻辑，聚焦企业价值创造的核心驱动力，剥离股价短期波动干扰；</div>
+      </div>
     </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">How capital is effectively allocated.</div>
-      <div class="about-zh" data-i18n="zh">资本如何有效配置；</div>
+    <div class="about-numbered-item">
+      <div class="about-num" data-i18n="en">02</div>
+      <div class="about-num" data-i18n="zh" style="display:none;">02</div>
+      <div>
+        <div class="about-num-text-en" data-i18n="en"><strong>Effective Capital Allocation:</strong> We analyze capital flow patterns across industries and businesses, examining capital allocation strategies from an asset management perspective to improve funding efficiency and return stability.</div>
+        <div class="about-num-text-zh" data-i18n="zh"><strong>资本有效配置：</strong>分析资本在各行业、企业间的流动规律，研究资产管理视角下的资本配置策略，提升资金配置效率与收益稳定性；</div>
+      </div>
     </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">How economic forces affect long-term investment outcomes.</div>
-      <div class="about-zh" data-i18n="zh">经济力量如何影响长期投资结果。</div>
+    <div class="about-numbered-item">
+      <div class="about-num" data-i18n="en">03</div>
+      <div class="about-num" data-i18n="zh" style="display:none;">03</div>
+      <div>
+        <div class="about-num-text-en" data-i18n="en"><strong>Economic Forces Impact:</strong> We interpret core variables such as macroeconomic cycles, interest rates, and inflation, clarifying how economic trends potentially affect various asset classes, hedge funds, and the asset management industry.</div>
+        <div class="about-num-text-zh" data-i18n="zh"><strong>经济力量影响：</strong>解读宏观经济周期、利率、通胀等核心变量，厘清经济趋势对各类资产、对冲基金及资产管理行业的潜在影响。</div>
+      </div>
     </div>
   </div>
 
   <div class="about-divider"></div>
 
-  <h2 class="about-section-title" data-i18n="en">Research Philosophy</h2>
-  <h2 class="about-section-title" data-i18n="zh" style="display:none;">研究理念</h2>
+  <!-- Research Philosophy -->
+  <h2 class="about-section-title">
+    <span data-i18n="en">Research Philosophy</span>
+    <span data-i18n="zh" style="display:none;">研究理念</span>
+  </h2>
+  <p class="about-lead" data-i18n="en">We believe that quality investment decisions stem from rigorous analysis, clear thinking, and rational judgment — not market predictions. This belief guides all our research work, with the following core principles:</p>
+  <p class="about-lead-zh" data-i18n="zh">我们坚信，优质的投资决策源于严谨的分析、清晰的思考与理性的判断，而非市场预测，这一理念贯穿所有研究工作，核心原则如下：</p>
 
-  <p class="about-lead" data-i18n="en">Successful investing is not about making more predictions,<br>but about building better ways of thinking.</p>
-  <p class="about-lead-zh" data-i18n="zh">成功的投资并不在于做出更多预测，<br>而在于建立更好的思考方式。</p>
-
-  <p class="about-philosophy-label" data-i18n="en">Magic Econ believes that good investment decisions come from:</p>
-  <p class="about-philosophy-label-zh" data-i18n="zh">Magic Econ 相信，优秀的投资决策来自：</p>
-
-  <div class="about-philosophy-list">
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">Understanding businesses before valuing them.</div>
-      <div class="about-zh" data-i18n="zh">在估值之前理解企业。</div>
+  <div class="about-bullet">
+    <div class="about-bullet-item">
+      <div class="about-bullet-en" data-i18n="en"><strong>Understand businesses before valuing them:</strong> The core of investing is understanding business operations, competitive advantages, and value creation capability — not just focusing on price.</div>
+      <div class="about-bullet-zh" data-i18n="zh"><strong>先懂企业，再谈估值：</strong>投资的核心是理解企业经营逻辑、竞争优势与价值创造能力，而非单纯关注标的价格；</div>
     </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">The starting point of investing is not price, but understanding of business models, competitive advantages, and value creation capability.</div>
-      <div class="about-zh" data-i18n="zh">投资的起点不是价格，而是对商业模式、竞争优势以及价值创造能力的理解。</div>
+    <div class="about-bullet-item">
+      <div class="about-bullet-en" data-i18n="en"><strong>Focus on fundamentals, filter out noise:</strong> Short-term market fluctuations are random in nature. Sustained business operating capability is the core pillar of long-term value.</div>
+      <div class="about-bullet-zh" data-i18n="zh"><strong>聚焦基本面，屏蔽噪音：</strong>短期市场波动具有随机性，企业持续经营能力是长期价值的核心支撑；</div>
     </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">Focusing on fundamentals rather than market noise.</div>
-      <div class="about-zh" data-i18n="zh">关注基本面，而非市场噪音。</div>
+    <div class="about-bullet-item">
+      <div class="about-bullet-en" data-i18n="en"><strong>Independent thinking, no consensus following:</strong> The value of research lies in building your own judgment framework, based on objective data and rigorous logic, maintaining independent analysis and judgment.</div>
+      <div class="about-bullet-zh" data-i18n="zh"><strong>独立思考，不盲从共识：</strong>研究的价值在于构建专属判断框架，以客观数据与严谨逻辑为依据，坚持独立分析与判断；</div>
     </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">Short-term market fluctuations are often hard to predict, but long-term enterprise value comes from sustained operating capability.</div>
-      <div class="about-zh" data-i18n="zh">短期市场波动往往难以预测，但企业长期价值来源于持续经营能力。</div>
+    <div class="about-bullet-item">
+      <div class="about-bullet-en" data-i18n="en"><strong>Long-term perspective, compound returns matter:</strong> Reject short-term speculation. Focus on long-term business development and capital compounding effects, adhering to long-term investment principles.</div>
+      <div class="about-bullet-zh" data-i18n="zh"><strong>立足长期，重视复利：</strong>摒弃短期投机思维，聚焦企业长期发展与资本复利效应，坚守长期投资原则；</div>
     </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">Independent thinking rather than following market consensus.</div>
-      <div class="about-zh" data-i18n="zh">保持独立思考，而非追随市场共识。</div>
-    </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">The meaning of research lies in forming your own judgment framework, not simply repeating market views.</div>
-      <div class="about-zh" data-i18n="zh">研究的意义在于形成自己的判断框架，而不是简单重复市场观点。</div>
-    </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">Long-term perspective on investing, rather than being affected by short-term changes.</div>
-      <div class="about-zh" data-i18n="zh">以长期视角看待投资，而非被短期变化影响。</div>
-    </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">What truly matters is long-term business development and capital compounding.</div>
-      <div class="about-zh" data-i18n="zh">真正重要的是企业长期发展和资本复利过程。</div>
-    </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">Making decisions based on probabilities in uncertainty.</div>
-      <div class="about-zh" data-i18n="zh">在不确定性中基于概率做出判断。</div>
-    </div>
-    <div class="about-philosophy-item">
-      <div class="about-en" data-i18n="en">Investing is not about finding absolutely certain answers, but improving decision quality with limited information.</div>
-      <div class="about-zh" data-i18n="zh">投资不是寻找绝对确定的答案，而是在有限信息下提高决策质量。</div>
+    <div class="about-bullet-item">
+      <div class="about-bullet-en" data-i18n="en"><strong>Probabilistic decisions, embrace uncertainty:</strong> There are no absolute answers in investing. We are committed to improving our probability edge in decision-making through rigorous research under limited information.</div>
+      <div class="about-bullet-zh" data-i18n="zh"><strong>概率决策，拥抱不确定：</strong>投资无绝对答案，我们致力于在有限信息下，通过严谨研究提升决策的概率优势。</div>
     </div>
   </div>
 
-  <p class="about-lead" data-i18n="en">The ultimate goal is not to predict every market movement,<br>but to build investment frameworks that support long-term decisions.</p>
-  <p class="about-lead-zh" data-i18n="zh">最终目标不是预测每一次市场变化，<br>而是建立能够帮助长期决策的投资框架。</p>
+  <p class="about-lead" data-i18n="en" style="margin-top:24px;">Our core goal is to build reusable, optimizable investment analysis frameworks that provide professional support for long-term decisions by hedge funds, asset management institutions, and individual investors.</p>
+  <p class="about-lead-zh" data-i18n="zh" style="margin-top:24px;">我们的核心目标，是构建可复用、可优化的投资分析框架，为对冲基金、资产管理机构及个人投资者的长期决策提供专业支撑。</p>
 
   <div class="about-divider"></div>
 
-  <h2 class="about-section-title" data-i18n="en">Research Focus</h2>
-  <h2 class="about-section-title" data-i18n="zh" style="display:none;">研究方向</h2>
+  <!-- Research Areas -->
+  <h2 class="about-section-title">
+    <span data-i18n="en">Research Areas</span>
+    <span data-i18n="zh" style="display:none;">研究方向</span>
+  </h2>
+  <p class="about-lead" data-i18n="en">Combining our core focus and research philosophy, we have clearly divided our research scope into four areas, concentrating on professional depth with clear boundaries:</p>
+  <p class="about-lead-zh" data-i18n="zh">结合核心关注方向与研究理念，我们将研究范围清晰划分为四大板块，聚焦专业深度，边界明确：</p>
 
-  <p class="about-focus-label" data-i18n="en">Magic Econ currently focuses on:</p>
-  <p class="about-focus-label-zh" data-i18n="zh">Magic Econ 当前关注：</p>
-
-  <div class="about-focus-grid">
-    <div class="about-focus-item"><div class="about-focus-en" data-i18n="en">Equity Research</div><div class="about-focus-zh" data-i18n="zh">股票研究</div></div>
-    <div class="about-focus-item"><div class="about-focus-en" data-i18n="en">Business Models &amp; Competitive Advantages</div><div class="about-focus-zh" data-i18n="zh">商业模式与竞争优势</div></div>
-    <div class="about-focus-item"><div class="about-focus-en" data-i18n="en">Enterprise Valuation &amp; Capital Allocation</div><div class="about-focus-zh" data-i18n="zh">企业估值与资本配置</div></div>
-    <div class="about-focus-item"><div class="about-focus-en" data-i18n="en">Macroeconomic Analysis</div><div class="about-focus-zh" data-i18n="zh">宏观经济分析</div></div>
-    <div class="about-focus-item"><div class="about-focus-en" data-i18n="en">Interest Rates &amp; Inflation</div><div class="about-focus-zh" data-i18n="zh">利率与通胀</div></div>
-    <div class="about-focus-item"><div class="about-focus-en" data-i18n="en">Asset Allocation</div><div class="about-focus-zh" data-i18n="zh">资产配置</div></div>
-    <div class="about-focus-item"><div class="about-focus-en" data-i18n="en">Index Investing &amp; Factor Investing</div><div class="about-focus-zh" data-i18n="zh">指数投资与因子投资</div></div>
-    <div class="about-focus-item"><div class="about-focus-en" data-i18n="en">Investment Analysis Frameworks</div><div class="about-focus-zh" data-i18n="zh">投资分析框架</div></div>
+  <div class="about-numbered" style="margin-top:28px;">
+    <div class="about-numbered-item">
+      <div class="about-num" data-i18n="en">01</div>
+      <div class="about-num" data-i18n="zh" style="display:none;">01</div>
+      <div>
+        <div class="about-num-text-en" data-i18n="en"><strong>Equity Research:</strong> Focus on business models, competitive advantages, valuation systems, and capital allocation. Conduct deep research on individual targets and industries to uncover long-term investment value.</div>
+        <div class="about-num-text-zh" data-i18n="zh"><strong>股票研究：</strong>聚焦企业商业模式、竞争优势、估值体系及资本配置，开展单标的与行业深度研究，挖掘长期投资价值；</div>
+      </div>
+    </div>
+    <div class="about-numbered-item">
+      <div class="about-num" data-i18n="en">02</div>
+      <div class="about-num" data-i18n="zh" style="display:none;">02</div>
+      <div>
+        <div class="about-num-text-en" data-i18n="en"><strong>Macroeconomic Analysis:</strong> Research interest rates, inflation, economic cycles, and capital flow patterns. Interpret how macroeconomic environments impact investment markets, hedge funds, and the asset management industry.</div>
+        <div class="about-num-text-zh" data-i18n="zh"><strong>宏观经济分析：</strong>研究利率、通胀、经济周期及资本流动规律，解读宏观环境对投资市场、对冲基金及资产管理行业的影响；</div>
+      </div>
+    </div>
+    <div class="about-numbered-item">
+      <div class="about-num" data-i18n="en">03</div>
+      <div class="about-num" data-i18n="zh" style="display:none;">03</div>
+      <div>
+        <div class="about-num-text-en" data-i18n="en"><strong>Asset Allocation:</strong> Explore diversified allocation approaches such as index investing and factor investing, combining market environments to provide scientific and rational allocation solutions for asset management.</div>
+        <div class="about-num-text-zh" data-i18n="zh"><strong>资产配置：</strong>探索指数投资、因子投资等多元化配置方式，结合市场环境，为资产管理提供科学合理的配置方案；</div>
+      </div>
+    </div>
+    <div class="about-numbered-item">
+      <div class="about-num" data-i18n="en">04</div>
+      <div class="about-num" data-i18n="zh" style="display:none;">04</div>
+      <div>
+        <div class="about-num-text-en" data-i18n="en"><strong>Investment Analysis Frameworks:</strong> Organize economics fundamentals, investment mental models, and practical analytical methods to help investors build professional research and decision-making systems.</div>
+        <div class="about-num-text-zh" data-i18n="zh"><strong>投资分析框架：</strong>整理经济学基础、投资思维模型与实用分析方法，助力投资者搭建专业的研究与决策体系。</div>
+      </div>
+    </div>
   </div>
 
   <div class="about-divider"></div>
 
-  <h2 class="about-section-title" data-i18n="en">Why Magic Econ</h2>
-  <h2 class="about-section-title" data-i18n="zh" style="display:none;">为什么叫 Magic Econ</h2>
+  <!-- Why Magic Econ -->
+  <h2 class="about-section-title">
+    <span data-i18n="en">Why "Magic" Econ</span>
+    <span data-i18n="zh" style="display:none;">名称释义</span>
+  </h2>
 
   <div class="about-section">
-    <p class="about-en" data-i18n="en">The word "Magic" does not represent market prediction, timing the market, or any shortcut to investment success.</p>
-    <p class="about-zh" data-i18n="zh">"Magic" 并不代表预测市场、择时交易，或者寻找投资成功的捷径。</p>
+    <p class="about-en" data-i18n="en">"Magic" does not refer to market prediction, timing the market, or any speculative shortcut to investment success. Instead, it represents our relentless exploration of the underlying logic behind financial markets, business growth, and capital appreciation.</p>
+    <p class="about-zh" data-i18n="zh">"Magic" 并非指市场预测、择时交易的投机捷径，而是我们对金融市场、企业成长与资本增值底层逻辑的执着探索。</p>
   </div>
 
   <div class="about-section">
-    <p class="about-en" data-i18n="en">It represents the curiosity behind understanding how economies work, how businesses grow, and how capital creates long-term value.</p>
-    <p class="about-zh" data-i18n="zh">它代表的是探索经济运行规律的好奇心。</p>
-  </div>
-
-  <div class="about-section">
-    <p class="about-en" data-i18n="en">By understanding how the economy works, how businesses grow, and how capital creates long-term value, we can gradually discover the logic behind complex markets.</p>
-    <p class="about-zh" data-i18n="zh">通过理解经济如何运转、企业如何成长、资本如何创造长期价值，我们能够逐渐发现复杂市场背后的逻辑。</p>
+    <p class="about-en" data-i18n="en">We believe the core value of investing lies in cultivating the ability to think clearly, analyze objectively, and remain rational in complex markets — anchored on long-term value — through continuous research and deep thinking.</p>
+    <p class="about-zh" data-i18n="zh">我们认为，投资的核心价值，在于通过持续研究与深度思考，培养清晰判断、客观分析的能力，在复杂市场中坚守理性，锚定长期价值。</p>
   </div>
 
   <div class="about-quote">
@@ -276,52 +286,45 @@
 
   <div class="about-divider"></div>
 
-  <h2 class="about-section-title" data-i18n="en">About Author</h2>
-  <h2 class="about-section-title" data-i18n="zh" style="display:none;">关于作者</h2>
+  <!-- About Author -->
+  <h2 class="about-section-title">
+    <span data-i18n="en">About the Author</span>
+    <span data-i18n="zh" style="display:none;">关于作者</span>
+  </h2>
 
   <div class="about-author">
     <div class="about-author-name">Common Sense Jack</div>
     <div class="about-author-desc">
-      <p class="about-en" data-i18n="en">Common Sense Jack is the author behind Magic Econ.</p>
-      <p class="about-zh" data-i18n="zh">Common Sense Jack 是 Magic Econ 的创作者与研究作者。</p>
-      <p class="about-en" data-i18n="en">This name represents a simple investment philosophy:</p>
-      <p class="about-zh" data-i18n="zh">这个名字代表一种简单的投资理念：</p>
-      <p class="about-en" data-i18n="en">Investing does not always require complicated answers.</p>
-      <p class="about-zh" data-i18n="zh">投资并不总需要复杂的答案。</p>
-      <p class="about-en" data-i18n="en">Many important investment judgments are ultimately built on some basic principles — business quality, valuation levels, incentive mechanisms, and economic cycles.</p>
-      <p class="about-zh" data-i18n="zh">许多重要的投资判断，最终建立在一些基本原则之上——企业质量、估值水平、激励机制以及经济周期。</p>
-      <p class="about-en" data-i18n="en">Common Sense Jack focuses on long-term investment research, exploring how businesses create value and how capital achieves long-term compounding.</p>
-      <p class="about-zh" data-i18n="zh">Common Sense Jack 专注于长期投资研究，探索企业如何创造价值，以及资本如何实现长期复利。</p>
+      <p class="about-en" data-i18n="en">Common Sense Jack is the core researcher at Magic Econ. "Common Sense" is his core investment philosophy — investing does not require complex formulas. The essence of critical decisions ultimately returns to basic principles: business quality, valuation levels, incentive mechanisms, and economic cycles.</p>
+      <p class="about-zh" data-i18n="zh">Common Sense Jack 是 Magic Econ 的核心研究人员，"Common Sense" 是其核心投资理念——投资无需复杂公式，关键决策的本质，最终回归于企业质量、估值水平、激励机制与经济周期等基础原则。</p>
+      <p class="about-en" data-i18n="en">The Magic Econ research team has long been deeply engaged in long-term value investing, hedge fund research, and asset management, focusing on business value creation and capital compounding research. With rigorous and objective attitudes, we produce professional research content to provide deep reference for investors.</p>
+      <p class="about-zh" data-i18n="zh">本平台研究团队长期深耕长期价值投资、对冲基金研究与资产管理领域，专注于企业价值创造与资本复利研究，以严谨、客观的态度产出专业研究内容，为投资者提供深度参考。</p>
     </div>
   </div>
 
   <div class="about-divider"></div>
 
-  <h2 class="about-section-title" data-i18n="en">Disclaimer</h2>
-  <h2 class="about-section-title" data-i18n="zh" style="display:none;">免责声明</h2>
+  <!-- Contact -->
+  <h2 class="about-section-title">
+    <span data-i18n="en">Get in Touch</span>
+    <span data-i18n="zh" style="display:none;">联系我们</span>
+  </h2>
+  <p class="about-lead" data-i18n="en">We welcome professionals from hedge funds, asset management institutions, and financial research to engage in research exchanges, opinion discussions, and collaboration. We also look forward to receiving your valuable suggestions to help the platform continuously improve.</p>
+  <p class="about-lead-zh" data-i18n="zh">我们欢迎对冲基金、资产管理机构及金融研究领域的从业者，开展研究交流、观点探讨与合作对接，也期待大家对平台内容提出宝贵建议，助力平台持续优化。</p>
+  <div class="about-email">
+    <a href="mailto:jack@magicecon.com">jack@magicecon.com</a>
+  </div>
 
+  <div class="about-divider"></div>
+
+  <!-- Disclaimer -->
+  <h2 class="about-section-title">
+    <span data-i18n="en">Disclaimer</span>
+    <span data-i18n="zh" style="display:none;">免责提示</span>
+  </h2>
   <div class="about-disclaimer">
-    <p class="about-en" data-i18n="en">Magic Econ publishes research content and personal opinions for learning and communication purposes only.</p>
-    <p class="about-zh" data-i18n="zh">Magic Econ 发布的研究内容与个人观点，仅用于学习交流目的。</p>
-    <p class="about-en" data-i18n="en">The content on this site does not constitute investment advice, financial advice, or a recommendation to buy or sell any securities.</p>
-    <p class="about-zh" data-i18n="zh">本站内容不构成投资建议、财务建议，亦不构成任何证券买入或卖出的推荐。</p>
-    <p class="about-en" data-i18n="en">Investment decisions involve risks, and readers should conduct independent research and make judgments after fully considering the risks based on their own circumstances.</p>
-    <p class="about-zh" data-i18n="zh">投资决策涉及风险，读者应结合自身情况进行独立研究，并在充分考虑风险后做出判断。</p>
-    <p class="about-en" data-i18n="en">Research is an iterative process. As new information and understanding emerge, the views published on this site may be adjusted and improved.</p>
-    <p class="about-zh" data-i18n="zh">研究是一个持续迭代的过程。随着新的信息和认知出现本站发布的观点可能会进行调整和完善。</p>
-  </div>
-
-  <div class="about-divider"></div>
-
-  <h2 class="about-section-title" data-i18n="en">Contact</h2>
-  <h2 class="about-section-title" data-i18n="zh" style="display:none;">联系方式</h2>
-
-  <div class="about-contact">
-    <p class="about-en" data-i18n="en">Welcome for research exchanges, opinion discussions, and collaboration:</p>
-    <p class="about-zh" data-i18n="zh">欢迎进行研究交流、观点讨论以及合作沟通：</p>
-    <div class="about-email">
-      <a href="mailto:jack@magicecon.com">jack@magicecon.com</a>
-    </div>
+    <p class="about-en" data-i18n="en">All content on Magic Econ is for independent research and thinking sharing purposes only. It does not constitute any investment advice, trading guidance, or investment commitment. Investors should make independent decisions based on their own risk tolerance. Neither the platform nor the author assumes responsibility for any investment results.</p>
+    <p class="about-zh" data-i18n="zh">Magic Econ 所有内容仅为独立研究与思考分享，不构成任何投资建议、交易指导或投资承诺。投资者需结合自身风险承受能力独立决策，平台及作者不对任何投资结果承担责任。</p>
   </div>
 
 </main>
@@ -330,7 +333,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-philosophy"><em data-i18n="en">The goal is not to predict markets, but to understand them.</em><em data-i18n="zh" style="display:none;">目标不是预测市场，而是理解市场。</em></div>
-        <ul class="footer-links">
+      <ul class="footer-links">
         <li><a href="/about/" data-i18n="en">About</a><a href="/about/" data-i18n="zh" style="display:none;">关于</a></li>
         <li><a href="/research/" data-i18n="en">Research</a><a href="/research/" data-i18n="zh" style="display:none;">研究</a></li>
         <li><a href="/contact/" data-i18n="en">Contact</a><a href="/contact/" data-i18n="zh" style="display:none;">联系</a></li>
@@ -361,8 +364,6 @@
       applyLang(next);
     });
   }
-
-  // 汉堡菜单
   var menuBtn = document.getElementById('nav-menu-btn');
   var navLinks = document.getElementById('nav-links');
   if (menuBtn && navLinks) {
