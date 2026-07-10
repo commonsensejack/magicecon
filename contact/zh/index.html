@@ -170,16 +170,18 @@
   var btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.addEventListener('click', function() {
+      var path = window.locat            var BASE = {};
       var path = window.location.pathname;
-      var isZh = path.indexOf('/zh/') !== -1 || path === '/zh';
-      if (isZh) {
-        window.location.href = path === '/zh/' || path === '/zh' ? '/' : path.replace('/zh/', '/');
+      // Detect language from path
+      if (path.indexOf('/zh') !== -1) {
+        // Currently in zh page → go to en
+        BASE.en = path.replace('/zh', '');
+        if (BASE.en === '' || BASE.en === '/') BASE.en = '/';
+        window.location.href = BASE.en;
       } else {
+        // Currently in en page → go to zh
         window.location.href = path === '/' || path === '' ? '/zh/' : path + 'zh/';
       }
-    });
-  }
-})();
 
   // 汉堡菜单
   var menuBtn = document.getElementById('nav-menu-btn');

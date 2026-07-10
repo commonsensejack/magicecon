@@ -296,52 +296,18 @@
   var btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.addEventListener('click', function() {
+      var path = window.locat            var BASE = {};
       var path = window.location.pathname;
-      var isZh = path.indexOf('/zh/') !== -1 || path === '/zh';
-      if (isZh) {
-        window.location.href = path === '/zh/' || path === '/zh' ? '/' : path.replace('/zh/', '/');
+      // Detect language from path
+      if (path.indexOf('/zh') !== -1) {
+        // Currently in zh page → go to en
+        BASE.en = path.replace('/zh', '');
+        if (BASE.en === '' || BASE.en === '/') BASE.en = '/';
+        window.location.href = BASE.en;
       } else {
+        // Currently in en page → go to zh
         window.location.href = path === '/' || path === '' ? '/zh/' : path + 'zh/';
       }
-    });
-  }
-  // 汉堡菜单
-  // 动态加载最新文章（Home Recent Research）
-  (function() {
-    var list = document.getElementById('home-article-list');
-    if (!list) return;
-    fetch('/research/articles.json')
-      .then(function(r) { return r.json(); })
-      .then(function(articles) {
-        if (!Array.isArray(articles) || articles.length === 0) {
-          list.innerHTML = '<div class="article-item" style="color:#aaaaaa;">No articles yet.</div>';
-          return;
-        }
-        // 按日期倒序，取最新 3 篇
-        var sorted = articles.slice().sort(function(a, b) {
-          return b.date.localeCompare(a.date);
-        });
-        var latest = sorted.slice(0, 3);
-        var lang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
-        var html = '';
-        latest.forEach(function(a) {
-          var title = a.title;
-          var cat = a['category_' + lang] || a.category;
-          var date = a.date;
-          html += '<div class="article-item">' +
-            '<div class="article-meta-row">' +
-            '<span class="article-category">' + cat + '</span>' +
-            '<span class="article-date">' + date + '</span>' +
-            '</div>' +
-            '<a href="' + a.url + '" class="article-title-link">' + title + '</a>' +
-            '</div>';
-        });
-        list.innerHTML = html;
-      })
-      .catch(function() {
-        list.innerHTML = '<div class="article-item" style="color:#aaaaaa;">No articles yet.</div>';
-      });
-  })();
 
   var menuBtn = document.getElementById('nav-menu-btn');
   var navLinks = document.getElementById('nav-links');
