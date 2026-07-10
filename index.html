@@ -109,10 +109,10 @@
         <span></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="/" class="nav-link-item" data-href-en="/" data-href-zh="/" style="color:#111111;font-weight:600;"><span data-i18n="en">Home</span><span data-i18n="zh" style="display:none;">首页</span></a></li>
-        <li><a href="/research/" class="nav-link-item" data-href-en="/research/" data-href-zh="/research/zh/"><span data-i18n="en">Research</span><span data-i18n="zh" style="display:none;">研究</span></a></li>
-        <li><a href="/about/" class="nav-link-item" data-href-en="/about/" data-href-zh="/about/"><span data-i18n="en">About</span><span data-i18n="zh" style="display:none;">关于</span></a></li>
-        <li><a href="/contact/" class="nav-link-item" data-href-en="/contact/" data-href-zh="/contact/zh/"><span data-i18n="en">Contact</span><span data-i18n="zh" style="display:none;">联系</span></a></li>
+        <li><a href="/" class="nav-link-item" data-base="/" style="color:#111111;font-weight:600;"><span data-i18n="en">Home</span><span data-i18n="zh" style="display:none;">首页</span></a></li>
+        <li><a href="/research/" class="nav-link-item" data-base="/research/"><span data-i18n="en">Research</span><span data-i18n="zh" style="display:none;">研究</span></a></li>
+        <li><a href="/about/" class="nav-link-item" data-base="/about/"><span data-i18n="en">About</span><span data-i18n="zh" style="display:none;">关于</span></a></li>
+        <li><a href="/contact/" class="nav-link-item" data-base="/contact/"><span data-i18n="en">Contact</span><span data-i18n="zh" style="display:none;">联系</span></a></li>
         <li><button class="lang-toggle" id="lang-toggle">中 / EN</button></li>
       </ul>
     </div>
@@ -278,8 +278,15 @@
       el.style.display = (el.getAttribute('data-i18n') === lang) ? '' : 'none';
     });
     // 同步更新导航链接
+    var langNav = {
+      '/': { en: '/', zh: '/' },
+      '/research/': { en: '/research/', zh: '/research/zh/' },
+      '/about/': { en: '/about/', zh: '/about/' },
+      '/contact/': { en: '/contact/', zh: '/contact/zh/' }
+    };
     document.querySelectorAll('.nav-link-item').forEach(function(a) {
-      a.setAttribute('href', lang === 'zh' ? a.getAttribute('data-href-zh') : a.getAttribute('data-href-en'));
+      var base = langNav[a.getAttribute('data-base') || a.pathname];
+      if (base) a.setAttribute('href', base[lang] || base.en);
     });
     var btn = document.getElementById('lang-toggle');
     if (btn) btn.textContent = lang === 'zh' ? 'EN / 中' : '中 / EN';
