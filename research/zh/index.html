@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research Library | Magic Econ</title>
-  <meta name="description" content="All research outputs from Magic Econ, organized by category — investment research, market observation, and learning notes.">
+  <title>研究资料库 | Magic Econ</title>
+  <meta name="description" content="Magic Econ 所有研究成果，按分类整理 — 投资研究、市场观察与学习笔记。">
   <meta name="author" content="Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://www.magicecon.com/research/">
+  <link rel="canonical" href="https://www.magicecon.com/research/zh/">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; -webkit-font-smoothing: antialiased; }
@@ -71,13 +71,13 @@
 <nav class="site-nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">Magic Econ<span>| Independent Research</span></a>
+      <a href="/" class="nav-logo">Magic Econ<span>| 独立投资研究平台</span></a>
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/research/" style="color:#111111;font-weight:600;">Research</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><button class="lang-toggle" onclick="location.href='/research/zh/'">中 / EN</button></li>
+        <li><a href="/">首页</a></li>
+        <li><a href="/research/" style="color:#111111;font-weight:600;">研究</a></li>
+        <li><a href="/about/">关于</a></li>
+        <li><a href="/contact/">联系</a></li>
+        <li><button class="lang-toggle" onclick="location.href='/research/'">中 / EN</button></li>
       </ul>
     </div>
   </div>
@@ -85,17 +85,17 @@
 
 <main class="page-library">
   <div class="library-header">
-    <div class="library-label">Research Library</div>
-    <h1 class="library-title">Research Library</h1>
+    <div class="library-label">研究资料库</div>
+    <h1 class="library-title">研究资料库</h1>
     <div class="library-divider"></div>
-    <p class="library-desc">All research outputs from Magic Econ, organized by category. Equity research, market observation, and learning notes.</p>
+    <p class="library-desc">Magic Econ 所有研究成果，按分类整理。涵盖投资研究、市场观察与学习笔记。</p>
   </div>
 
   <div class="filter-bar" id="filter-bar">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="research">Research</button>
-    <button class="filter-btn" data-filter="market">Market</button>
-    <button class="filter-btn" data-filter="learning">Learning</button>
+    <button class="filter-btn active" data-filter="all">全部</button>
+    <button class="filter-btn" data-filter="research">研究</button>
+    <button class="filter-btn" data-filter="market">市场</button>
+    <button class="filter-btn" data-filter="learning">学习</button>
   </div>
 
   <div class="research-article-list" id="article-list"></div>
@@ -104,11 +104,11 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-philosophy"><em>The goal is not to predict markets, but to understand them.</em></div>
+      <div class="footer-philosophy"><em>目标不是预测市场，而是理解市场。</em></div>
       <ul class="footer-links">
-        <li><a href="/about/">About</a></li>
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">关于</a></li>
+        <li><a href="/research/">研究</a></li>
+        <li><a href="/contact/">联系</a></li>
       </ul>
     </div>
     <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
@@ -125,7 +125,7 @@ function renderArticles(filter) {
     return (a.category_slug || '').toLowerCase() === filter;
   });
   if (filtered.length === 0) {
-    list.innerHTML = '<div class="no-articles">No articles in this category yet.</div>';
+    list.innerHTML = '<div class="no-articles">暂无文章。</div>';
     return;
   }
   var html = '';
@@ -160,7 +160,7 @@ fetch('/articles.json')
     bindFilters();
   })
   .catch(function() {
-    document.getElementById('article-list').innerHTML = '<div class="no-articles">Failed to load. Please refresh.</div>';
+    document.getElementById('article-list').innerHTML = '<div class="no-articles">加载失败，请刷新重试。</div>';
   });
 </script>
 
