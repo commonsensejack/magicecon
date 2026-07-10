@@ -171,10 +171,12 @@
   if (btn) {
     btn.addEventListener('click', function() {
       var path = window.location.pathname;
-      if (path.endsWith('/zh/')) {
-        window.location.href = path.replace('/zh/', '/');
-      } else if (path === '/' || /^\/(research|about|contact)\/?$/.test(path)) {
-        window.location.href = path.replace(/\/?$/, '') + '/zh/';
+      var isZh = path.startsWith('/zh');
+      if (isZh) {
+        window.location.href = path.replace('/zh', '');
+      } else {
+        var target = path === '/' ? '/zh/' : path + 'zh/';
+        window.location.href = target;
       }
     });
   }
