@@ -37,7 +37,7 @@
       .nav-links a { display: block; padding: 12px 0; font-size: 0.9rem; border-bottom: 1px solid #f0f0f0; }
       .nav-links li:last-child a { border-bottom: none; }
       .lang-toggle { margin-top: 8px; width: 100%; text-align: center; }
-    } .nav-links a { font-size: 0.8rem; } }
+    }
 
     .contact-page { max-width: 1200px; margin: 0 auto; padding: 96px 40px; }
     .contact-header { margin-bottom: 80px; }
@@ -144,6 +144,24 @@
     <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
   </div>
 </footer>
+
+<script>
+  // 汉堡菜单
+  var menuBtn = document.getElementById('nav-menu-btn');
+  var navLinks = document.getElementById('nav-links');
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
