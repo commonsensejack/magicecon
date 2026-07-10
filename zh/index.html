@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magic Econ | Independent Research Platform</title>
-  <meta name="description" content="Magic Econ — independent investment research on markets, economics, and frameworks.">
+  <title>Magic Econ | 独立投资研究平台</title>
+  <meta name="description" content="Magic Econ — 独立投资研究平台，专注于市场、宏观经济与投资框架研究。">
   <meta name="author" content="Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.magicecon.com/">
+  <link rel="canonical" href="https://www.magicecon.com/zh/">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; -webkit-font-smoothing: antialiased; }
@@ -113,7 +113,7 @@
         <li><a href="/research/" class="nav-link-item" data-base="/research/"><span data-i18n="en">Research</span><span data-i18n="zh" style="display:none;">研究</span></a></li>
         <li><a href="/about/" class="nav-link-item" data-base="/about/"><span data-i18n="en">About</span><span data-i18n="zh" style="display:none;">关于</span></a></li>
         <li><a href="/contact/" class="nav-link-item" data-base="/contact/"><span data-i18n="en">Contact</span><span data-i18n="zh" style="display:none;">联系</span></a></li>
-        <li><button class="lang-toggle" id="lang-toggle">中 / EN</button></li>
+        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
       </ul>
     </div>
   </div>
@@ -258,10 +258,10 @@
     <div class="footer-inner">
       <div class="footer-philosophy"><em data-i18n="en">The goal is not to predict markets, but to understand them.</em><em data-i18n="zh">目标不是预测市场，而是理解市场。</em></div>
       <ul class="footer-links">
-        <li><a href="/about/">About</a></li>
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="mailto:jack@magicecon.com">Email</a></li>
+        <li><a href="/about/zh/">关于</a></li>
+        <li><a href="/research/zh/">研究</a></li>
+        <li><a href="/contact/zh/">联系</a></li>
+        <li><a href="mailto:jack@magicecon.com">邮箱</a></li>
       </ul>
     </div>
     <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
@@ -292,7 +292,7 @@
     if (btn) btn.textContent = lang === 'zh' ? 'EN / 中' : '中 / EN';
   }
   // 永远默认英文，不记忆
-  applyLang('en');
+  applyLang('zh');
   var btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.addEventListener('click', function() {

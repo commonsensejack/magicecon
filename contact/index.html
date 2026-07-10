@@ -154,7 +154,7 @@
       el.style.display = (el.getAttribute('data-i18n') === lang) ? '' : 'none';
     });
     var langNav = {
-      '/': { en: '/', zh: '/' },
+      '/': { en: '/', zh: '/zh/' },
       '/research/': { en: '/research/', zh: '/research/zh/' },
       '/about/': { en: '/about/', zh: '/about/zh/' },
       '/contact/': { en: '/contact/', zh: '/contact/zh/' }
@@ -173,7 +173,7 @@
       var path = window.location.pathname;
       if (path.endsWith('/zh/')) {
         window.location.href = path.replace('/zh/', '/');
-      } else if (/^\/(research|about|contact)\/?$/.test(path)) {
+      } else if (path === '/' || /^\/(research|about|contact)\/?$/.test(path)) {
         window.location.href = path.replace(/\/?$/, '') + '/zh/';
       }
     });

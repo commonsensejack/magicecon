@@ -334,9 +334,9 @@
     <div class="footer-inner">
       <div class="footer-philosophy"><em data-i18n="en">The goal is not to predict markets, but to understand them.</em><em data-i18n="zh">目标不是预测市场，而是理解市场。</em></div>
       <ul class="footer-links">
-        <li><a href="/about/zh/" data-i18n="en">About</a><a href="/about/zh/" data-i18n="zh">关于</a></li>
-        <li><a href="/research/zh/" data-i18n="en">Research</a><a href="/research/zh/" data-i18n="zh">研究</a></li>
-        <li><a href="/contact/zh/" data-i18n="en">Contact</a><a href="/contact/zh/" data-i18n="zh">联系</a></li>
+        <li><a href="/about/zh/">关于</a></li>
+        <li><a href="/research/zh/">研究</a></li>
+        <li><a href="/contact/zh/">联系</a></li>
       </ul>
     </div>
     <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
@@ -352,7 +352,7 @@
       el.style.display = (el.getAttribute('data-i18n') === lang) ? '' : 'none';
     });
     var langNav = {
-      '/': { en: '/', zh: '/' },
+      '/': { en: '/', zh: '/zh/' },
       '/research/': { en: '/research/', zh: '/research/zh/' },
       '/about/': { en: '/about/', zh: '/about/zh/' },
       '/contact/': { en: '/contact/', zh: '/contact/zh/' }
@@ -371,7 +371,7 @@
       var path = window.location.pathname;
       if (path.endsWith('/zh/')) {
         window.location.href = path.replace('/zh/', '/');
-      } else if (/^\/(research|about|contact)\/?$/.test(path)) {
+      } else if (path === '/' || /^\/(research|about|contact)\/?$/.test(path)) {
         window.location.href = path.replace(/\/?$/, '') + '/zh/';
       }
     });
