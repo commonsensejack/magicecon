@@ -216,7 +216,7 @@ function bindFilters() {
   }
 })();
 
-fetch('/articles.json')
+fetch('/research/articles.json')
   .then(function(r) { return r.json(); })
   .then(function(data) {
     allArticles = data;

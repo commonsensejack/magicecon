@@ -141,7 +141,7 @@
   });
 })();
 
-fetch('/articles.json')
+fetch('/research/articles.json')
   .then(function(r) { return r.json(); })
   .then(function(data) {
     var list = document.getElementById('article-list');
