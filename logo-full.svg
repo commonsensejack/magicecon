@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <!-- ME square -->
+  <rect x="0" y="0" width="200" height="200" fill="#1E3A5F"/>
+  <text x="100" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="400" text-anchor="middle" fill="#ffffff">ME</text>
+  
+  <!-- Vertical divider -->
+  <rect x="220" y="20" width="1.5" height="160" fill="#cccccc"/>
+  
+  <!-- Magic Econ -->
+  <text x="240" y="105" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="400" fill="#1E3A5F">Magic Econ</text>
+  
+  <!-- Subtitle -->
+  <text x="240" y="155" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400" fill="#888888" letter-spacing="3">INDEPENDENT RESEARCH PLATFORM</text>
+</svg>

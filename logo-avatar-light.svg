@@ -1,14 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <!-- White circle background -->
-  <circle cx="200" cy="200" r="200" fill="#ffffff" stroke="#111111" stroke-width="3"/>
-  <!-- "M" serif -->
-  <text x="200" y="178" font-family="Georgia, 'Times New Roman', serif" font-size="150" font-weight="400" text-anchor="middle" fill="#111111" letter-spacing="-4">M</text>
-  <!-- "E" serif offset -->
-  <text x="248" y="178" font-family="Georgia, 'Times New Roman', serif" font-size="150" font-weight="400" text-anchor="middle" fill="#111111" letter-spacing="-4">E</text>
-  <!-- Thin horizontal rule -->
-  <rect x="100" y="228" width="200" height="1.2" fill="#111111"/>
-  <!-- "MAGIC ECON" small caps -->
-  <text x="200" y="256" font-family="Georgia, 'Times New Roman', serif" font-size="13" text-anchor="middle" fill="#555555" letter-spacing="3.5">MAGIC ECON</text>
-  <!-- Dark blue accent dot (alternative to red) -->
-  <circle cx="200" cy="278" r="3" fill="#003366"/>
+  <rect width="400" height="400" rx="80" fill="#ffffff" stroke="#1E3A5F" stroke-width="3"/>
+  <text x="200" y="258" font-family="Georgia, 'Times New Roman', serif" font-size="200" font-weight="400" text-anchor="middle" fill="#1E3A5F">ME</text>
 </svg>
