@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#ffffff"/>
+
+  <!-- M path: classic serif M, centered at x=200 -->
+  <path d="
+    M 124,240
+    L 124,130
+    L 136,130
+    L 150,185
+    L 164,130
+    L 176,130
+    L 176,240
+    L 192,240
+    L 192,155
+    L 200,140
+    L 208,155
+    L 208,240
+    Z
+    M 136,130 L 150,172 L 164,130
+  " fill="none" stroke="#111111" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- E path -->
+  <path d="
+    M 230,240 L 230,130
+    L 278,130
+    L 278,150 L 255,150
+    L 255,172 L 273,172
+    L 273,192 L 255,192
+    L 255,220 L 278,220
+    L 278,240 Z
+  " fill="#111111"/>
+
+  <!-- Horizontal rule below -->
+  <rect x="124" y="268" width="154" height="1.5" fill="#111111"/>
+
+  <!-- MAGIC ECON small text -->
+  <text x="201" y="298" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#555555" letter-spacing="4">MAGIC ECON</text>
+
+  <!-- Red accent dot -->
+  <circle cx="201" cy="320" r="3.5" fill="#c8102e"/>
+</svg>
