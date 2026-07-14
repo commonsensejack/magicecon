@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
   <!-- ME square -->
   <rect x="0" y="0" width="200" height="200" fill="#1E3A5F"/>
-  <text x="100" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="400" text-anchor="middle" fill="#ffffff">ME</text>
+  <!-- M -->
+  <text x="84" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="400" text-anchor="middle" fill="#ffffff">M</text>
+  <!-- E, overlapping -->
+  <text x="154" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="400" text-anchor="middle" fill="#ffffff">E</text>
   
   <!-- Vertical divider -->
   <rect x="220" y="20" width="1.5" height="160" fill="#cccccc"/>
