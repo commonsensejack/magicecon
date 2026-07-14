@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <rect width="400" height="120" fill="#ffffff"/>
+  <!-- "Magic Econ" wordmark - two-line stacked like Economist masthead -->
+  <!-- "Magic" in bold serif -->
+  <text x="200" y="50" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="700" text-anchor="middle" fill="#111111" letter-spacing="1">Magic</text>
+  <!-- "Econ" in regular serif, aligned -->
+  <text x="200" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="400" text-anchor="middle" fill="#111111" letter-spacing="1">Econ</text>
+  <!-- Horizontal rule above text (Economist masthead style) -->
+  <rect x="80" y="18" width="240" height="1.2" fill="#111111"/>
+  <!-- Red accent rule below -->
+  <rect x="80" y="100" width="240" height="2" fill="#c8102e"/>
+</svg>
