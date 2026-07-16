@@ -1,362 +1,724 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magic Econ | 独立投资研究平台</title>
-  <meta name="description" content="Magic Econ — 独立投资研究平台，专注于市场、宏观经济与投资框架研究。">
-  <meta name="author" content="Common Sense Jack">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.magicecon.com/zh/">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; color: #111111; background: #ffffff; line-height: 1.7; }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-    @media (max-width: 768px) { .container { padding: 0 24px; } }
-
-    .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid #eeeeee; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #111111; }
-    .nav-logo span { font-weight: 400; color: #666666; margin-left: 6px; font-size: 0.85em; }
-    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
-    .nav-links a { font-size: 0.875rem; color: #444444; letter-spacing: 0.02em; transition: color 0.15s; }
-    .nav-links a:hover { color: #111111; }
-    .lang-toggle { padding: 6px 14px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; color: #444444; background: transparent; border: 1px solid #dddddd; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-    .lang-toggle:hover { color: #111111; border-color: #999999; }
-    .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 12px; margin: -12px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-    .nav-menu-btn span { display: block; width: 22px; height: 2px; background: #111111; margin: 5px 0; transition: 0.3s; pointer-events: none; }
-    @media (max-width: 640px) {
-      .nav-menu-btn { display: block; }
-      .nav-links { position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eeeeee; flex-direction: column; gap: 0; padding: 16px 24px; transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
-      .nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
-      .nav-links li { width: 100%; }
-      .nav-links a { display: block; padding: 12px 0; font-size: 0.9rem; border-bottom: 1px solid #f0f0f0; }
-      .nav-links li:last-child a { border-bottom: none; }
-      .lang-toggle { margin-top: 8px; width: 100%; text-align: center; }
-    }
-
-    .hero { padding: 120px 0 100px; border-bottom: 1px solid #eeeeee; }
-    .hero-title { font-size: clamp(52px, 8vw, 88px); font-weight: 800; letter-spacing: -0.035em; color: #111111; line-height: 1; margin-bottom: 20px; }
-    .hero-tagline { font-size: clamp(14px, 1.8vw, 18px); color: #555555; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 56px; }
-    .hero-divider { width: 48px; height: 1.5px; background: #111111; margin-bottom: 48px; }
-    .hero-philosophy { font-size: clamp(18px, 2.5vw, 26px); line-height: 1.9; color: #222222; font-weight: 300; max-width: 600px; margin-bottom: 64px; }
-    .hero-philosophy em { font-style: italic; color: #111111; }
-    .hero-slogans { display: flex; gap: 40px; flex-wrap: wrap; }
-    .hero-slogans span { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: #555555; border-left: 2px solid #cccccc; padding-left: 14px; }
-    @media (max-width: 768px) { .hero { padding: 80px 0 64px; } .hero-slogans { gap: 20px; } }
-
-    section { padding: 96px 0; }
-    section + section { border-top: 1px solid #eeeeee; }
-    .section-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 10px; }
-    .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.025em; color: #111111; line-height: 1.2; margin-bottom: 48px; }
-
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .about-lead { font-size: clamp(17px, 2vw, 20px); line-height: 1.85; color: #222222; font-weight: 300; }
-    .about-lead strong { font-weight: 600; color: #111111; }
-    .about-details { display: flex; flex-direction: column; gap: 32px; }
-    .about-detail-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; margin-bottom: 8px; }
-    .about-detail-value { font-size: 0.95rem; color: #222222; line-height: 1.6; }
-    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } section { padding: 64px 0; } }
-
-    .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #eeeeee; border: 1px solid #eeeeee; }
-    .research-card { background: #ffffff; padding: 48px 40px; display: block; transition: background 0.2s; }
-    .research-card:hover { background: #fafafa; }
-    .research-card-category { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
-    .research-card-name { font-size: 1.35rem; font-weight: 700; color: #111111; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
-    .research-card-desc { font-size: 0.875rem; color: #444444; line-height: 1.75; margin-bottom: 28px; }
-    .research-card-cta { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #111111; border-bottom: 1px solid #111111; padding-bottom: 2px; display: inline-block; transition: border-color 0.15s; }
-    .research-card:hover .research-card-cta { border-bottom-color: #555555; }
-    @media (max-width: 900px) { .research-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { .research-card { padding: 32px 24px; } }
-
-    .article-list { display: flex; flex-direction: column; gap: 0; }
-    .article-item { padding: 28px 0; border-bottom: 1px solid #eeeeee; }
-    .article-item:first-child { border-top: 1px solid #eeeeee; }
-    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
-    .article-category { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #777777; }
-    .article-date { font-size: 0.8rem; color: #888888; }
-    .article-title-link { font-size: clamp(15px, 1.8vw, 18px); font-weight: 500; color: #111111; line-height: 1.4; letter-spacing: -0.01em; transition: color 0.15s; }
-    .article-title-link:hover { color: #444444; }
-
-    .philosophy { background: #f9f9f9; border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; padding: 80px 0; }
-    .philosophy blockquote { font-size: clamp(20px, 3vw, 30px); font-weight: 300; line-height: 1.7; color: #111111; letter-spacing: -0.01em; max-width: 700px; margin-bottom: 40px; }
-    .philosophy-attr { font-size: 0.85rem; color: #666666; letter-spacing: 0.05em; }
-    .philosophy-slogans { display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap; }
-    .philosophy-slogans span { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #555555; padding: 8px 0; border-bottom: 1px solid #cccccc; }
-
-    .site-footer { padding: 48px 0; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .footer-philosophy { font-size: 0.8rem; color: #666666; font-style: italic; }
-    .footer-links { display: flex; gap: 24px; list-style: none; }
-    .footer-links a { font-size: 0.8rem; color: #555555; transition: color 0.15s; }
-    .footer-links a:hover { color: #111111; }
-    .footer-copy { font-size: 0.75rem; color: #888888; margin-top: 24px; }
-  </style>
-</head>
-<body>
-
-<nav class="site-nav">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="/zh/" class="nav-logo">Magic Econ<span>| Independent Research</span></a>
-      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/zh/" class="nav-link-item" data-base="/" style="color:#111111;font-weight:600;"><span data-i18n="en">Home</span><span data-i18n="zh" style="display:none;">首页</span></a></li>
-        <li><a href="/research/zh/" class="nav-link-item" data-base="/research/"><span data-i18n="en">Research</span><span data-i18n="zh" style="display:none;">研究</span></a></li>
-        <li><a href="/about/zh/" class="nav-link-item" data-base="/about/"><span data-i18n="en">About</span><span data-i18n="zh" style="display:none;">关于</span></a></li>
-        <li><a href="/contact/zh/" class="nav-link-item" data-base="/contact/"><span data-i18n="en">Contact</span><span data-i18n="zh" style="display:none;">联系</span></a></li>
-        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="container">
-    <div class="hero-title">Magic Econ</div>
-    <div class="hero-tagline" data-i18n="en">Independent Research Platform</div>
-    <div class="hero-tagline" data-i18n="zh" style="display:none;">独立投资研究平台</div>
-    <div class="hero-divider"></div>
-    <div class="hero-philosophy" data-i18n="en">
-      Research on Markets, Economics and Investment Frameworks.
-      <br><br>
-      <em>The goal is not to predict markets,<br>but to understand them.</em>
-    </div>
-    <div class="hero-philosophy" data-i18n="zh" style="display:none;">
-      专注于市场、宏观经济与投资框架研究。
-      <br><br>
-      <em>我们的目标不是预测市场，<br>而是理解驱动市场的力量。</em>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <div class="section-label" data-i18n="en">About</div>
-        <div class="section-label" data-i18n="zh" style="display:none;">关于</div>
-        <div class="section-title">Magic Econ</div>
-        <div class="about-lead" data-i18n="en">
-          Magic Econ is an <strong>independent research platform</strong> dedicated to investment research, market observation, and economic analysis.
-          <br><br>
-          Not investment advice. Not news commentary. Not market prediction.
-          <br><br>
-          <strong>A place for structured thinking about markets and value.</strong>
-        </div>
-        <div class="about-lead" data-i18n="zh" style="display:none;">
-          Magic Econ 是一个<strong>独立投资研究平台</strong>，专注于投资研究、市场观察与经济分析。
-          <br><br>
-          深耕底层市场逻辑，坚守长期研究视角，搭建完整投资框架。
-          <br><br>
-          <strong>一个通过结构化思考理解市场与价值的研究空间。</strong>
-        </div>
-      </div>
-      <div class="about-details">
-        <div>
-          <div class="about-detail-label" data-i18n="en">Focus Areas</div>
-          <div class="about-detail-label" data-i18n="zh" style="display:none;">研究领域</div>
-          <div class="about-detail-value" data-i18n="en">Equity Research · Macro Economics<br>Asset Allocation · Investment Frameworks</div>
-          <div class="about-detail-value" data-i18n="zh" style="display:none;">企业研究 · 宏观经济<br>资产配置 · 投资框架</div>
-        </div>
-        <div>
-          <div class="about-detail-label" data-i18n="en">Research Philosophy</div>
-          <div class="about-detail-label" data-i18n="zh" style="display:none;">研究理念</div>
-          <div class="about-detail-value" data-i18n="en">Understanding beats predicting.<br>Long-term thinking over short-term views.</div>
-          <div class="about-detail-value" data-i18n="zh" style="display:none;">理解市场，比预测市场更重要。<br>长期视角，胜过短期判断。</div>
-        </div>
-        <div>
-          <div class="about-detail-label" data-i18n="en">Researcher</div>
-          <div class="about-detail-label" data-i18n="zh" style="display:none;">作者</div>
-          <div class="about-detail-value" data-i18n="en">Common Sense Jack<br><a href="/about/" style="color:#666;font-size:0.85em;">About &#8594;</a></div>
-          <div class="about-detail-value" data-i18n="zh" style="display:none;">Common Sense Jack<br><a href="/about/" style="color:#666;font-size:0.85em;">关于 &#8594;</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="research">
-  <div class="container">
-    <div class="section-label" data-i18n="en">Research Library</div>
-    <div class="section-label" data-i18n="zh" style="display:none;">研究资料库</div>
-    <div class="section-title" data-i18n="en">Research Areas</div>
-    <div class="section-title" data-i18n="zh" style="display:none;">研究领域</div>
-    <div class="research-grid">
-      <a href="/library/research/" class="research-card">
-        <div class="research-card-category">01</div>
-        <div class="research-card-name" data-i18n="en">Research</div>
-        <div class="research-card-name" data-i18n="zh" style="display:none;">投资研究</div>
-        <div class="research-card-desc" data-i18n="en">Explore companies, industries and investment ideas. Deep analysis on business models, competitive moats and valuation frameworks.</div>
-        <div class="research-card-desc" data-i18n="zh" style="display:none;">探索企业、行业与投资案例。深入研究商业模式、竞争优势以及估值方法。</div>
-        <span class="research-card-cta" data-i18n="en">View Research &#8594;</span>
-        <span class="research-card-cta" data-i18n="zh" style="display:none;">查看研究 &#8594;</span>
-      </a>
-      <a href="/library/market/" class="research-card">
-        <div class="research-card-category">02</div>
-        <div class="research-card-name" data-i18n="en">Market</div>
-        <div class="research-card-name" data-i18n="zh" style="display:none;">市场观察</div>
-        <div class="research-card-desc" data-i18n="en">Understand economic cycles and market trends. Macro analysis, interest rates, inflation, and capital flow dynamics.</div>
-        <div class="research-card-desc" data-i18n="zh" style="display:none;">理解经济周期与市场变化。关注宏观环境、利率、通胀以及资本流动。</div>
-        <span class="research-card-cta" data-i18n="en">View Observation &#8594;</span>
-        <span class="research-card-cta" data-i18n="zh" style="display:none;">查看观察 &#8594;</span>
-      </a>
-      <a href="/library/learning/" class="research-card">
-        <div class="research-card-category">03</div>
-        <div class="research-card-name" data-i18n="en">Learning</div>
-        <div class="research-card-name" data-i18n="zh" style="display:none;">学习思考</div>
-        <div class="research-card-desc" data-i18n="en">Build investment knowledge and frameworks. Economics fundamentals, book notes, and mental models for better decisions.</div>
-        <div class="research-card-desc" data-i18n="zh" style="display:none;">构建投资知识体系与分析框架。记录经济学基础、读书笔记与投资思维模型。</div>
-        <span class="research-card-cta" data-i18n="en">View Learning &#8594;</span>
-        <span class="research-card-cta" data-i18n="zh" style="display:none;">查看学习 &#8594;</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="latest">
-  <div class="container">
-    <div class="section-label" data-i18n="en">Latest</div>
-    <div class="section-label" data-i18n="zh" style="display:none;">最新内容</div>
-    <div class="section-title" data-i18n="en">Recent Research</div>
-    <div class="section-title" data-i18n="zh" style="display:none;">近期研究</div>
-    <div class="article-list" id="home-article-list" data-i18n-empty="No articles yet."></div>
-  </div>
-</section>
-
-<div class="philosophy">
-  <div class="container">
-    <blockquote data-i18n="en">"The market rewards those who understand,<br>not those who simply react."</blockquote>
-    <blockquote data-i18n="zh" style="display:none;">"市场奖励的是理解它的人，<br>而不是仅仅对市场做出反应的人。"</blockquote>
-    <div class="philosophy-attr" data-i18n="en">&#8212; Magic Econ Research Philosophy</div>
-    <div class="philosophy-attr" data-i18n="zh" style="display:none;">&#8212; Magic Econ 研究理念</div>
-    <div class="philosophy-slogans" data-i18n="en">
-      <span>Think Clearly.</span>
-      <span>Research Deeply.</span>
-      <span>Invest Wisely.</span>
-    </div>
-    <div class="philosophy-slogans" data-i18n="zh" style="display:none;">
-      <span>清晰思考。</span>
-      <span>深度研究。</span>
-      <span>理性投资。</span>
-    </div>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-philosophy"><em data-i18n="en">The goal is not to predict markets, but to understand them.</em><em data-i18n="zh">我们的目标不是预测市场，而是理解驱动市场的力量。</em></div>
-      <ul class="footer-links">
-        <li><a href="/about/zh/">关于</a></li>
-        <li><a href="/research/zh/">研究</a></li>
-        <li><a href="/contact/zh/">联系</a></li>
-        <li><a href="mailto:jack@magicecon.com">邮箱</a></li>
-      </ul>
-    </div>
-    <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
-  </div>
-</footer>
-
-<script src="https://busuanzi.42pu.com"></script>
-<script>
-(function() {
-  var KEY = 'magicecon-lang';
-  function applyLang(lang) {
-    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    document.querySelectorAll('[data-i18n]').forEach(function(el) {
-      el.style.display = (el.getAttribute('data-i18n') === lang) ? '' : 'none';
-    });
-    // 同步更新导航链接
-    var langNav = {
-      '/': { en: '/', zh: '/zh/' },
-      '/research/': { en: '/research/', zh: '/research/zh/' },
-      '/about/': { en: '/about/', zh: '/about/zh/' },
-      '/contact/': { en: '/contact/', zh: '/contact/zh/' }
-    };
-    document.querySelectorAll('.nav-link-item').forEach(function(a) {
-      var base = langNav[a.getAttribute('data-base') || a.pathname];
-      if (base) a.setAttribute('href', base[lang] || base.en);
-    });
-    var btn = document.getElementById('lang-toggle');
-    if (btn) btn.textContent = lang === 'zh' ? 'EN / 中' : '中 / EN';
-  }
-  // 永远默认英文，不记忆
-  applyLang('zh');
-  var btn = document.getElementById('lang-toggle');
-  if (btn) {
-    btn.addEventListener('click', function() {
-      var path = window.location.pathname;
-      var isZh = path.indexOf('/zh/') !== -1 || path === '/zh';
-      if (isZh) {
-        window.location.href = path === '/zh/' || path === '/zh' ? '/' : path.replace('/zh/', '/');
-      } else {
-        window.location.href = path === '/' || path === '' ? '/zh/' : path + 'zh/';
-      }
-    });
-  }
-  // 汉堡菜单
-  // 动态加载最新文章（Home Recent Research）
-  (function() {
-    var list = document.getElementById('home-article-list');
-    if (!list) return;
-    fetch('/research/articles.json')
-      .then(function(r) { return r.json(); })
-      .then(function(articles) {
-        if (!Array.isArray(articles) || articles.length === 0) {
-          list.innerHTML = '<div class="article-item" style="color:#aaaaaa;">No articles yet.</div>';
-          return;
-        }
-        // 按日期倒序，取最新 3 篇
-        var sorted = articles.slice().sort(function(a, b) {
-          return b.date.localeCompare(a.date);
-        });
-        var latest = sorted.slice(0, 3);
-        var lang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
-        var html = '';
-        latest.forEach(function(a) {
-          var title = a.title;
-          var cat = a['category_' + lang] || a.category;
-          var date = a.date;
-          html += '<div class="article-item">' +
-            '<div class="article-meta-row">' +
-            '<span class="article-category">' + cat + '</span>' +
-            '<span class="article-date">' + date + '</span>' +
-            '</div>' +
-            '<a href="' + a.url + '" class="article-title-link">' + title + '</a>' +
-            '</div>';
-        });
-        list.innerHTML = html;
-      })
-      .catch(function() {
-        list.innerHTML = '<div class="article-item" style="color:#aaaaaa;">No articles yet.</div>';
-      });
-  })();
-
-  var menuBtn = document.getElementById('nav-menu-btn');
-  var navLinks = document.getElementById('nav-links');
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      navLinks.classList.toggle('active');
-    });
-    navLinks.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-      });
-    });
-  }
-})();
-</script>
-
-</body>
-</html>
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Magic Econ | 独立投资研究平台</title>
+
+  <meta name="description" content="Magic Econ — 独立投资研究平台，专注于市场、宏观经济与投资框架研究。">
+
+  <meta name="author" content="Common Sense Jack">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="canonical" href="https://www.magicecon.com/zh/">
+
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; color: #111111; background: #ffffff; line-height: 1.7; }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+    @media (max-width: 768px) { .container { padding: 0 24px; } }
+
+
+
+    .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid #eeeeee; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+
+    .nav-logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #111111; }
+
+    .nav-logo span { font-weight: 400; color: #666666; margin-left: 6px; font-size: 0.85em; }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+
+    .nav-links a { font-size: 0.875rem; color: #444444; letter-spacing: 0.02em; transition: color 0.15s; }
+
+    .nav-links a:hover { color: #111111; }
+
+    .lang-toggle { padding: 6px 14px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; color: #444444; background: transparent; border: 1px solid #dddddd; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+
+    .lang-toggle:hover { color: #111111; border-color: #999999; }
+
+    .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 12px; margin: -12px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+    .nav-menu-btn span { display: block; width: 22px; height: 2px; background: #111111; margin: 5px 0; transition: 0.3s; pointer-events: none; }
+
+    @media (max-width: 640px) {
+
+      .nav-menu-btn { display: block; }
+
+      .nav-links { position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eeeeee; flex-direction: column; gap: 0; padding: 16px 24px; transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+
+      .nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
+
+      .nav-links li { width: 100%; }
+
+      .nav-links a { display: block; padding: 12px 0; font-size: 0.9rem; border-bottom: 1px solid #f0f0f0; }
+
+      .nav-links li:last-child a { border-bottom: none; }
+
+      .lang-toggle { margin-top: 8px; width: 100%; text-align: center; }
+
+    }
+
+
+
+    .hero { padding: 120px 0 100px; border-bottom: 1px solid #eeeeee; }
+
+    .hero-title { font-size: clamp(52px, 8vw, 88px); font-weight: 800; letter-spacing: -0.035em; color: #111111; line-height: 1; margin-bottom: 20px; }
+
+    .hero-tagline { font-size: clamp(14px, 1.8vw, 18px); color: #555555; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 56px; }
+
+    .hero-divider { width: 48px; height: 1.5px; background: #111111; margin-bottom: 48px; }
+
+    .hero-philosophy { font-size: clamp(18px, 2.5vw, 26px); line-height: 1.9; color: #222222; font-weight: 300; max-width: 600px; margin-bottom: 64px; }
+
+    .hero-philosophy em { font-style: italic; color: #111111; }
+
+    .hero-slogans { display: flex; gap: 40px; flex-wrap: wrap; }
+
+    .hero-slogans span { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: #555555; border-left: 2px solid #cccccc; padding-left: 14px; }
+
+    @media (max-width: 768px) { .hero { padding: 80px 0 64px; } .hero-slogans { gap: 20px; } }
+
+
+
+    section { padding: 96px 0; }
+
+    section + section { border-top: 1px solid #eeeeee; }
+
+    .section-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 10px; }
+
+    .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.025em; color: #111111; line-height: 1.2; margin-bottom: 48px; }
+
+
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+    .about-lead { font-size: clamp(17px, 2vw, 20px); line-height: 1.85; color: #222222; font-weight: 300; }
+
+    .about-lead strong { font-weight: 600; color: #111111; }
+
+    .about-details { display: flex; flex-direction: column; gap: 32px; }
+
+    .about-detail-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; margin-bottom: 8px; }
+
+    .about-detail-value { font-size: 0.95rem; color: #222222; line-height: 1.6; }
+
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } section { padding: 64px 0; } }
+
+
+
+    .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #eeeeee; border: 1px solid #eeeeee; }
+
+    .research-card { background: #ffffff; padding: 48px 40px; display: block; transition: background 0.2s; }
+
+    .research-card:hover { background: #fafafa; }
+
+    .research-card-category { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
+
+    .research-card-name { font-size: 1.35rem; font-weight: 700; color: #111111; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
+
+    .research-card-desc { font-size: 0.875rem; color: #444444; line-height: 1.75; margin-bottom: 28px; }
+
+    .research-card-cta { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #111111; border-bottom: 1px solid #111111; padding-bottom: 2px; display: inline-block; transition: border-color 0.15s; }
+
+    .research-card:hover .research-card-cta { border-bottom-color: #555555; }
+
+    @media (max-width: 900px) { .research-grid { grid-template-columns: 1fr; } }
+
+    @media (max-width: 640px) { .research-card { padding: 32px 24px; } }
+
+
+
+    .article-list { display: flex; flex-direction: column; gap: 0; }
+
+    .article-item { padding: 28px 0; border-bottom: 1px solid #eeeeee; }
+
+    .article-item:first-child { border-top: 1px solid #eeeeee; }
+
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+
+    .article-category { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #777777; }
+
+    .article-date { font-size: 0.8rem; color: #888888; }
+
+    .article-title-link { font-size: clamp(15px, 1.8vw, 18px); font-weight: 500; color: #111111; line-height: 1.4; letter-spacing: -0.01em; transition: color 0.15s; }
+
+    .article-title-link:hover { color: #444444; }
+
+
+
+    .philosophy { background: #f9f9f9; border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; padding: 80px 0; }
+
+    .philosophy blockquote { font-size: clamp(20px, 3vw, 30px); font-weight: 300; line-height: 1.7; color: #111111; letter-spacing: -0.01em; max-width: 700px; margin-bottom: 40px; }
+
+    .philosophy-attr { font-size: 0.85rem; color: #666666; letter-spacing: 0.05em; }
+
+    .philosophy-slogans { display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap; }
+
+    .philosophy-slogans span { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #555555; padding: 8px 0; border-bottom: 1px solid #cccccc; }
+
+
+
+    .site-footer { padding: 48px 0; }
+
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+
+    .footer-philosophy { font-size: 0.8rem; color: #666666; font-style: italic; }
+
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+
+    .footer-links a { font-size: 0.8rem; color: #555555; transition: color 0.15s; }
+
+    .footer-links a:hover { color: #111111; }
+
+    .footer-copy { font-size: 0.75rem; color: #888888; margin-top: 24px; }
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+<nav class="site-nav">
+
+  <div class="container">
+
+    <div class="nav-inner">
+
+      <a href="/zh/" class="nav-logo">Magic Econ<span>| Independent Research</span></a>
+
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+
+        <li><a href="/zh/" class="nav-link-item" data-base="/" style="color:#111111;font-weight:600;"><span data-i18n="en">Home</span><span data-i18n="zh" style="display:none;">首页</span></a></li>
+
+        <li><a href="/research/zh/" class="nav-link-item" data-base="/research/"><span data-i18n="en">Research</span><span data-i18n="zh" style="display:none;">研究</span></a></li>
+
+        <li><a href="/about/zh/" class="nav-link-item" data-base="/about/"><span data-i18n="en">About</span><span data-i18n="zh" style="display:none;">关于</span></a></li>
+
+        <li><a href="/contact/zh/" class="nav-link-item" data-base="/contact/"><span data-i18n="en">Contact</span><span data-i18n="zh" style="display:none;">联系</span></a></li>
+
+        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-title">Magic Econ</div>
+
+    <div class="hero-tagline" data-i18n="en">Independent Research Platform</div>
+
+    <div class="hero-tagline" data-i18n="zh" style="display:none;">独立投资研究平台</div>
+
+    <div class="hero-divider"></div>
+
+    <div class="hero-philosophy" data-i18n="en">
+
+      Research on Markets, Economics and Investment Frameworks.
+
+      <br><br>
+
+      <em>The goal is not to predict markets,<br>but to understand them.</em>
+
+    </div>
+
+    <div class="hero-philosophy" data-i18n="zh" style="display:none;">
+
+      专注于市场、宏观经济与投资框架研究。
+
+      <br><br>
+
+      <em>我们的目标不是预测市场，<br>而是理解驱动市场的力量。</em>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div>
+
+        <div class="section-label" data-i18n="en">About</div>
+
+        <div class="section-label" data-i18n="zh" style="display:none;">关于</div>
+
+        <div class="section-title">Magic Econ</div>
+
+        <div class="about-lead" data-i18n="en">
+
+          Magic Econ is an <strong>independent research platform</strong> dedicated to investment research, market observation, and economic analysis.
+
+          <br><br>
+
+          Not investment advice. Not news commentary. Not market prediction.
+
+          <br><br>
+
+          <strong>A place for structured thinking about markets and value.</strong>
+
+        </div>
+
+        <div class="about-lead" data-i18n="zh" style="display:none;">
+
+          Magic Econ 是一个<strong>独立投资研究平台</strong>，专注于投资研究、市场观察与经济分析。
+
+          <br><br>
+
+          深耕底层市场逻辑，坚守长期研究视角，搭建完整投资框架。
+
+          <br><br>
+
+          <strong>一个通过结构化思考理解市场与价值的研究空间。</strong>
+
+        </div>
+
+      </div>
+
+      <div class="about-details">
+
+        <div>
+
+          <div class="about-detail-label" data-i18n="en">Focus Areas</div>
+
+          <div class="about-detail-label" data-i18n="zh" style="display:none;">研究领域</div>
+
+          <div class="about-detail-value" data-i18n="en">Equity Research · Macro Economics<br>Asset Allocation · Investment Frameworks</div>
+
+          <div class="about-detail-value" data-i18n="zh" style="display:none;">企业研究 · 宏观经济<br>资产配置 · 投资框架</div>
+
+        </div>
+
+        <div>
+
+          <div class="about-detail-label" data-i18n="en">Research Philosophy</div>
+
+          <div class="about-detail-label" data-i18n="zh" style="display:none;">研究理念</div>
+
+          <div class="about-detail-value" data-i18n="en">Understanding beats predicting.<br>Long-term thinking over short-term views.</div>
+
+          <div class="about-detail-value" data-i18n="zh" style="display:none;">理解市场，比预测市场更重要。<br>长期视角，胜过短期判断。</div>
+
+        </div>
+
+        <div>
+
+          <div class="about-detail-label" data-i18n="en">Researcher</div>
+
+          <div class="about-detail-label" data-i18n="zh" style="display:none;">作者</div>
+
+          <div class="about-detail-value" data-i18n="en">Common Sense Jack<br><a href="/about/" style="color:#666;font-size:0.85em;">About &#8594;</a></div>
+
+          <div class="about-detail-value" data-i18n="zh" style="display:none;">Common Sense Jack<br><a href="/about/" style="color:#666;font-size:0.85em;">关于 &#8594;</a></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="research">
+
+  <div class="container">
+
+    <div class="section-label" data-i18n="en">Research Library</div>
+
+    <div class="section-label" data-i18n="zh" style="display:none;">研究资料库</div>
+
+    <div class="section-title" data-i18n="en">Research Areas</div>
+
+    <div class="section-title" data-i18n="zh" style="display:none;">研究领域</div>
+
+    <div class="research-grid">
+
+      <a href="/library/research/" class="research-card">
+
+        <div class="research-card-category">01</div>
+
+        <div class="research-card-name" data-i18n="en">Research</div>
+
+        <div class="research-card-name" data-i18n="zh" style="display:none;">投资研究</div>
+
+        <div class="research-card-desc" data-i18n="en">Explore companies, industries and investment ideas. Deep analysis on business models, competitive moats and valuation frameworks.</div>
+
+        <div class="research-card-desc" data-i18n="zh" style="display:none;">探索企业、行业与投资案例。深入研究商业模式、竞争优势以及估值方法。</div>
+
+        <span class="research-card-cta" data-i18n="en">View Research &#8594;</span>
+
+        <span class="research-card-cta" data-i18n="zh" style="display:none;">查看研究 &#8594;</span>
+
+      </a>
+
+      <a href="/library/market/" class="research-card">
+
+        <div class="research-card-category">02</div>
+
+        <div class="research-card-name" data-i18n="en">Market</div>
+
+        <div class="research-card-name" data-i18n="zh" style="display:none;">市场观察</div>
+
+        <div class="research-card-desc" data-i18n="en">Understand economic cycles and market trends. Macro analysis, interest rates, inflation, and capital flow dynamics.</div>
+
+        <div class="research-card-desc" data-i18n="zh" style="display:none;">理解经济周期与市场变化。关注宏观环境、利率、通胀以及资本流动。</div>
+
+        <span class="research-card-cta" data-i18n="en">View Observation &#8594;</span>
+
+        <span class="research-card-cta" data-i18n="zh" style="display:none;">查看观察 &#8594;</span>
+
+      </a>
+
+      <a href="/library/learning/" class="research-card">
+
+        <div class="research-card-category">03</div>
+
+        <div class="research-card-name" data-i18n="en">Learning</div>
+
+        <div class="research-card-name" data-i18n="zh" style="display:none;">学习思考</div>
+
+        <div class="research-card-desc" data-i18n="en">Build investment knowledge and frameworks. Economics fundamentals, book notes, and mental models for better decisions.</div>
+
+        <div class="research-card-desc" data-i18n="zh" style="display:none;">构建投资知识体系与分析框架。记录经济学基础、读书笔记与投资思维模型。</div>
+
+        <span class="research-card-cta" data-i18n="en">View Learning &#8594;</span>
+
+        <span class="research-card-cta" data-i18n="zh" style="display:none;">查看学习 &#8594;</span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="latest">
+
+  <div class="container">
+
+    <div class="section-label" data-i18n="en">Latest</div>
+
+    <div class="section-label" data-i18n="zh" style="display:none;">最新内容</div>
+
+    <div class="section-title" data-i18n="en">Recent Research</div>
+
+    <div class="section-title" data-i18n="zh" style="display:none;">近期研究</div>
+
+    <div class="article-list" id="home-article-list" data-i18n-empty="No articles yet."></div>
+
+  </div>
+
+</section>
+
+
+
+<div class="philosophy">
+
+  <div class="container">
+
+    <blockquote data-i18n="en">"The market rewards those who understand,<br>not those who simply react."</blockquote>
+
+    <blockquote data-i18n="zh" style="display:none;">"市场奖励的是理解它的人，<br>而不是仅仅对市场做出反应的人。"</blockquote>
+
+    <div class="philosophy-attr" data-i18n="en">&#8212; Magic Econ Research Philosophy</div>
+
+    <div class="philosophy-attr" data-i18n="zh" style="display:none;">&#8212; Magic Econ 研究理念</div>
+
+    <div class="philosophy-slogans" data-i18n="en">
+
+      <span>Think Clearly.</span>
+
+      <span>Research Deeply.</span>
+
+      <span>Invest Wisely.</span>
+
+    </div>
+
+    <div class="philosophy-slogans" data-i18n="zh" style="display:none;">
+
+      <span>清晰思考。</span>
+
+      <span>深度研究。</span>
+
+      <span>理性投资。</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<footer class="site-footer">
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div class="footer-philosophy"><em data-i18n="en">The goal is not to predict markets, but to understand them.</em><em data-i18n="zh">我们的目标不是预测市场，而是理解驱动市场的力量。</em></div>
+
+      <ul class="footer-links">
+
+        <li><a href="/about/zh/">关于</a></li>
+
+        <li><a href="/research/zh/">研究</a></li>
+
+        <li><a href="/contact/zh/">联系</a></li>
+
+        <li><a href="mailto:jack@magicecon.com">邮箱</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
+
+  </div>
+
+</footer>
+
+
+
+<script src="https://busuanzi.42pu.com"></script>
+
+<script>
+
+(function() {
+
+  var KEY = 'magicecon-lang';
+
+  function applyLang(lang) {
+
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+
+      el.style.display = (el.getAttribute('data-i18n') === lang) ? '' : 'none';
+
+    });
+
+    // 同步更新导航链接
+
+    var langNav = {
+
+      '/': { en: '/', zh: '/zh/' },
+
+      '/research/': { en: '/research/', zh: '/research/zh/' },
+
+      '/about/': { en: '/about/', zh: '/about/zh/' },
+
+      '/contact/': { en: '/contact/', zh: '/contact/zh/' }
+
+    };
+
+    document.querySelectorAll('.nav-link-item').forEach(function(a) {
+
+      var base = langNav[a.getAttribute('data-base') || a.pathname];
+
+      if (base) a.setAttribute('href', base[lang] || base.en);
+
+    });
+
+    var btn = document.getElementById('lang-toggle');
+
+    if (btn) btn.textContent = lang === 'zh' ? 'EN / 中' : '中 / EN';
+
+  }
+
+  // 永远默认英文，不记忆
+
+  applyLang('zh');
+
+  var btn = document.getElementById('lang-toggle');
+
+  if (btn) {
+
+    btn.addEventListener('click', function() {
+
+      var path = window.location.pathname;
+
+      var isZh = path.indexOf('/zh/') !== -1 || path === '/zh';
+
+      if (isZh) {
+
+        window.location.href = path === '/zh/' || path === '/zh' ? '/' : path.replace('/zh/', '/');
+
+      } else {
+
+        window.location.href = path === '/' || path === '' ? '/zh/' : path + 'zh/';
+
+      }
+
+    });
+
+  }
+
+  // 汉堡菜单
+
+  // 动态加载最新文章（Home Recent Research）
+
+  (function() {
+
+    var list = document.getElementById('home-article-list');
+
+    if (!list) return;
+
+    fetch('/research/articles.json')
+
+      .then(function(r) { return r.json(); })
+
+      .then(function(articles) {
+
+        if (!Array.isArray(articles) || articles.length === 0) {
+
+          list.innerHTML = '<div class="article-item" style="color:#aaaaaa;">No articles yet.</div>';
+
+          return;
+
+        }
+
+        // 按日期倒序，取最新 3 篇
+
+        var sorted = articles.slice().sort(function(a, b) {
+
+          return b.date.localeCompare(a.date);
+
+        });
+
+        var latest = sorted.slice(0, 3);
+
+        var lang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
+
+        var html = '';
+
+        latest.forEach(function(a) {
+
+          var title = a.title;
+
+          var cat = a['category_' + lang] || a.category;
+
+          var date = a.date;
+
+          html += '<div class="article-item">' +
+
+            '<div class="article-meta-row">' +
+
+            '<span class="article-category">' + cat + '</span>' +
+
+            '<span class="article-date">' + date + '</span>' +
+
+            '</div>' +
+
+            '<a href="' + (a.url_zh || a.url) + '" class="article-title-link">' + title + '</a>' +
+
+            '</div>';
+
+        });
+
+        list.innerHTML = html;
+
+      })
+
+      .catch(function() {
+
+        list.innerHTML = '<div class="article-item" style="color:#aaaaaa;">No articles yet.</div>';
+
+      });
+
+  })();
+
+
+
+  var menuBtn = document.getElementById('nav-menu-btn');
+
+  var navLinks = document.getElementById('nav-links');
+
+  if (menuBtn && navLinks) {
+
+    menuBtn.addEventListener('click', function(e) {
+
+      e.preventDefault();
+
+      e.stopPropagation();
+
+      navLinks.classList.toggle('active');
+
+    });
+
+    navLinks.querySelectorAll('a').forEach(function(link) {
+
+      link.addEventListener('click', function() {
+
+        navLinks.classList.remove('active');
+
+      });
+
+    });
+
+  }
+
+})();
+
+</script>
+
+
+
+</body>
+
+</html>
+
