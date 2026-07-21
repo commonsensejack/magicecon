@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <rect width="400" height="400" rx="80" fill="#ffffff" stroke="#1E3A5F" stroke-width="3"/>
-  <!-- M -->
-  <text x="168" y="265" font-family="Georgia, 'Times New Roman', serif" font-size="200" font-weight="400" text-anchor="middle" fill="#1E3A5F">M</text>
-  <!-- E, overlapping -->
-  <text x="268" y="265" font-family="Georgia, 'Times New Roman', serif" font-size="200" font-weight="400" text-anchor="middle" fill="#1E3A5F">E</text>
-</svg>
