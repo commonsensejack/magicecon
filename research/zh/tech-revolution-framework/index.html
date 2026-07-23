@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技术革命的产业研究框架：以AI产业链为例 | Magic Econ</title>
+  <meta name="description" content="从供给约束到商业化落地——以AI产业链为例，构建技术革命的产业研究框架。">
+  <meta name="author" content="Magic Econ · Common Sense Jack">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #111111; background: #ffffff; line-height: 1.8; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 24px; } }
+
+    .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid #eeeeee; backdrop-filter: blur(12px); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #111111; }
+    .nav-logo span { font-weight: 400; color: #666666; margin-left: 6px; font-size: 0.85em; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.875rem; color: #444444; letter-spacing: 0.02em; transition: color 0.15s; }
+    .nav-links a:hover { color: #111111; }
+    .lang-toggle { padding: 6px 14px; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #444444; background: transparent; border: 1px solid #dddddd; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+    .lang-toggle:hover { color: #111111; border-color: #999999; }
+    .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 12px; margin: -12px; }
+    .nav-menu-btn span { display: block; width: 22px; height: 2px; background: #111111; margin: 5px 0; transition: 0.3s; }
+    @media (max-width: 640px) {
+      .nav-menu-btn { display: block; }
+      .nav-links { position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eeeeee; flex-direction: column; gap: 0; padding: 16px 24px; transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+      .nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 0.9rem; border-bottom: 1px solid #f0f0f0; }
+      .nav-links li:last-child a { border-bottom: none; }
+    }
+
+    .article-hero { padding: 80px 0 60px; border-bottom: 1px solid #eeeeee; }
+    .article-hero .container { max-width: 760px; }
+    .article-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
+    .article-title { font-size: clamp(28px, 5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; color: #111111; margin-bottom: 16px; }
+    .article-subtitle { font-size: 1.05rem; color: #555555; line-height: 1.7; font-weight: 400; }
+    .article-meta { display: flex; gap: 16px; margin-top: 28px; font-size: 0.8rem; color: #888888; flex-wrap: wrap; }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+    .article-divider { display: inline-block; width: 1px; height: 12px; background: #dddddd; }
+
+    .article-body { padding: 60px 0 80px; }
+    .article-body .container { max-width: 760px; }
+
+    .article-lead { font-size: 1.15rem; color: #222222; line-height: 1.8; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid #f0f0f0; }
+    .article-lead strong { color: #111111; }
+
+    h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; color: #111111; margin: 56px 0 20px; line-height: 1.3; }
+    h3 { font-size: 1.15rem; font-weight: 700; color: #111111; margin: 32px 0 14px; line-height: 1.4; }
+
+    p { margin-bottom: 20px; color: #222222; }
+    strong { font-weight: 700; color: #111111; }
+
+    blockquote { border-left: 3px solid #111111; padding: 16px 24px; margin: 32px 0; background: #fafafa; }
+    blockquote p { margin: 0; color: #333333; font-style: italic; }
+
+    .article-blockquote-main { font-size: 1.05rem; border-left: 3px solid #111111; padding: 16px 24px; margin: 32px 0; background: #fafafa; font-style: italic; color: #333333; line-height: 1.8; }
+
+    table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 0.9rem; }
+    thead tr { background: #f5f5f5; }
+    th { text-align: left; padding: 10px 16px; font-weight: 700; color: #111111; border-bottom: 2px solid #dddddd; }
+    td { padding: 10px 16px; border-bottom: 1px solid #eeeeee; color: #333333; }
+    tbody tr:hover { background: #fafafa; }
+
+    ul, ol { margin: 16px 0 20px 24px; }
+    li { margin-bottom: 8px; color: #222222; line-height: 1.7; }
+    li p { margin-bottom: 8px; }
+
+    hr { border: none; border-top: 1px solid #eeeeee; margin: 48px 0; }
+
+    .scenario { background: #fafafa; border: 1px solid #eeeeee; padding: 20px 24px; margin: 20px 0; }
+    .scenario-title { font-weight: 700; font-size: 0.9rem; color: #111111; margin-bottom: 8px; }
+    .scenario-desc { color: #444444; font-size: 0.9rem; line-height: 1.7; }
+
+    .article-endquote { margin: 48px 0 32px; padding: 24px 32px; background: #f5f5f5; border-left: 4px solid #111111; }
+    .article-endquote p { font-size: 1rem; font-style: italic; color: #333333; margin: 0; line-height: 1.8; }
+
+    .article-signature { font-size: 0.875rem; color: #666666; margin-bottom: 32px; font-style: italic; }
+    .article-disclaimer { font-size: 0.8rem; color: #888888; line-height: 1.7; padding-top: 24px; border-top: 1px solid #eeeeee; }
+
+    .article-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid #eeeeee; flex-wrap: wrap; gap: 12px; }
+    .article-nav a { font-size: 0.875rem; color: #555555; transition: color 0.15s; }
+    .article-nav a:hover { color: #111111; }
+
+    .site-footer { padding: 48px 0; border-top: 1px solid #eeeeee; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-philosophy { font-size: 0.8rem; color: #666666; font-style: italic; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 0.8rem; color: #555555; transition: color 0.15s; }
+    .footer-links a:hover { color: #111111; }
+    .footer-copy { font-size: 0.75rem; color: #888888; margin-top: 24px; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/zh/" class="nav-logo">Magic Econ<span>| 独立研究</span></a>
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/zh/">首页</a></li>
+        <li><a href="/research/zh/">研究</a></li>
+        <li><a href="/about/zh/">关于</a></li>
+        <li><a href="/contact/zh/">联系</a></li>
+        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <div class="article-cat">研究框架</div>
+    <h1 class="article-title">技术革命的产业研究框架：以AI产业链为例</h1>
+    <p class="article-subtitle">从供给约束到商业化落地</p>
+    <div class="article-meta">
+      <span>Magic Econ</span>
+      <span class="article-divider"></span>
+      <span>2026年7月</span>
+      <span class="article-divider"></span>
+      <span>Research</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="container">
+
+    <p class="article-lead">每一次技术革命，都会改变产业研究的方法。在成熟行业，我们习惯从需求出发：需求增长、企业扩产、供给增加、价格回落。这个框架对大多数制造业有效，因为传统制造业的供给弹性很高。但技术革命往往不同。由于供给扩张受到工程周期、技术积累和资本投入的限制，真正决定产业节奏的，往往不是需求，而是供给约束。<strong>AI产业，就是一个典型例子。</strong></p>
+
+    <p>先进制程晶圆厂从开工到量产需要3-5年；高端光刻机的交付周期长达2-3年；高带宽存储（HBM）的良率爬坡需要1-2年；数据中心建设周期约18个月。即使价格翻倍，产能也无法在短期内跟上。</p>
+
+    <p>这意味着：当供给无法快速响应需求时，产业周期就不再由需求端决定，而由供给端决定。理解这一点，是研究技术革命所有后续分析的前提。</p>
+
+    <hr>
+
+    <h2>一、为什么技术革命需要不同的研究框架？</h2>
+
+    <p>每一次重大技术革命，都会产生新的投资机会。但历史经验同样告诉我们：技术趋势正确，并不意味着所有相关企业都会获得成功。</p>
+
+    <p>互联网时代如此，移动互联网时代如此，新能源时代如此，AI时代也不会例外。</p>
+
+    <p><strong>投资者最大的挑战，不是发现某个技术很重要，而是回答：在技术扩散的过程中，价值在哪个环节沉淀？哪些参与者真正拥有长期竞争优势？</strong></p>
+
+    <p>过去很多产业研究习惯从需求端开始：市场空间有多大？用户数量多少？渗透率提升多少？这种方法对于成熟行业有效，但对于技术革命早期阶段，可能并不足够。</p>
+
+    <p>原因在于：<strong>新技术周期往往首先受到供给约束。</strong> 不是没有需求，而是供给无法快速满足需求。</p>
+
+    <p>因此，研究技术革命的产业，第一步不是预测未来市场规模，而是理解<strong>供给如何形成</strong>。AI并不是唯一如此的产业，但它是当前最典型、最容易观察的案例，因此本文以AI产业链作为例子，讨论一种研究技术革命的通用方法。</p>
+
+    <p>这也是本框架的起点。</p>
+
+    <h2>二、供给约束如何重塑产业周期</h2>
+
+    <p>供给约束不是抽象的概念，而是由物理规律决定的。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>环节</th>
+          <th>建设/交付周期</th>
+          <th>核心瓶颈</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>先进制程晶圆厂</td><td>3-5年</td><td>光刻机、工艺积累、人才</td></tr>
+        <tr><td>高端光刻机</td><td>2-3年交付</td><td>ASML独家供应、产能有限</td></tr>
+        <tr><td>HBM（高带宽存储）</td><td>1-2年良率爬坡</td><td>先进封装、良率、材料</td></tr>
+        <tr><td>数据中心建设</td><td>12-18个月</td><td>电力供应、土地、散热</td></tr>
+        <tr><td>先进封装</td><td>6-12个月扩产</td><td>CoWoS工艺、设备交付</td></tr>
+      </tbody>
+    </table>
+
+    <p>这些约束的共同特点是：<strong>它们不随价格信号而即时改变。</strong> 传统制造业的逻辑是"价格涨了，多生产就行了"，但技术革命早期的逻辑是"价格涨了，产能也没法快速释放"。</p>
+
+    <p>供给刚性的量级有多大？以AI产业为例，几个关键数据可以说明：</p>
+
+    <ul>
+      <li><strong>全球数据中心支出：</strong>单季首次突破3000亿美元，同比增速58%。四大科技巨头的AI算力投资占比超过七成。</li>
+      <li><strong>全球晶圆厂设备支出：</strong>2026年同比增长18%至1330亿美元，2027年突破1500亿美元。三年累计有望突破3740亿美元。</li>
+      <li><strong>全球IT支出：</strong>2026年预计达6.1万亿美元，其中数据中心设备支出增长32%，AI相关支出占比持续提升。</li>
+      <li><strong>存储芯片市场：</strong>预计2026年同比增长249%。</li>
+    </ul>
+
+    <p>需求增长速度远超供给释放速度，这个时间差，就是产业利润形成的重要来源。</p>
+
+    <p><strong>核心结论：AI产业不是需求驱动的周期，而是供给约束驱动的周期。</strong> 景气持续时间不再由历史统计决定，而由产能释放周期决定。</p>
+
+    <h2>三、价值如何在产业链中传递</h2>
+
+    <p>理解了供给约束，接下来需要回答一个更本质的问题：<strong>在供给约束的条件下，价值如何在产业链中传递？利润最终流向哪里？</strong></p>
+
+    <h3>第一层：谁拥有稀缺资源？</h3>
+
+    <p>技术革命中，第一个赚钱的人，通常不是需求最旺的人，而是掌握稀缺资源的人。</p>
+
+    <p>AI产业链最上游，是支撑模型运行的基础设施：半导体制造、AI芯片、高带宽存储、先进封装、电力基础设施。</p>
+
+    <p>很多人认为AI革命主要发生在模型层，但真正限制模型扩张速度的，却是现实世界的基础设施。</p>
+
+    <p>很多投资者容易将AI理解为软件革命，但实际上，AI的发展高度依赖硬件基础。大型模型训练需要更强计算能力、更大数据规模、更高能源投入。这意味着：<strong>算力成为AI时代的重要生产资料，而生产资料的供应速度，决定产业发展的速度。</strong></p>
+
+    <p>这与互联网时代有所不同。互联网企业可以快速复制软件，但AI基础设施需要大量现实世界投入——晶圆厂、服务器、电力、网络、设备。这些都需要时间建设。因此，上游供应商具备天然稀缺性。</p>
+
+    <p>但上游的价值，不仅来自需求增长，更来自<strong>供给扩张速度低于需求增长速度形成的阶段性稀缺</strong>。当需求快速增长而产能无法同步扩张时，上游供应商就具备了定价权。这不是垄断，而是物理约束造成的自然稀缺。</p>
+
+    <p>因此，研究上游的核心不是"需求有多大"，而是"供给瓶颈在哪里"——瓶颈越硬，定价权越强，利润留存越多。</p>
+
+    <p><strong>研究上游，需要关注三个变量：</strong></p>
+
+    <p><strong>1. 供需关系的边际变化：</strong>需求增长速度是否超过供给增长？判断的关键不是总量，而是边际变化——供给释放的速度是否在加快？需求增长的斜率是否在变化？</p>
+
+    <p><strong>2. 产能释放的时间节点：</strong>新增供给什么时候出现？关注设备交付周期、工厂扩产进度、良率提升速度。供给变化决定景气持续时间。</p>
+
+    <p><strong>3. 技术壁垒的可持续性：</strong>真正有价值的环节，通常具备高研发投入、长认证周期、高客户粘性、难以复制的制造能力。市场最终奖励的，不只是增长最快的企业，而是拥有长期竞争优势的企业。</p>
+
+    <h3>第二层：谁把稀缺资源变成生产力？</h3>
+
+    <p>如果说互联网时代的数据是生产资料，那么AI时代的算力就是生产资料。</p>
+
+    <p>模型能力决定AI能做到什么，而算力供给决定AI能够以多快速度扩散。中游的核心逻辑是：把上游的稀缺资源转化为可使用的计算能力。这一层的关键不是技术先进性，而是规模化速度和成本控制。</p>
+
+    <h3>从模型竞争到基础设施竞争</h3>
+
+    <p>过去，人们讨论人工智能，更多关注模型能力：哪个模型参数更多？哪个算法更先进？但随着AI进入规模化阶段，竞争重点正在发生变化。</p>
+
+    <p>模型能力的重要性依然存在，但支撑模型运行的基础设施，正在成为新的约束。原因很简单：更强大的模型，需要更多计算资源、更高能源消耗、更复杂的数据中心。</p>
+
+    <p>因此，AI竞争不仅发生在软件层面，也发生在现实世界的基础设施层面。</p>
+
+    <h3>为什么算力周期可能比传统周期更长？</h3>
+
+    <p>传统资本开支周期通常具有明显规律：需求增加 → 企业扩产 → 供给释放 → 价格下降 → 行业进入调整。然而，AI基础设施周期具有不同特点。</p>
+
+    <p><strong>第一，需求增长的持续性更强。</strong> AI并不是单一应用驱动的需求，而是一种新的通用技术（General Purpose Technology），类似电力或互联网。它会渗透到各行各业，创造持续的算力需求。</p>
+
+    <p><strong>第二，供给扩张的链条更长。</strong> 从设备制造到晶圆厂建设，从封装测试到数据中心部署，从电力供应到网络带宽，AI算力的供给链条涉及多个环节，每个环节都有自己的建设周期。这意味着整体供给释放的速度会更慢。</p>
+
+    <p><strong>第三，AI需求具有正反馈。</strong> 更多资本投入 → 更多算力建设 → 更低模型成本 → 更多企业使用AI → 更多商业需求 → 推动进一步资本投入。这与传统行业不同——传统产业往往随着供给增加而竞争加剧，而AI产业在早期阶段，供给建设反而可能创造新的需求。</p>
+
+    <h3>第三层：谁最终创造现金流？</h3>
+
+    <p>任何技术革命，最终都需要回答一个问题：技术如何创造商业价值？互联网如此，移动互联网如此，AI同样如此。</p>
+
+    <p>上游和中游解决的是"能不能做"的问题，下游解决的是"值不值得做"的问题。如果AI只停留在基础设施投资阶段，那么最终无法形成长期产业价值。真正决定AI周期高度的，是：应用是否能够提高企业效率，是否能够创造新的商业模式，是否能够改变生产方式。说到底，是企业是否愿意为AI付费、AI是否真正降低成本、AI是否创造新增收入。</p>
+
+    <p><strong>AI商业化需要观察三个信号：</strong></p>
+
+    <p><strong>1. 从成本降低到效率提升。</strong> AI目前正在从"技术验证"阶段逐步进入"商业价值"阶段。真正重要的问题，不再只是模型能力是否提升，而是：企业是否愿意为AI付费？AI是否真正降低成本？AI是否创造新增收入？</p>
+
+    <p><strong>2. 企业采用的广度与深度。</strong> 判断AI商业化，需要关注企业部署速度、付费用户增长、应用场景扩展、行业渗透率。技术领先不等于商业成功。很多技术最终失败，并不是因为技术不好，而是因为无法形成经济价值。</p>
+
+    <p><strong>3. 盈利模式的稳定性。</strong> 长期来看，市场不会永远奖励技术领先。最终决定价值的，是盈利能力。需要关注收入增长、利润率变化、现金流改善、商业模式稳定性。只有技术优势能够转化为经济优势，才能形成长期价值。</p>
+
+    <h2>四、三层信号交叉验证：一个可迁移的工具</h2>
+
+    <p>基于以上分析，可以建立一个简单但有效的研究工具——<strong>三层信号交叉验证法</strong>。</p>
+
+    <p>这个工具的设计逻辑是：无论下一次技术革命是什么形态，只要它符合"供给约束 → 资本投入 → 盈利兑现"的基本路径，就可以使用同样的方法进行跟踪。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>层级</th>
+          <th>核心问题</th>
+          <th>关键指标</th>
+          <th>代表意义</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>供给信号</td><td>有没有瓶颈？</td><td>产能、交期、良率</td><td>判断景气持续性</td></tr>
+        <tr><td>资本信号</td><td>企业是否继续下注？</td><td>CAPEX、融资、扩产</td><td>判断周期强度</td></tr>
+        <tr><td>盈利信号</td><td>是否创造价值？</td><td>收入、利润、现金流</td><td>判断长期兑现</td></tr>
+      </tbody>
+    </table>
+
+    <p>三个信号形成完整闭环：供给约束 → 资本投入 → 盈利兑现。</p>
+
+    <p>单一信号容易误导。只有三层信号相互印证时，判断的可靠性才更高。以下是三种典型组合场景：</p>
+
+    <div class="scenario">
+      <div class="scenario-title">场景一：供给紧张 + 资本增长 + 盈利改善</div>
+      <div class="scenario-desc"><strong>黄金阶段。</strong> 三个信号同时指向正向，趋势的可靠性最高。产业处于景气扩张期，供给约束支撑利润，资本投入延续趋势，盈利兑现验证逻辑。</div>
+    </div>
+
+    <div class="scenario">
+      <div class="scenario-title">场景二：供给紧张 + 资本增长 + 盈利未兑现</div>
+      <div class="scenario-desc"><strong>投入期。</strong> 产业仍处于早期投入阶段。市场预期可能领先于基本面，波动会比较大。需要关注盈利拐点何时出现——如果盈利长期无法兑现，资本投入可能收缩。</div>
+    </div>
+
+    <div class="scenario">
+      <div class="scenario-title">场景三：供给释放 + 资本收缩 + 盈利放缓</div>
+      <div class="scenario-desc"><strong>周期转折。</strong> 供给约束缓解，资本开始撤退，盈利增长停滞。产业可能进入成熟期或调整期，需要警惕景气下行风险。</div>
+    </div>
+
+    <p>这个工具的意义不在于预测，而在于帮你系统性地组织信息，减少随机和情绪化的判断。</p>
+
+    <h2>五、这个框架的边界</h2>
+
+    <p>任何框架都有其适用边界。</p>
+
+    <p><strong>第一，技术突破可能改变供给刚性。</strong> 如果出现重大技术突破（如新型计算架构、量子计算、AI辅助芯片设计等），供给约束可能被快速打破，框架的前提假设就需要调整。</p>
+
+    <p><strong>第二，商业化路径可能非线性。</strong> AI应用的爆发可能不是渐进的，而是某个杀手级应用突然出现，导致需求跳变。框架无法预测这种非线性变化，只能在变化发生后帮助理解其影响。</p>
+
+    <p><strong>第三，地缘政治可能中断产业链。</strong> AI产业链高度全球化，任何贸易摩擦、技术封锁、出口管制，都可能改变供需格局。框架需要根据外部环境动态更新。</p>
+
+    <p>因此，这个框架不是用来给出确定性答案的，而是用来组织信息、形成判断的工具。<strong>框架的价值不在于"永远正确"，而在于帮助我们系统性地思考问题。</strong></p>
+
+    <h2>结语</h2>
+
+    <p>AI只是今天的案例。</p>
+
+    <p>十年前是移动互联网，二十年前是互联网。每一次技术革命，产业研究的核心问题其实没有变：价值在哪里产生？利润向谁集中？什么变量决定周期节奏？</p>
+
+    <p>区别在于：成熟行业可以从需求端研究，而技术革命必须从供给端入手。</p>
+
+    <p>下一次技术革命出现时——无论是量子计算、生物技术还是可控核聚变——我们仍然可以使用同样的框架：</p>
+
+    <div class="article-endquote">
+      <p><strong>寻找供给约束，观察资本投入，等待盈利兑现。</strong></p>
+    </div>
+
+    <p>因为真正有价值的，不是对某一次技术革命的判断，而是一套可以反复使用的研究方法。</p>
+
+    <p>研究产业，不是寻找最热门的主题，而是理解价值如何沿产业链传递。</p>
+
+    <p>正如 Magic Econ 所坚持的理念：</p>
+
+    <blockquote>
+      <p>The goal is not to predict markets, but to understand the forces driving them.</p>
+    </blockquote>
+
+    <p class="article-signature">*作者：Magic Econ · Common Sense Jack*</p>
+
+    <p class="article-disclaimer">本文基于公开市场数据及公开研究资料整理（数据来源包括SEMI、Gartner、WSTS等），旨在构建技术革命的产业研究框架，仅供学习交流，不构成任何投资建议。</p>
+
+    <div class="article-nav">
+      <a href="/research/zh/">← 返回研究</a>
+      <a href="/research/tech-revolution-framework/">English Version →</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-philosophy"><em>The goal is not to predict markets, but to understand them.</em></div>
+      <ul class="footer-links">
+        <li><a href="/about/zh/">关于</a></li>
+        <li><a href="/research/zh/">研究</a></li>
+        <li><a href="/contact/zh/">联系</a></li>
+        <li><a href="mailto:jack@magicecon.com">邮件</a></li>
+      </ul>
+    </div>
+    <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('lang-toggle');
+  if (btn) {
+    btn.addEventListener('click', function() {
+      var path = window.location.pathname;
+      var p = path.replace(/\/$/, '');
+      var newPath = p.replace(/\/zh\//, '/');
+      window.location.href = newPath + '/';
+    });
+  }
+  var menuBtn = document.getElementById('nav-menu-btn');
+  var navLinks = document.getElementById('nav-links');
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      navLinks.classList.toggle('active');
+    });
+  }
+</script>
+
+</body>
+</html>

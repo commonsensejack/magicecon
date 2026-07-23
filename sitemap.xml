@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated at 2026-07-21T06:40:22.277Z -->
+<!-- generated at 2026-07-23T06:49:18.185Z -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.magicecon.com/</loc>
@@ -15,13 +15,13 @@
   </url>
   <url>
     <loc>https://www.magicecon.com/about/</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.magicecon.com/about/zh/</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,8 +92,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.magicecon.com/research/tech-revolution-framework/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.magicecon.com/research/zh/</loc>
     <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.magicecon.com/research/zh/tech-revolution-framework/</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
