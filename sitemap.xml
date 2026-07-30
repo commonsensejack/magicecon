@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated at 2026-07-30T02:44:10.461Z -->
+<!-- generated at 2026-07-30T02:57:38.524Z -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.magicecon.com/</loc>
@@ -44,8 +44,20 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.magicecon.com/learning/framework-blindspots/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.magicecon.com/learning/historical-patterns-break/</loc>
     <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.magicecon.com/learning/zh/framework-blindspots/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,12 +104,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.magicecon.com/research/framework-blindspots/</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.magicecon.com/research/tech-revolution-framework/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -106,12 +112,6 @@
   <url>
     <loc>https://www.magicecon.com/research/zh/</loc>
     <lastmod>2026-07-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.magicecon.com/research/zh/framework-blindspots/</loc>
-    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
