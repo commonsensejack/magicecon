@@ -448,7 +448,7 @@
       if (parts[1] === 'zh') {
         parts.splice(1, 1);
       } else {
-        parts.splice(2, 0, 'zh');
+        parts.splice(1, 0, 'zh');
       }
       window.location.href = '/' + parts.join('/') + '/';
     });
