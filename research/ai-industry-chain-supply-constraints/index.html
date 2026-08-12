@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -444,8 +444,13 @@
   if (btn) {
     btn.addEventListener('click', function() {
       var path = window.location.pathname.replace(/\/$/, '');
-      var newPath = path + '/zh/';
-      window.location.href = newPath + '/';
+      var parts = path.split('/').filter(Boolean);
+      if (parts[1] === 'zh') {
+        parts.splice(1, 1);
+      } else {
+        parts.splice(2, 0, 'zh');
+      }
+      window.location.href = '/' + parts.join('/') + '/';
     });
   }
   var menuBtn = document.getElementById('nav-menu-btn');
