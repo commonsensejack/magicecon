@@ -67,8 +67,17 @@
     .article-quote { font-size: clamp(18px, 2.5vw, 22px); font-weight: 300; line-height: 1.8; color: #111111; letter-spacing: -0.01em; margin: 56px 0; padding: 40px 0; border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; text-align: center; }
     .article-quote em { font-style: italic; }
 
-    .article-model { background: #f9f9f9; border: 1px solid #eeeeee; border-radius: 4px; padding: 24px 28px; margin: 40px 0; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 2; color: #333333; overflow-x: auto; }
-    .article-model p { margin-bottom: 4px; }
+    .force-flow { margin: 40px 0; }
+    .force-card { background: #ffffff; border: 1px solid #e8e8e8; border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .force-card:last-of-type { margin-bottom: 0; }
+    .force-title { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #888888; margin-bottom: 8px; }
+    .force-chain { font-size: 1rem; line-height: 1.8; color: #333333; }
+    .force-chain strong { color: #111111; font-weight: 600; }
+    .force-arrow { text-align: center; margin: 12px 0; color: #aaaaaa; font-size: 1.2rem; }
+    @media (max-width: 640px) {
+      .force-card { padding: 20px; }
+      .force-chain { font-size: 0.95rem; }
+    }
 
     .article-list { margin: 24px 0 40px; }
     .article-list li { font-size: 1rem; line-height: 1.9; color: #222222; margin-bottom: 12px; margin-left: 20px; }
@@ -200,12 +209,21 @@
 
     <h2>IV. An Analytical Framework: The Three-Force Model</h2>
     <p>These three forces can be organized into a simple thinking tool.</p>
-    <div class="article-model">
-      <p>AI supply rigidity  →  industrial cycle stretches  →  growth stocks keep outperforming</p>
-      <p>       ↓</p>
-      <p>Policy framework shift  →  aggregate stimulus weakens  →  cyclical stocks lose elasticity</p>
-      <p>       ↓</p>
-      <p>Global division rebuild  →  capital reprices  →  divergence goes from local to global</p>
+    <div class="force-flow">
+      <div class="force-card">
+        <div class="force-title">Force I</div>
+        <div class="force-chain"><strong>AI supply rigidity</strong> → industrial cycle stretches → <strong>growth stocks keep outperforming</strong></div>
+      </div>
+      <div class="force-arrow">↓</div>
+      <div class="force-card">
+        <div class="force-title">Force II</div>
+        <div class="force-chain"><strong>Policy framework shift</strong> → aggregate stimulus weakens → <strong>cyclical stocks lose elasticity</strong></div>
+      </div>
+      <div class="force-arrow">↓</div>
+      <div class="force-card">
+        <div class="force-title">Force III</div>
+        <div class="force-chain"><strong>Global division rebuild</strong> → capital reprices → <strong>divergence goes from local to global</strong></div>
+      </div>
     </div>
     <p>The point of this framework is to organize thinking, not to produce a forecast.</p>
     <ul class="article-list">

@@ -67,8 +67,17 @@
     .article-quote { font-size: clamp(18px, 2.5vw, 22px); font-weight: 300; line-height: 1.8; color: #111111; letter-spacing: -0.01em; margin: 56px 0; padding: 40px 0; border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; text-align: center; }
     .article-quote em { font-style: italic; }
 
-    .article-model { background: #f9f9f9; border: 1px solid #eeeeee; border-radius: 4px; padding: 24px 28px; margin: 40px 0; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 2; color: #333333; overflow-x: auto; }
-    .article-model p { margin-bottom: 4px; }
+    .force-flow { margin: 40px 0; }
+    .force-card { background: #ffffff; border: 1px solid #e8e8e8; border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .force-card:last-of-type { margin-bottom: 0; }
+    .force-title { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #888888; margin-bottom: 8px; }
+    .force-chain { font-size: 1rem; line-height: 1.8; color: #333333; }
+    .force-chain strong { color: #111111; font-weight: 600; }
+    .force-arrow { text-align: center; margin: 12px 0; color: #aaaaaa; font-size: 1.2rem; }
+    @media (max-width: 640px) {
+      .force-card { padding: 20px; }
+      .force-chain { font-size: 0.95rem; }
+    }
 
     .article-list { margin: 24px 0 40px; }
     .article-list li { font-size: 1rem; line-height: 1.9; color: #222222; margin-bottom: 12px; margin-left: 20px; }
@@ -199,12 +208,21 @@
 
     <h2>四、一个分析框架：三力模型</h2>
     <p>以上三股力量，可以整合成一个简单的思考框架：</p>
-    <div class="article-model">
-      <p>AI供给刚性 → 产业周期被拉长 → 成长股持续跑赢</p>
-      <p>       ↓</p>
-      <p>政策框架转型 → 总量刺激减弱 → 周期股弹性下降</p>
-      <p>       ↓</p>
-      <p>全球分工重构 → 资本重新定价 → 分化从局部走向全球</p>
+    <div class="force-flow">
+      <div class="force-card">
+        <div class="force-title">第一力</div>
+        <div class="force-chain"><strong>AI供给刚性</strong> → 产业周期被拉长 → <strong>成长股持续跑赢</strong></div>
+      </div>
+      <div class="force-arrow">↓</div>
+      <div class="force-card">
+        <div class="force-title">第二力</div>
+        <div class="force-chain"><strong>政策框架转型</strong> → 总量刺激减弱 → <strong>周期股弹性下降</strong></div>
+      </div>
+      <div class="force-arrow">↓</div>
+      <div class="force-card">
+        <div class="force-title">第三力</div>
+        <div class="force-chain"><strong>全球分工重构</strong> → 资本重新定价 → <strong>分化从局部走向全球</strong></div>
+      </div>
     </div>
     <p>这个框架的作用是组织思考，不是给出预测：</p>
     <ul class="article-list">
