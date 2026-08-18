@@ -1,16 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Framework for Technology Revolution: The AI Industry Chain | Magic Econ</title>
-  <meta name="description" content="From supply constraints to commercial deployment — a framework for researching technology revolutions, using the AI industry chain as a case study.">
+  <title>A Framework for Studying Technology Revolutions | Magic Econ</title>
+  <meta name="description" content="From supply constraints to commercialization — using the AI supply chain as a case study to build a framework for studying technology revolutions: find the bottlenecks, watch the capital, wait for the earnings.">
   <meta name="author" content="Magic Econ · Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://www.magicecon.com/research/tech-revolution-framework/">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #111111; background: #ffffff; line-height: 1.7; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #111111; background: #ffffff; line-height: 1.8; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
     @media (max-width: 768px) { .container { padding: 0 24px; } }
@@ -35,13 +36,62 @@
       .nav-links li:last-child a { border-bottom: none; }
     }
 
-    .coming-soon { max-width: 760px; margin: 0 auto; padding: 80px 40px 120px; text-align: center; }
-    @media (max-width: 768px) { .coming-soon { padding: 60px 24px 80px; } }
-    .coming-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
-    .coming-title { font-size: clamp(28px, 5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.25; color: #111111; margin-bottom: 16px; }
-    .coming-desc { font-size: 1rem; color: #666666; line-height: 1.8; max-width: 520px; margin: 0 auto 40px; }
-    .coming-btn { display: inline-block; padding: 12px 28px; font-size: 0.875rem; font-weight: 500; color: #111111; border: 1px solid #111111; transition: all 0.15s; }
-    .coming-btn:hover { background: #111111; color: #ffffff; }
+    .article-hero { padding: 80px 0 60px; border-bottom: 1px solid #eeeeee; }
+    .article-hero .container { max-width: 760px; }
+    .article-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
+    .article-title { font-size: clamp(28px, 5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; color: #111111; margin-bottom: 16px; }
+    .article-subtitle { font-size: 1.05rem; color: #555555; line-height: 1.7; font-weight: 400; }
+    .article-meta { display: flex; gap: 16px; margin-top: 28px; font-size: 0.8rem; color: #888888; flex-wrap: wrap; }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+    .article-divider { display: inline-block; width: 1px; height: 12px; background: #dddddd; }
+
+    .article-body { padding: 60px 0 80px; }
+    .article-body .container { max-width: 760px; }
+
+    .article-lead { font-size: 1.15rem; color: #222222; line-height: 1.8; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid #f0f0f0; }
+    .article-lead strong { color: #111111; }
+
+    h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; color: #111111; margin: 56px 0 20px; line-height: 1.3; }
+    h3 { font-size: 1.15rem; font-weight: 700; color: #111111; margin: 32px 0 14px; line-height: 1.4; }
+
+    p { margin-bottom: 20px; color: #222222; }
+    strong { font-weight: 700; color: #111111; }
+
+    blockquote { border-left: 3px solid #111111; padding: 16px 24px; margin: 32px 0; background: #fafafa; }
+    blockquote p { margin: 0; color: #333333; font-style: italic; }
+
+    .article-blockquote-main { font-size: 1.05rem; border-left: 3px solid #111111; padding: 16px 24px; margin: 32px 0; background: #fafafa; font-style: italic; color: #333333; line-height: 1.8; }
+
+    table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 0.9rem; }
+    thead tr { background: #f5f5f5; }
+    th { text-align: left; padding: 10px 16px; font-weight: 700; color: #111111; border-bottom: 2px solid #dddddd; }
+    td { padding: 10px 16px; border-bottom: 1px solid #eeeeee; color: #333333; }
+    tbody tr:hover { background: #fafafa; }
+
+    ul, ol { margin: 16px 0 20px 24px; }
+    li { margin-bottom: 8px; color: #222222; line-height: 1.7; }
+    li p { margin-bottom: 8px; }
+
+    hr { border: none; border-top: 1px solid #eeeeee; margin: 48px 0; }
+
+    .scenario { background: #fafafa; border: 1px solid #eeeeee; padding: 20px 24px; margin: 20px 0; }
+    .scenario-title { font-weight: 700; font-size: 0.9rem; color: #111111; margin-bottom: 8px; }
+    .scenario-desc { color: #444444; font-size: 0.9rem; line-height: 1.7; }
+
+    .article-endquote { margin: 48px 0 32px; padding: 24px 32px; background: #f5f5f5; border-left: 4px solid #111111; }
+    .article-endquote p { font-size: 1rem; font-style: italic; color: #333333; margin: 0; line-height: 1.8; }
+
+    .article-signature { font-size: 0.875rem; color: #666666; margin-bottom: 16px; font-style: italic; }
+    .article-disclaimer { font-size: 0.8rem; color: #888888; line-height: 1.7; padding-top: 24px; border-top: 1px solid #eeeeee; }
+
+    .subscribe-section { margin-top: 48px; padding: 32px; background: #f8f8f8; border: 1px solid #e8e8e8; text-align: center; }
+    .subscribe-section p { font-size: 0.9rem; color: #555555; margin-bottom: 20px; }
+    .subscribe-section .wechat-img { width: 160px; height: 160px; margin: 0 auto 8px; display: block; border: 1px solid #eeeeee; }
+    .subscribe-section .wechat-hint { font-size: 0.8rem; color: #999999; }
+
+    .article-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid #eeeeee; flex-wrap: wrap; gap: 12px; }
+    .article-nav a { font-size: 0.875rem; color: #555555; transition: color 0.15s; }
+    .article-nav a:hover { color: #111111; }
 
     .site-footer { padding: 48px 0; border-top: 1px solid #eeeeee; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -66,17 +116,237 @@
         <li><a href="/research/">Research</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
-        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
+        <li><button class="lang-toggle" id="lang-toggle">中</button></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="coming-soon">
-  <div class="coming-cat">Research</div>
-  <h1 class="coming-title">A Framework for Technology Revolution:<br>The AI Industry Chain</h1>
-  <p class="coming-desc">This article is being translated. The Chinese version is available now.</p>
-  <a href="/research/zh/tech-revolution-framework/" class="coming-btn">Read in Chinese &rarr;</a>
+<div class="article-hero">
+  <div class="container">
+    <div class="article-cat">Research Framework</div>
+    <h1 class="article-title">A Framework for Studying Technology Revolutions</h1>
+    <p class="article-subtitle">From Supply Constraints to Commercialization</p>
+    <div class="article-meta">
+      <span>Magic Econ</span>
+      <span class="article-divider"></span>
+      <span>July 2026</span>
+      <span class="article-divider"></span>
+      <span>Research</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="container">
+
+    <p class="article-lead">Every technology revolution changes how industry research should be done. In mature industries, we start from demand: demand grows, companies expand, supply increases, prices fall. That framework works for most of manufacturing, because traditional manufacturing supply is highly elastic. Technology revolutions are different. When supply expansion is constrained by engineering timelines, accumulated know-how, and capital intensity, what sets the pace of the industry is usually not demand but supply. AI is the textbook case.</p>
+
+    <p>A leading-edge fab takes three to five years from groundbreaking to volume production. High-end lithography equipment has delivery lead times of two to three years. HBM yield ramping takes one to two years. Data center construction runs about eighteen months. Double the price and capacity still cannot catch up in the short run.</p>
+
+    <p>When supply cannot respond quickly to demand, the industry cycle is no longer set by the demand side. It is set by the supply side. Understanding that is the prerequisite for everything that follows in studying a technology revolution.</p>
+
+    <hr>
+
+    <h2>I. Why Technology Revolutions Need a Different Framework</h2>
+
+    <p>Every major technology revolution creates new investment opportunities. But history is equally clear: getting the technology trend right does not mean every related company succeeds.</p>
+
+    <p>The internet era proved it. The mobile internet era proved it. The renewable energy era proved it. AI will be no exception.</p>
+
+    <p>The real challenge for investors is not spotting that a technology matters. It is answering, as the technology diffuses: where in the value chain does value settle? Which participants actually hold durable competitive advantage?</p>
+
+    <p>A lot of industry research starts from the demand side — how big is the market, how many users, how fast is penetration rising. That works for mature industries. For the early stages of a technology revolution, it is not enough. New technology cycles are supply-constrained first. It's not that demand is absent; it's that supply cannot meet it fast enough.</p>
+
+    <p>So the first step in researching a technology revolution is not forecasting future market size. It is understanding how supply forms. AI is not the only industry where this holds, but it is the most typical and observable case today, which is why this article uses the AI supply chain to discuss a general method for studying technology revolutions.</p>
+
+    <p>That is the starting point of this framework.</p>
+
+    <h2>II. How Supply Constraints Reshape the Industrial Cycle</h2>
+
+    <p>Supply constraints are not an abstract concept. They are determined by physical reality.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Link</th>
+          <th>Build / Delivery Cycle</th>
+          <th>Core Bottleneck</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Leading-edge fab</td><td>3–5 years</td><td>Lithography, process know-how, talent</td></tr>
+        <tr><td>High-end lithography equipment</td><td>2–3 year delivery</td><td>ASML sole supplier, limited capacity</td></tr>
+        <tr><td>HBM (high-bandwidth memory)</td><td>1–2 year yield ramp</td><td>Advanced packaging, yields, materials</td></tr>
+        <tr><td>Data center construction</td><td>12–18 months</td><td>Power supply, land, cooling</td></tr>
+        <tr><td>Advanced packaging</td><td>6–12 month expansion</td><td>CoWoS process, equipment delivery</td></tr>
+      </tbody>
+    </table>
+
+    <p>What these constraints share is that they do not respond instantly to price signals. Traditional manufacturing logic is "prices rose, produce more." Technology revolution logic is "prices rose, capacity still can't release quickly."</p>
+
+    <p>The scale of supply rigidity is visible in a few data points from the AI industry:</p>
+
+    <ul>
+      <li><strong>Global data center spending:</strong> first quarter to exceed $300 billion, up 58% year-on-year. The four tech giants account for over 70% of AI compute investment.</li>
+      <li><strong>Global fab equipment spending:</strong> up 18% in 2026 to $133 billion, projected to exceed $150 billion in 2027. Three-year cumulative total may surpass $374 billion.</li>
+      <li><strong>Global IT spending:</strong> projected to reach $6.1 trillion in 2026, with data center equipment spending up 32% and AI-related spending taking a rising share.</li>
+      <li><strong>Memory chip market:</strong> projected to grow 249% year-on-year in 2026.</li>
+    </ul>
+
+    <p>Demand growth is running far ahead of supply release. That time gap is a major source of industrial profit.</p>
+
+    <p>The core conclusion: AI is not a demand-driven cycle. It is a supply-constrained cycle. How long the boom lasts is no longer set by historical statistics. It is set by the capacity release cycle.</p>
+
+    <h2>III. Where Does Value Go?</h2>
+
+    <p>Once supply constraints are understood, the deeper question follows: under supply-constrained conditions, how does value move through the supply chain? Where does profit ultimately settle?</p>
+
+    <h3>Layer One: Who Controls the Scarce Resources?</h3>
+
+    <p>In the early stage of a technology revolution, the first beneficiaries are usually not the companies with the biggest end-market demand. They are the ones controlling the resources everyone else needs.</p>
+
+    <p>In AI, that means the upstream infrastructure: semiconductor manufacturing, AI accelerators, high-bandwidth memory, advanced packaging, power infrastructure, specialized networking and equipment.</p>
+
+    <p>The popular narrative around AI tends to focus on models. But the physical constraints are further upstream. Training and running large models requires enormous amounts of compute, memory, power, and data-center infrastructure. Those inputs cannot be reproduced as quickly as software. Software can scale almost instantly. Physical infrastructure cannot — a fab must be built, equipment must be delivered, processes must be qualified, yields must improve, power must be connected.</p>
+
+    <p>This creates transitional scarcity. And scarcity matters because pricing power is often a function of how difficult it is for supply to respond. This is not necessarily monopoly power. It can be something much simpler: more buyers than available capacity, and additional capacity takes years.</p>
+
+    <p>For upstream companies, we focus on three questions.</p>
+
+    <p><strong>1. Is supply becoming tighter or looser at the margin?</strong> Headline supply-demand balances are less useful than the direction of change. Is new capacity coming online faster? Are customers still accelerating orders? Is demand growth slowing? The slope matters more than the absolute level.</p>
+
+    <p><strong>2. When will additional capacity actually arrive?</strong> Capacity announcements are not the same thing as capacity. We care about equipment delivery, fab construction, qualification, yield improvement, and utilization. The timing of real supply determines how long a favorable cycle can last.</p>
+
+    <p><strong>3. Is the competitive advantage durable?</strong> The most attractive bottlenecks are rarely just temporary shortages. The stronger ones combine high R&D intensity, long qualification cycles, customer stickiness, specialized manufacturing knowledge, and difficult-to-replicate processes. The market may reward the fastest-growing company in the short run. Over time, it tends to reward companies that can keep their economics when supply conditions normalize.</p>
+
+    <h3>Layer Two: Who Turns Scarce Resources Into Usable Capacity?</h3>
+
+    <p>The second layer sits between raw scarcity and end-market demand. If compute is a production input for the AI economy, this layer turns that input into usable computing capacity.</p>
+
+    <p>The economics here are different from the upstream bottleneck. The key questions are no longer simply "who has the scarce resource?" They become: who can deploy it fastest? Who can turn each unit of scarce capacity into the most useful output at the lowest cost? Not every company downstream of a bottleneck will capture the same amount of value.</p>
+
+    <h3>From Model Competition to Infrastructure Competition</h3>
+
+    <p>For a long time, AI discussion focused on model capability — which model has more parameters, which algorithm is more advanced. As AI moves into scaled deployment, the center of competition is shifting. Model capability still matters, but the infrastructure supporting models is becoming the new constraint. More powerful models require more compute. More users require more inference capacity. More workloads require more power and data-center capacity. AI competition is no longer only at the software layer. It is also at the physical infrastructure layer.</p>
+
+    <h3>Why the Compute Cycle May Outlast Traditional Cycles</h3>
+
+    <p>Traditional capex cycles follow a familiar pattern: demand rises, companies expand, supply releases, prices fall, the industry adjusts. The AI infrastructure cycle is different in three ways.</p>
+
+    <p><strong>First, demand is potentially broader.</strong> AI is not a single end-market application. It is a general-purpose technology, like electricity or the internet. It permeates industry after industry, creating sustained compute demand.</p>
+
+    <p><strong>Second, the supply chain is unusually long.</strong> From semiconductor equipment to wafer fabrication, from memory to advanced packaging, from servers to networking to power systems to data centers — each layer has its own lead time. Overall supply release is constrained by the slowest important bottleneck rather than by a single factory.</p>
+
+    <p><strong>Third, AI demand has positive feedback.</strong> More capital in, more compute built, lower model cost, more companies using AI, more commercial demand, more capital in. This is different from a conventional commodity cycle, where additional capacity usually increases competition. In AI's early stages, supply buildout can actually create new demand:</p>
+
+    <p>capital investment → more compute → lower cost per workload → wider adoption → more demand → further capital investment</p>
+
+    <h3>Layer Three: Who Ultimately Turns Technology Into Cash Flow?</h3>
+
+    <p>This is where the framework shifts from technology to investing.</p>
+
+    <p>Upstream companies can benefit from scarcity. Midstream companies can benefit from infrastructure spending. But neither guarantees long-term value creation. Eventually, the technology has to generate economic returns. The key question: who can turn technological capability into recurring cash flow?</p>
+
+    <p>The same question applied to the internet. The same question applied to mobile computing. Eventually, the same question will determine the winners of AI. A technology may be revolutionary and still produce disappointing investment returns if customers are unwilling to pay for it.</p>
+
+    <p>Three signals to watch for AI commercialization:</p>
+
+    <p><strong>1. From cost reduction to measurable productivity.</strong> AI adoption initially tends to be justified as experimentation or cost reduction. Over time, the more important question is whether companies can translate AI into measurable improvements in productivity, revenue, or margins. The transition is from "AI works" to "AI creates economic value." That is the point at which technology adoption becomes a business cycle rather than simply an investment theme.</p>
+
+    <p><strong>2. Breadth and depth of enterprise adoption.</strong> Watch deployment speed, paying-user growth, expansion of use cases, industry penetration rates. Technical leadership does not necessarily produce commercial leadership. Many technologies fail not because they are technically weak, but because they never become economically compelling.</p>
+
+    <p><strong>3. Durability of the business model.</strong> Over the long run, the market stops rewarding technological novelty by itself. It starts asking whether the economics are durable. Track revenue growth, margin progression, free cash flow, customer retention, recurring revenue, returns on invested capital. The long-term winner is not necessarily the company with the best technology. It is the company that can convert technological advantage into economic advantage.</p>
+
+    <h2>IV. A Practical Tool: Three-Layer Signal Cross-Validation</h2>
+
+    <p>These three layers can be turned into a simple framework for tracking a technology cycle. The design logic: no matter what form the next technology revolution takes, as long as it follows the basic path of "supply constraint → capital investment → earnings realization," the same method can track it.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Core Question</th>
+          <th>What to Watch</th>
+          <th>What It Tells You</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Supply</td><td>Where are the bottlenecks?</td><td>Capacity, lead times, yields</td><td>How long the cycle can last</td></tr>
+        <tr><td>Capital</td><td>Are companies still committing?</td><td>Capex, financing, expansion</td><td>How strong the cycle is</td></tr>
+        <tr><td>Earnings</td><td>Is value actually being created?</td><td>Revenue, margins, cash flow</td><td>Whether the thesis is being validated</td></tr>
+      </tbody>
+    </table>
+
+    <p>The three signals form a closed loop: supply constraint → capital investment → earnings realization.</p>
+
+    <p>No single signal is sufficient. A supply shortage can persist while capital discipline deteriorates. Capex can rise even when returns are falling. Revenue can grow while cash flow remains poor. Reliability rises only when the three layers confirm each other. Three typical combinations:</p>
+
+    <div class="scenario">
+      <div class="scenario-title">Scenario 1: Tight supply + rising capital spending + improving earnings</div>
+      <div class="scenario-desc"><strong>The golden phase.</strong> All three point positive. Trend reliability is highest. The industry is in expansion, supply constraints support margins, capital investment extends the trend, earnings realization validates the logic.</div>
+    </div>
+
+    <div class="scenario">
+      <div class="scenario-title">Scenario 2: Tight supply + rising capital spending + weak earnings</div>
+      <div class="scenario-desc"><strong>The investment phase.</strong> The industry may still be early. Expectations can run well ahead of fundamentals, which usually means higher volatility. The key question is whether earnings will eventually catch up. If they do not, capital spending may eventually slow.</div>
+    </div>
+
+    <div class="scenario">
+      <div class="scenario-title">Scenario 3: Supply expanding + capital spending slowing + earnings weakening</div>
+      <div class="scenario-desc"><strong>The warning phase.</strong> Capacity is becoming available, investment appetite is fading, and earnings growth is losing momentum. The industry may be moving from scarcity into normalization, or from expansion into a cyclical downturn.</div>
+    </div>
+
+    <p>The point of this tool is not prediction. It is to systematically organize information and cut down on random, emotional decisions. Its value is not that it tells us exactly when a cycle will turn. It gives us a structured way to notice when the underlying conditions are changing.</p>
+
+    <h2>V. Where This Framework Can Fail</h2>
+
+    <p>Every framework has its limits. Being honest about them is part of the research process.</p>
+
+    <p><strong>Technology can change the supply constraint.</strong> A genuine breakthrough — new compute architectures, quantum computing, AI-assisted chip design — could shorten the time required to add capacity. When that happens, the premise of supply rigidity has to be reconsidered.</p>
+
+    <p><strong>Commercialization can be nonlinear.</strong> AI adoption may not develop gradually. A single application could suddenly become economically viable and create a large jump in demand. Conversely, adoption could disappoint for longer than expected. The framework cannot predict nonlinear events. It can only help interpret them after they occur.</p>
+
+    <p><strong>Geopolitics can disrupt the chain.</strong> The AI supply chain is highly globalized. Trade restrictions, export controls, sanctions, tariffs can all change the location and availability of capacity almost overnight. A supply chain that appears balanced on paper can become constrained for reasons that have nothing to do with economics.</p>
+
+    <p>This framework is not for producing certainty. It is a working model for organizing information and forming judgment. Its value is not in being permanently correct, but in giving us a disciplined way to think when the facts change.</p>
+
+    <h2>Closing</h2>
+
+    <p>AI is only the current case study.</p>
+
+    <p>Ten years ago, the same research questions could have been applied to mobile internet. Twenty years ago, to the internet itself. The technology changes. The investment questions do not: where is value being created? Who captures it? What constrains the industry? What determines how long the cycle can last?</p>
+
+    <p>The difference is that mature industries can often be studied starting from demand. Technology revolutions require starting with the physical and economic constraints that determine how quickly supply can respond.</p>
+
+    <p>For the next technology revolution — whether quantum computing, biotechnology, fusion energy, or something we have not yet identified — the same framework still applies:</p>
+
+    <div class="article-endquote">
+      <p><strong>Find the bottlenecks. Watch the capital. Wait for the earnings.</strong></p>
+    </div>
+
+    <p>The point is not to predict the next technology revolution correctly. It is to have a way of studying it once it arrives. The most useful industry research is not about chasing the hottest theme. It is about understanding how value moves through the supply chain, where scarcity creates pricing power, and whether technological progress ultimately becomes economic value.</p>
+
+    <blockquote>
+      <p>The goal is not to predict markets, but to understand them.</p>
+    </blockquote>
+
+    <p class="article-signature">*Magic Econ · Common Sense Jack*</p>
+
+    <p class="article-disclaimer">This article is based on public market data and publicly available research materials (sources include SEMI, Gartner, WSTS, TrendForce, Omdia, SIA, and company filings). It is intended to build a framework for studying technology revolutions and is for educational exchange only. It does not constitute investment advice.</p>
+
+    <div class="subscribe-section">
+      <p>If this article sharpened your research framework, follow Magic Econ</p>
+      <img src="/images/wechat-scan.jpg" alt="Magic Econ 公众号" class="wechat-img">
+      <div class="wechat-hint">Scan to follow · WeChat</div>
+    </div>
+
+    <div class="article-nav">
+      <a href="/research/">&larr; Back to Research</a>
+      <a href="/research/zh/tech-revolution-framework/">中文版 →</a>
+    </div>
+
+  </div>
 </div>
 
 <footer class="site-footer">
