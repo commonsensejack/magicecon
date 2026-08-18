@@ -1,16 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>When Historical Patterns Break: What We Really Need to Reconstruct | Magic Econ</title>
-  <meta name="description" content="Why are the experience rules accumulated over twenty years in A-shares collectively failing? Is this change from short-term fluctuations, or has the market structure undergone deep reconstruction?">
+  <title>When the Rules Stop Working | Magic Econ</title>
+  <meta name="description" content="When the rules investors treat as near-laws start breaking at once, the question isn't what replaces them — it's whether the market structure that produced them still exists. A framework for supply rigidity, capital structure, and policy regime.">
   <meta name="author" content="Magic Econ · Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://www.magicecon.com/learning/historical-patterns-break/">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #111111; background: #ffffff; line-height: 1.7; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #111111; background: #ffffff; line-height: 1.8; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
     @media (max-width: 768px) { .container { padding: 0 24px; } }
@@ -35,13 +36,58 @@
       .nav-links li:last-child a { border-bottom: none; }
     }
 
-    .coming-soon { max-width: 760px; margin: 0 auto; padding: 80px 40px 120px; text-align: center; }
-    @media (max-width: 768px) { .coming-soon { padding: 60px 24px 80px; } }
-    .coming-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
-    .coming-title { font-size: clamp(28px, 5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.25; color: #111111; margin-bottom: 16px; }
-    .coming-desc { font-size: 1rem; color: #666666; line-height: 1.8; max-width: 520px; margin: 0 auto 40px; }
-    .coming-btn { display: inline-block; padding: 12px 28px; font-size: 0.875rem; font-weight: 500; color: #111111; border: 1px solid #111111; transition: all 0.15s; }
-    .coming-btn:hover { background: #111111; color: #ffffff; }
+    .article-hero { padding: 80px 0 40px; border-bottom: 1px solid #eeeeee; }
+    .article-hero .container { max-width: 760px; }
+    .article-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
+    .article-title { font-size: clamp(28px, 5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; color: #111111; margin-bottom: 16px; }
+    .article-subtitle { font-size: 1.05rem; color: #555555; line-height: 1.7; font-weight: 400; }
+    .article-meta { display: flex; gap: 16px; margin-top: 28px; font-size: 0.8rem; color: #888888; flex-wrap: wrap; }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+    .article-divider { display: inline-block; width: 1px; height: 12px; background: #dddddd; }
+
+    .article-body { padding: 60px 0 80px; }
+    .article-body .container { max-width: 760px; }
+
+    .article-lead { font-size: 1.15rem; color: #222222; line-height: 1.8; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid #f0f0f0; }
+    .article-lead p { margin-bottom: 18px; }
+    .article-lead em { font-size: 1.05rem; color: #555555; }
+    .article-lead strong { color: #111111; }
+
+    h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; color: #111111; margin: 56px 0 20px; line-height: 1.3; }
+    h3 { font-size: 1.15rem; font-weight: 700; color: #111111; margin: 32px 0 14px; line-height: 1.4; }
+
+    p { margin-bottom: 20px; color: #222222; }
+    strong { font-weight: 700; color: #111111; }
+
+    blockquote { border-left: 3px solid #111111; padding: 16px 24px; margin: 32px 0; background: #fafafa; }
+    blockquote p { margin: 0; color: #333333; font-style: italic; }
+
+    .note-box { background: #fafafa; border-left: 3px solid #999999; padding: 14px 20px; margin: 20px 0; font-size: 0.875rem; color: #555555; line-height: 1.7; }
+    .note-box strong { color: #333333; }
+
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.875rem; }
+    thead tr { background: #f5f5f5; }
+    th { text-align: left; padding: 10px 16px; font-weight: 700; color: #111111; border-bottom: 2px solid #dddddd; }
+    td { padding: 10px 16px; border-bottom: 1px solid #eeeeee; color: #333333; vertical-align: top; }
+    tbody tr:hover { background: #fafafa; }
+    .tbl-label { font-size: 0.75rem; color: #888888; margin: 20px 0 6px; font-style: italic; }
+
+    ul, ol { margin: 16px 0 20px 24px; }
+    li { margin-bottom: 8px; color: #222222; line-height: 1.7; }
+
+    hr { border: none; border-top: 1px solid #eeeeee; margin: 48px 0; }
+
+    .article-signature { font-size: 0.875rem; color: #666666; margin-bottom: 16px; font-style: italic; }
+    .article-disclaimer { font-size: 0.8rem; color: #888888; line-height: 1.7; padding-top: 24px; border-top: 1px solid #eeeeee; }
+
+    .subscribe-section { margin-top: 48px; padding: 32px; background: #f8f8f8; border: 1px solid #e8e8e8; text-align: center; }
+    .subscribe-section p { font-size: 0.9rem; color: #555555; margin-bottom: 20px; }
+    .subscribe-section .wechat-img { width: 160px; height: 160px; margin: 0 auto 8px; display: block; border: 1px solid #eeeeee; }
+    .subscribe-section .wechat-hint { font-size: 0.8rem; color: #999999; }
+
+    .article-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid #eeeeee; flex-wrap: wrap; gap: 12px; }
+    .article-nav a { font-size: 0.875rem; color: #555555; transition: color 0.15s; }
+    .article-nav a:hover { color: #111111; }
 
     .site-footer { padding: 48px 0; border-top: 1px solid #eeeeee; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -65,18 +111,157 @@
         <li><a href="/">Home</a></li>
         <li><a href="/research/">Research</a></li>
         <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
+        <li><button class="lang-toggle" id="lang-toggle">中</button></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="coming-soon">
-  <div class="coming-cat">Learning</div>
-  <h1 class="coming-title">When Historical Patterns Break:<br>What We Really Need to Reconstruct</h1>
-  <p class="coming-desc">This article is being translated. The Chinese version is available now.</p>
-  <a href="/learning/zh/historical-patterns-break/" class="coming-btn">Read in Chinese &rarr;</a>
+<article class="article-hero">
+  <div class="container">
+    <div class="article-cat">Learning</div>
+    <h1 class="article-title">When the Rules Stop Working</h1>
+    <div class="article-meta">
+      <span>Magic Econ · Common Sense Jack</span>
+      <span class="article-divider"></span>
+      <span>August 2026</span>
+    </div>
+  </div>
+</article>
+
+<div class="article-body">
+  <div class="container">
+
+    <div class="article-lead">
+      <p><em>The goal is not to predict markets, but to understand them.</em></p>
+      <p style="margin-top: 16px;">This is the first research piece from Magic Econ. Over the past several months, while tracking structural shifts in China's A-share market, we kept running into the same problem: several of the rules investors treat as near-laws are breaking down at the same time.</p>
+      <p>Valuation expansion has lasted longer than historical precedent would suggest. Sector leadership has persisted beyond the usual three-year window. The traditional 20% portfolio-weight threshold has stopped behaving like a reliable warning signal. And TMT trading activity has reached levels that would previously have been considered extreme — peaking at 49.8% of total market turnover on June 3, 2026.</p>
+      <p>The natural instinct when rules fail is to search for new ones. I think that's the wrong instinct. The first question isn't "what's the new rule?" It's whether the market structure that produced those historical patterns still exists. If it doesn't, swapping one forecast for another doesn't solve the problem.</p>
+      <p>Our working hypothesis: the underlying logic of price formation hasn't changed — earnings still drive value, and value still constrains price. What has changed is the market structure around that relationship. Three forces appear particularly important: greater supply rigidity in parts of the AI value chain, a changing composition of market capital, and a shift in the policy regime.</p>
+      <p>The implication for research is straightforward. Instead of leaning on historical thresholds and mean reversion, we need to put more weight on supply constraints, structural positioning, probability distributions, and tail outcomes. Let's unpack this.</p>
+    </div>
+
+    <h2>I. The Signals</h2>
+
+    <p>Chinese equities have accumulated a large number of rules of thumb — empirical patterns treated almost like laws. Since 2024, several have started to break.</p>
+
+    <h3>Valuation expansion shouldn't last more than two years</h3>
+    <p>In previous major cycles — 2006–2007, 2014–2015, 2019–2020 — valuation contributed positively for roughly two years before the expansion faded. Yet after two consecutive years of positive valuation contribution in 2024 and 2025, valuations kept climbing into 2026. The old two-year ceiling is no longer behaving like a ceiling.</p>
+
+    <h3>A single sector shouldn't lead for more than three years</h3>
+    <p>In past bull cycles, the leading sector typically dominated for two and a half to three years. Electronics and communications have now been structurally strong since 2023, extending well beyond that window. The question isn't whether three years is "wrong" — it's what made three years a useful threshold in the first place.</p>
+
+    <h3>A 20% fund allocation should signal a top</h3>
+    <p>Since 2004, mutual-fund industry allocations have approached the 20% level for a single sector on roughly six occasions. In most of those episodes, the sector was near a major price peak. This cycle provides a useful counterexample.</p>
+    <p>Electronics moved above 20% of aggregate fund holdings in Q1 2025 and has remained there for roughly a year and a half, while prices have stayed strong. The important difference is not the absolute allocation itself, but the relative degree of crowding.</p>
+    <p class="tbl-label">Figure 1 — Electronics sector overweight ratio: this cycle is well below historical levels. Data: mutual fund quarterly reports, Wind.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Fund Allocation</th>
+          <th>Overweight Ratio</th>
+          <th>Did the 20% rule hold?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Six historical episodes since 2004</td>
+          <td>~20%</td>
+          <td>0.8–2.6x</td>
+          <td>Generally preceded sector peaks</td>
+        </tr>
+        <tr>
+          <td>Current cycle (broke 20% in Q1 2025, 1.5 years running)</td>
+          <td>&gt;20%</td>
+          <td><strong>0.6x</strong></td>
+          <td>Not yet</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The current absolute allocation looks extreme, but the relative overweight is still modest compared with previous instances. Twenty percent is not a structural threshold by itself; its meaning depends on what the rest of the market looks like.</p>
+
+    <h3>TMT trading concentration is breaking historical boundaries</h3>
+    <p>Trading concentration has climbed with every technology cycle. During the smartphone era, TMT accounted for roughly 17% of A-share turnover. The mobile-internet cycle pushed it toward 30%. The 5G cycle reached around 40%. The current AI cycle has pushed it further — roughly 45% on average, sitting at the 99th percentile of its history since 2011.</p>
+    <p>Two lenses measure how concentrated market attention has become. By price performance: of more than 5,000 A-share listed companies, only 584 have reached all-time highs, and roughly 70% of those are AI compute-related names. By trading activity: about 270 companies — the top 5% by turnover — absorb nearly half of all market trading value.</p>
+    <p>Both lenses point the same way. This cycle looks less like traditional sector rotation and more like a structural concentration of market attention and capital. The median stock confirms it: a large portion of the market hasn't participated meaningfully in the rally.</p>
+
+    <p>Faced with these shifts, the market splits into two familiar camps. One says "this time is different," therefore a bubble is approaching. The other says "the old rules no longer apply," therefore the rally can continue. Both are really just forecasts — one bearish, one bullish, identical in structure, opposite in direction.</p>
+    <p>Before choosing a side, the more useful question: why are the old rules breaking?</p>
+
+    <h2>II. Market Rules Come from Market Structure</h2>
+
+    <p>Where a rule comes from determines when it stops working. Most so-called "market rules" are statistical artifacts of a specific era — the product of how industry structure, capital flows, and policy frameworks interacted during that time. Change any of those underlying structures, and the pattern loses its explanatory power.</p>
+    <p>That doesn't mean history becomes useless. It means historical relationships need to be treated as conditional, not universal. Three structural changes appear especially relevant today.</p>
+
+    <h3>Industry Structure: Supply Rigidity Breaks the Self-Correcting Loop</h3>
+    <p>For much of the A-share market's history, the dominant industries were financials, property, consumer goods, and traditional cyclicals. Demand in these sectors tracks the economic cycle closely, supply can respond relatively quickly to profitability, and competitive structures evolve gradually. That's why sector rotation and valuation mean reversion held up as patterns for so long.</p>
+    <p>The AI cycle is different in one important respect: parts of the supply chain are constrained by time and physics. This may be the starting point for understanding why some historical rules are failing.</p>
+    <p>In a conventional manufacturing cycle, higher prices create profits, profits attract capital, capital builds capacity, capacity exceeds demand, and prices fall. The feedback loop is relatively self-correcting: higher prices → capacity expansion → oversupply → lower prices. But that mechanism slows dramatically when the bottleneck itself takes years to expand.</p>
+    <p>A leading-edge fab takes three to five years to build. Critical lithography equipment has delivery lead times of two to three years. Advanced packaging faces similar constraints, and yields on new processes need time to ramp. The result is simple: profitability can no longer summon supply fast enough.</p>
+    <p>This doesn't mean supply will never arrive. It means the lag between price signals and physical capacity can become long enough to materially extend the cycle. Global semiconductor revenue is projected to cross the $1 trillion mark for the first time in 2026 (per SIA/WSTS forecasts), while capital investment in AI infrastructure continues at hundreds of billions of dollars. The supply gap may eventually close. It cannot necessarily close quickly. And in a cyclical industry, time matters.</p>
+    <p>When supply is genuinely constrained, the traditional self-correcting loop weakens. As long as demand doesn't collapse, high prices persist because high prices alone can't create enough physical supply in the short run.</p>
+    <p>This is, in my view, the most convincing explanation for why the "three-year peak" rule has failed. It's also the key to understanding the AI rally. I'd weight this explanation well above the others.</p>
+    <p>But supply rigidity has to be applied selectively. It holds in a narrow set of bottlenecks where physical capacity is genuinely constrained: HBM and advanced DRAM, CoWoS and other advanced packaging, and sub-3nm foundry capacity. In these segments, expansion is limited by equipment lead times, process complexity, or yield learning curves — supply cannot be quickly summoned by profit signals.</p>
+    <p>The same argument does not automatically apply to general-purpose server assembly, commodity cables and connectors, or every class of edge inference chips. Where barriers to entry are lower and substitution is easier, supply can still scale within several quarters — no different from traditional manufacturing. A technology narrative can push up stock prices, but it can't substitute for business model validation. One of the easiest mistakes in a technology cycle is to observe a genuine structural change in one part of the value chain and extrapolate it to every asset associated with the theme. The AI cycle may be structurally different. That doesn't make every AI stock structurally different.</p>
+
+    <h3>Concentration Is Not Unique to China</h3>
+    <p>This isn't unique to the A-share market, either. The US has experienced several periods of unusually high market concentration: the dot-com era of 1995–2000, the defensive concentration around the 2007–2008 financial crisis, and the current AI cycle from 2017 onward. Each coincided with a technological revolution or structural market shift. If you'd used past ranges as thresholds, you'd have called the top "too early" every single time — in 1998, in 2020, and quite possibly in the A-share market today. The US tech giants now account for over 30% of total market capitalization. In Korea, Samsung and SK Hynix alone make up nearly 40% of the KOSPI. The A-share market isn't special.</p>
+    <p>This kind of concentration isn't even limited to tech. In pharmaceuticals, Eli Lilly rode the commercialization of GLP-1 drugs to a market cap that grew by an order of magnitude over five years, now exceeding $1 trillion. Yet Novo Nordisk — the company that actually pioneered GLP-1 — has seen its market share overtaken by Lilly, with its stock down more than 30% from peak. Together, the two companies still dominate the category. But in the end, there was only one winner.</p>
+    <blockquote>
+      <p>Technology revolutions explain why winners emerge. They don't replace valuation discipline.</p>
+    </blockquote>
+    <p>Looking back across these cycles, what failed first wasn't the magnitude of the rally — it was the toolkit we used to call the top.</p>
+
+    <h3>Capital Structure: Retail Trend-Following Meets Institutional Risk Control</h3>
+    <p>The composition of market capital is also changing. Retail participation has been strengthening. Margin financing balances have broken through the RMB 3 trillion mark, with roughly RMB 500 billion added in a single year. New account openings remain robust, fund redemption waves have eased, and more than half of existing active funds have returned to breakeven. Retail capital's shared trait: it follows trends.</p>
+    <p>Institutional capital is behaving differently. Major broad-based ETFs have plateaued relative to their October 2023 levels. Active mutual fund positioning has ticked down slightly, but concentration has become more extreme: absolute exposure to electronics and TMT has broken past historical ranges, though overweight ratios haven't reached prior highs. Institutional capital's shared trait: it manages risk.</p>
+    <p>This structure — retail chasing trends, institutions controlling the temperature — is unlike the leverage-driven rally of 2014–2015, and unlike the mutual fund issuance-driven rally of 2020–2021. Rules built on historical capital behavior, like "heavy positioning inevitably leads to correction," are losing their reliability. In the communication sector, for instance, institutional holdings rose against the trend across multiple quarters, and the expected negative excess return never materialized.</p>
+    <p>The lesson isn't that positioning no longer matters. Positioning has to be interpreted in context: who owns the market, how they behave, and how much incremental capital remains available.</p>
+
+    <h3>Policy Regime: The Least Certain Piece</h3>
+    <p>This is the most uncertain leg of the three. Policy constraints are too nonlinear to observe with the same stability as industrial data.</p>
+    <p>For much of the past two decades, investors expected a familiar sequence: inventory cycle bottoms, policy support increases, liquidity improves, valuations expand. Since 2023, that linkage has weakened visibly. Manufacturing inventory growth hit historic lows as early as mid-2023, but the large-scale policy inflection everyone waited for never arrived in the expected form.</p>
+    <p>Fiscal restraint reflects a shift in policy philosophy — from short-cycle growth stabilization to long-term structural optimization. Domestically, debt pressures on local governments and enterprises have compressed the room for leverage. Externally, narrowing China-US yield spreads and exchange rate stability form hard constraints. The old transmission chain — major policy easing, broad liquidity expansion, system-wide valuation repricing — can no longer play out in full under current conditions.</p>
+    <p>This is the least certain part of the framework. Policy transmission is nonlinear and hard to measure systematically. I'm recording it as a variable worth tracking, not treating it as a conclusion.</p>
+
+    <h2>III. What Doesn't Change: First Principles</h2>
+
+    <p>If historical patterns can break, what should investors continue to trust? Not another historical pattern — the underlying economic mechanism. Statistical relationships are conditional on market structure. But the relationship between business performance and long-term value is more durable.</p>
+    <p>Earnings still matter. According to Wind data through March 2026, companies in the top 10% by revenue and adjusted-net-profit growth delivered average gains of over 40% in the first quarter. Meanwhile, factors typically seen as "defensive" — stronger cash positions, higher dividend yields, cheaper valuations — showed an inverse relationship with performance. Companies with thicker cash, higher dividends, and cheaper valuations actually fell further.</p>
+    <p>The market handed its richest premiums to the fastest-growing, highest-valued, lowest-dividend companies. This looks superficially like "the more expensive, the more it rises." But the deeper reading is that the market was repricing future earnings power. That's still an earnings-driven market — the difference is that the market is pricing growth much further ahead than in previous cycles.</p>
+    <p>Rules like "sector leadership can't last more than three years," "20% holdings means a top," "40% TMT turnover means risk," mean reversion, and policy-pivot allocation are all conditional. They weaken when the structure that generated them changes. But several deeper principles remain intact: earnings constrain long-term value, fundamentals eventually matter for price, supply and demand set the duration of a cycle, and valuation discipline still applies.</p>
+    <p>These aren't guarantees of short-term performance. Prices can deviate dramatically from fundamentals because of liquidity, expectations, narratives, and positioning. But over longer horizons, profitability remains the anchor.</p>
+    <p>The difficulty in today's AI cycle is that the anchor may be harder to observe. Two questions are worth watching closely. First, in a technology cycle as fast-moving as AI, earnings realization may lag industrial momentum by years — the traditional valuation anchor may remain unclear for an extended period. Second, has the market moved ahead of the earnings curve? That's a more useful question than asking whether AI is "overvalued" in the abstract. The relevant comparison is not price versus today's earnings. It's the speed of market pricing versus the speed of fundamental delivery.</p>
+
+    <hr>
+
+    <h2>Closing</h2>
+
+    <p>When a historical market rule breaks, the instinctive response is to search for a new rule. I think that's the wrong response.</p>
+    <p>The first question should be: what structure made the old rule work in the first place? Does that structure still hold? Without an answer, predictions in either direction lack a foundation.</p>
+    <p>This doesn't mean abandoning history. A historical pattern is useful precisely because it tells us something about the environment in which it emerged. Once that environment changes, the pattern may become less informative — even if the underlying economic mechanism remains intact. That's why we're increasingly interested in structural variables rather than fixed historical thresholds.</p>
+    <p>For the current AI cycle, several questions remain open. The first is the actual boundary of supply rigidity — at present concentrated in a relatively small number of physical bottlenecks, and requiring ongoing tracking of capacity delivery cadence and yield ramp curves. The second is the timing of the earnings anchor: if industry demand stays strong but earnings realization continues to lag, the gap between expectations and fundamentals may become the key source of risk. H2 2026 financial reports should provide more evidence. The third is the evolution of the policy regime, where we have lower confidence because policy transmission is nonlinear and difficult to measure systematically.</p>
+    <p>None of these questions requires a precise forecast. They require a framework capable of recognizing when the assumptions behind a forecast are changing. The objective is not to find a new rule that works until the next regime change. It is to build a framework that can recognize when the rules themselves are changing.</p>
+
+    <p class="article-signature">*Magic Econ · Common Sense Jack*</p>
+
+    <p>Magic Econ is an independent research platform focused on understanding the structural forces beneath markets. This article marks the beginning of that effort.</p>
+
+    <p class="article-disclaimer">This research is based on publicly available market data and research materials. Data sources include TrendForce, SEMI, Omdia, SIA, WSTS, company filings, Wind, the People's Bank of China, the China Securities Regulatory Commission, the Asset Management Association of China, and public financial reporting from Reuters and CNBC. It is intended to validate an industry research framework through case analysis and is for educational exchange only. It does not constitute investment advice.</p>
+
+    <div class="subscribe-section">
+      <p>If this article sharpened your research framework, follow Magic Econ</p>
+      <img src="/images/wechat-scan.jpg" alt="Magic Econ 公众号" class="wechat-img">
+      <div class="wechat-hint">Scan to follow · WeChat</div>
+    </div>
+
+    <div class="article-nav">
+      <a href="/research/">← Back to Research</a>
+      <a href="/learning/zh/historical-patterns-break/">中文版本 →</a>
+    </div>
+
+  </div>
 </div>
 
 <footer class="site-footer">
