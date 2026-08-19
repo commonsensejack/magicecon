@@ -155,7 +155,7 @@ function renderArticles(filter) {
       '<div class="article-date-col"><div class="article-date">' + (a.date || '') + '</div></div>' +
       '<div class="article-body">' +
       '<div class="article-category-tag">' + (a.category || '') + '</div>' +
-      '<a class="article-title-link" href="' + (a.url || '#') + '">' + (a.title || 'Untitled') + '</a>' +
+      '<a class="article-title-link" href="' + (a.url || '#') + '">' + (a.title ? a.title.split('|')[0].trim() : 'Untitled') + '</a>' +
       (a.summary ? '<div class="article-summary">' + a.summary + '</div>' : '') +
       '</div></div>';
   });
