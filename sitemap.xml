@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated at 2026-08-19T03:02:42.945Z -->
+<!-- generated at 2026-08-19T03:19:23.909Z -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.magicecon.com/</loc>
@@ -9,7 +9,7 @@
   </url>
   <url>
     <loc>https://www.magicecon.com/zh/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -63,19 +63,37 @@
   </url>
   <url>
     <loc>https://www.magicecon.com/library/learning/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.magicecon.com/library/market/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.magicecon.com/library/research/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.magicecon.com/library/zh/learning/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.magicecon.com/library/zh/market/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.magicecon.com/library/zh/research/</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

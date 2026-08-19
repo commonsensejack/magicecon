@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learning | Magic Econ</title>
-  <meta name="description" content="Learning notes from Magic Econ �?investment frameworks, mental models, and research methodology.">
+  <title>学习思考 | Magic Econ</title>
+  <meta name="description" content="Magic Econ 的学习思考——投资框架与思维模型。">
   <meta name="author" content="Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.magicecon.com/library/learning/">
+  <link rel="canonical" href="https://www.magicecon.com/library/zh/learning/">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; -webkit-font-smoothing: antialiased; }
@@ -70,16 +70,16 @@
 <nav class="site-nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">Magic Econ<span>| Independent Research</span></a>
+      <a href="/zh/" class="nav-logo">Magic Econ<span>| 独立研究</span></a>
       <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="/" class="nav-link-item" data-base="/">Home</a></li>
-        <li><a href="/research/" class="nav-link-item" data-base="/research/">Research</a></li>
-        <li><a href="/about/" class="nav-link-item" data-base="/about/">About</a></li>
-        <li><a href="/contact/" class="nav-link-item" data-base="/contact/">Contact</a></li>
-        <li><button class="lang-toggle" id="lang-toggle">中文</button></li>
+        <li><a href="/zh/" class="nav-link-item" data-base="/">首页</a></li>
+        <li><a href="/research/zh/" class="nav-link-item" data-base="/research/">研究</a></li>
+        <li><a href="/about/zh/" class="nav-link-item" data-base="/about/">关于</a></li>
+        <li><a href="/contact/zh/" class="nav-link-item" data-base="/contact/">联系</a></li>
+        <li><button class="lang-toggle" id="lang-toggle">EN</button></li>
       </ul>
     </div>
   </div>
@@ -87,10 +87,10 @@
 
 <div class="page-header">
   <div class="container">
-    <div class="page-label">Magic Econ Learning</div>
-    <h1 class="page-title">Learning</h1>
+    <div class="page-label">Magic Econ 学习</div>
+    <h1 class="page-title">学习思考</h1>
     <div class="page-divider"></div>
-    <p class="page-desc">Investment knowledge and frameworks �?economics fundamentals, mental models, and research methodology for better decisions.</p>
+    <p class="page-desc">构建投资知识体系与分析框架，记录经济学基础、读书笔记与投资思维模型。</p>
   </div>
 </div>
 
@@ -101,43 +101,24 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-philosophy"><em>The goal is not to predict markets, but to understand them.</em></div>
+      <div class="footer-philosophy"><em>我们的目标不是预测市场，而是理解驱动市场的力量。</em></div>
       <ul class="footer-links">
-        <li><a href="/about/">About</a></li>
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="mailto:jack@magicecon.com">Email</a></li>
+        <li><a href="/about/zh/">关于</a></li>
+        <li><a href="/research/zh/">研究</a></li>
+        <li><a href="/contact/zh/">联系</a></li>
+        <li><a href="mailto:jack@magicecon.com">邮件</a></li>
       </ul>
     </div>
-    <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
+    <div class="footer-copy">&copy; 2026 Magic Econ. 独立投资研究平台。</div>
   </div>
 </footer>
 
 <script>
 (function() {
-  var langNav = {
-    '/': '/zh/',
-    '/research/': '/research/zh/',
-    '/about/': '/about/zh/',
-    '/contact/': '/contact/zh/'
-  };
-
-  document.querySelectorAll('.nav-link-item').forEach(function(a) {
-    var base = a.getAttribute('data-base');
-    if (base && langNav[base]) a.setAttribute('href', langNav[base]);
-  });
-
   var btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.addEventListener('click', function() {
-      var path = window.location.pathname.replace(/\/$/, '');
-      var parts = path.split('/').filter(Boolean);
-      if (parts[1] === 'zh') {
-        parts.splice(1, 1);
-      } else {
-        parts.splice(1, 0, 'zh');
-      }
-      window.location.href = '/' + parts.join('/') + '/';
+      window.location.href = '/library/learning/';
     });
   }
 
@@ -151,7 +132,7 @@
   }
 })();
 
-fetch('/research/articles-en.json')
+fetch('/research/articles.json')
   .then(function(r) { return r.json(); })
   .then(function(data) {
     var list = document.getElementById('article-list');
@@ -160,7 +141,7 @@ fetch('/research/articles-en.json')
       return (a.category_slug || '').toLowerCase() === 'learning';
     });
     if (filtered.length === 0) {
-      list.innerHTML = '<div class="no-articles">No articles in this category yet.</div>';
+      list.innerHTML = '<div class="no-articles">该分类暂无文章。</div>';
       return;
     }
     var sorted = filtered.sort(function(a, b) { return b.date.localeCompare(a.date); });
@@ -168,10 +149,10 @@ fetch('/research/articles-en.json')
     sorted.forEach(function(a) {
       html += '<div class="article-item">' +
         '<div class="article-meta">' +
-        '<span class="article-cat">' + (a.category || '') + '</span>' +
+        '<span class="article-cat">' + (a.category_zh || a.category) + '</span>' +
         '<span class="article-date">' + (a.date || '') + '</span>' +
         '</div>' +
-        '<h2 class="article-title"><a href="' + (a.url || '#') + '">' + (a.title || 'Untitled') + '</a></h2>' +
+        '<h2 class="article-title"><a href="' + (a.url_zh || a.url) + '">' + (a.title || '无标题') + '</a></h2>' +
         (a.summary ? '<p class="article-summary">' + a.summary + '</p>' : '') +
         '</div>';
     });
@@ -179,7 +160,7 @@ fetch('/research/articles-en.json')
   })
   .catch(function() {
     var list = document.getElementById('article-list');
-    if (list) list.innerHTML = '<div class="no-articles">Failed to load.</div>';
+    if (list) list.innerHTML = '<div class="no-articles">加载失败，请刷新。</div>';
   });
 </script>
 
