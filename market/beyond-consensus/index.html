@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond Consensus: Overlooked Fundamentals and Market Cognitive Biases | Magic Econ</title>
-  <meta name="description" content="When market consensus concentrates on one direction, how do we systematically examine the fundamental changes obscured by that consensus? This article builds a cross-validation research framework across four cases.">
+  <title>Beyond Consensus | Overlooked Fundamentals and Market Blind Spots | Magic Econ</title>
+  <meta name="description" content="When consensus becomes concentrated, information becomes unevenly processed. Four overlooked fundamentals: energy storage, copper, innovative pharma, and non-bank financials.">
   <meta name="author" content="Magic Econ · Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://www.magicecon.com/market/beyond-consensus/">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #111111; background: #ffffff; line-height: 1.7; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #111111; background: #ffffff; line-height: 1.8; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
     @media (max-width: 768px) { .container { padding: 0 24px; } }
@@ -35,13 +36,76 @@
       .nav-links li:last-child a { border-bottom: none; }
     }
 
-    .coming-soon { max-width: 760px; margin: 0 auto; padding: 80px 40px 120px; text-align: center; }
-    @media (max-width: 768px) { .coming-soon { padding: 60px 24px 80px; } }
-    .coming-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
-    .coming-title { font-size: clamp(28px, 5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.25; color: #111111; margin-bottom: 16px; }
-    .coming-desc { font-size: 1rem; color: #666666; line-height: 1.8; max-width: 520px; margin: 0 auto 40px; }
-    .coming-btn { display: inline-block; padding: 12px 28px; font-size: 0.875rem; font-weight: 500; color: #111111; border: 1px solid #111111; transition: all 0.15s; }
-    .coming-btn:hover { background: #111111; color: #ffffff; }
+    .article-hero { padding: 80px 0 40px; border-bottom: 1px solid #eeeeee; }
+    .article-hero .container { max-width: 760px; }
+    .article-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 20px; }
+    .article-title { font-size: clamp(26px, 5vw, 40px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; color: #111111; margin-bottom: 16px; }
+    .article-subtitle { font-size: 1rem; color: #555555; line-height: 1.7; font-weight: 400; margin-bottom: 8px; }
+    .article-meta { display: flex; gap: 16px; margin-top: 24px; font-size: 0.8rem; color: #888888; flex-wrap: wrap; align-items: center; }
+    .article-divider { display: inline-block; width: 1px; height: 12px; background: #dddddd; }
+
+    .article-body { padding: 60px 0 80px; }
+    .article-body .container { max-width: 760px; }
+
+    .article-lead { font-size: 1.05rem; color: #222222; line-height: 1.8; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid #f0f0f0; }
+    .article-lead p { margin-bottom: 16px; }
+    .article-lead strong { color: #111111; }
+
+    h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; color: #111111; margin: 56px 0 20px; line-height: 1.3; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #111111; margin: 32px 0 14px; line-height: 1.4; }
+    h4 { font-size: 0.9rem; font-weight: 700; color: #333333; margin: 24px 0 12px; letter-spacing: 0.01em; }
+
+    p { margin-bottom: 20px; color: #222222; font-size: 0.975rem; }
+    strong { font-weight: 700; color: #111111; }
+
+    ul, ol { margin: 0 0 20px 20px; color: #333; font-size: 0.95rem; }
+    li { margin-bottom: 10px; }
+
+    .case-card { background: #f8f8f8; border: 1px solid #e0e0e0; padding: 24px 28px; margin: 28px 0; }
+    .case-card .case-lens { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888888; margin-bottom: 14px; }
+    .case-card h3 { font-size: 1.05rem; font-weight: 700; color: #111111; margin: 0 0 16px; }
+    .case-card p { margin-bottom: 14px; font-size: 0.95rem; }
+    .case-card p:last-child { margin-bottom: 0; }
+
+    .data-row { display: flex; gap: 16px; margin: 20px 0; padding: 16px 20px; background: #f8f8f8; border: 1px solid #e8e8e8; flex-wrap: wrap; }
+    .data-item { flex: 1; min-width: 160px; }
+    .data-label { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #888888; margin-bottom: 6px; }
+    .data-value { font-size: 1.05rem; font-weight: 700; color: #111111; line-height: 1.3; }
+    .data-note { font-size: 0.8rem; color: #666666; margin-top: 4px; }
+
+    .principle-box { background: #111111; color: #ffffff; padding: 24px 28px; margin: 32px 0; }
+    .principle-box h3 { color: #ffffff; font-size: 1rem; font-weight: 700; margin: 0 0 14px; letter-spacing: -0.01em; }
+    .principle-box p { color: #dddddd; font-size: 0.95rem; margin-bottom: 10px; }
+    .principle-box p:last-child { margin-bottom: 0; }
+    .principle-box strong { color: #ffffff; }
+    .principle-box ol { margin: 12px 0 0 20px; color: #dddddd; font-size: 0.9rem; }
+    .principle-box li { margin-bottom: 8px; }
+
+    .bubble-section { background: #fafafa; border: 1px solid #e0e0e0; padding: 24px 28px; margin: 28px 0; }
+    .bubble-section h3 { font-size: 1rem; font-weight: 700; color: #111111; margin: 0 0 16px; }
+    .bubble-row { display: flex; gap: 12px; margin-bottom: 10px; font-size: 0.9rem; align-items: flex-start; }
+    .bubble-tag { padding: 3px 10px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; border-radius: 2px; flex-shrink: 0; }
+    .bubble-tag.hot { background: #ff3b3b; color: #ffffff; }
+    .bubble-tag.warm { background: #f5a623; color: #ffffff; }
+    .bubble-tag.cool { background: #4a90d9; color: #ffffff; }
+    .bubble-desc { color: #444444; }
+
+    blockquote { border-left: 3px solid #111111; padding: 16px 24px; margin: 32px 0; background: #fafafa; }
+    blockquote p { margin: 0; color: #333333; font-style: italic; font-size: 0.975rem; }
+
+    hr { border: none; border-top: 1px solid #eeeeee; margin: 48px 0; }
+
+    .article-signature { font-size: 0.875rem; color: #666666; margin-bottom: 16px; font-style: italic; }
+    .article-disclaimer { font-size: 0.8rem; color: #888888; line-height: 1.7; padding-top: 24px; border-top: 1px solid #eeeeee; }
+
+    .subscribe-section { margin-top: 48px; padding: 32px; background: #f8f8f8; border: 1px solid #e8e8e8; text-align: center; }
+    .subscribe-section p { font-size: 0.9rem; color: #555555; margin-bottom: 20px; }
+    .subscribe-section .wechat-img { width: 160px; height: 160px; margin: 0 auto 8px; display: block; border: 1px solid #eeeeee; }
+    .subscribe-section .wechat-hint { font-size: 0.8rem; color: #999999; }
+
+    .article-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid #eeeeee; flex-wrap: wrap; gap: 12px; }
+    .article-nav a { font-size: 0.875rem; color: #555555; transition: color 0.15s; }
+    .article-nav a:hover { color: #111111; }
 
     .site-footer { padding: 48px 0; border-top: 1px solid #eeeeee; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -66,17 +130,224 @@
         <li><a href="/research/">Research</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
-        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
+        <li><button class="lang-toggle" id="lang-toggle">中</button></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="coming-soon">
-  <div class="coming-cat">Market</div>
-  <h1 class="coming-title">Beyond Consensus:<br>Overlooked Fundamentals and Market Cognitive Biases</h1>
-  <p class="coming-desc">This article is being translated. The Chinese version is available now.</p>
-  <a href="/market/zh/beyond-consensus/" class="coming-btn">Read in Chinese &rarr;</a>
+<article class="article-hero">
+  <div class="container">
+    <div class="article-cat">Market</div>
+    <h1 class="article-title">Beyond Consensus</h1>
+    <p class="article-subtitle">Overlooked Fundamentals and Market Blind Spots</p>
+    <div class="article-meta">
+      <span>Magic Econ · Common Sense Jack</span>
+      <span class="article-divider"></span>
+      <span>August 2026</span>
+    </div>
+  </div>
+</article>
+
+<div class="article-body">
+  <div class="container">
+
+    <div class="article-lead">
+      <p>In the previous AI case study, we reached a simple conclusion: a strong industry and an attractive investment are not the same thing. The AI industry can continue to improve while valuations become increasingly demanding. Industry fundamentals determine direction. Valuation determines the return investors receive.</p>
+      <p>That distinction leads to a broader question. When market attention concentrates on a few hot themes, what happens to everything else?</p>
+      <p>This article is not about "should you chase hot sectors." It's about something more structural: when consensus becomes concentrated, information becomes unevenly processed. Some changes are amplified. Others disappear from view. How do you systematically examine fundamental changes that consensus has obscured?</p>
+      <p><strong>This is not an attempt to find contrarian trades. It is a structural examination of market information efficiency.</strong></p>
+    </div>
+
+    <h2>I. When Consensus Becomes the Market</h2>
+
+    <p>A highly concentrated market leaves recognizable traces. The top 5% of stocks account for an unusually large share of trading value. A popular sector takes up a greater share of market turnover than in any previous cycle. Institutional portfolios become increasingly concentrated in the same names. Growth indicators are highly effective, while defensive indicators — cash flow, dividend yield, valuation — not just stop working but show negative correlation.</p>
+
+    <p>None of these things is necessarily bearish. What matters is what they do to the information environment.</p>
+
+    <p>We've seen similar situations before: the late stages of the internet boom, the strongest phase of the new-energy trade, the period when China's "core asset" strategy became overwhelmingly popular. Each time, the market felt "this time is different." Each time, narrative eventually gave way to fundamentals.</p>
+
+    <p>When one narrative becomes dominant, three familiar biases emerge:</p>
+
+    <ul>
+      <li><strong>Availability bias.</strong> Investors remember what is visible. When a sector dominates the news, every product launch, earnings beat, and shortage alert becomes easy to find. Other industries may still be changing — their signals simply don't reach the same number of screens.</li>
+      <li><strong>Confirmation bias.</strong> Once "this is the only main thread" becomes consensus, investors unconsciously seek evidence supporting it, while ignoring or discounting contradictory information. Positive evidence confirms the thesis. Negative evidence is treated as temporary. Developments outside the theme are dismissed as irrelevant.</li>
+      <li><strong>Herding.</strong> When everyone is positioned in the same direction, being different becomes expensive. A fund manager who underweights the consensus can underperform the benchmark for months. A manager who participates in the consensus and gets caught in a reversal can at least point out that everyone else was there too. Consensus has its own institutional gravity.</li>
+    </ul>
+
+    <p>Understanding these biases is the starting point. The goal is not to become contrarian for its own sake. It is to recognize when market attention has become so concentrated that it may no longer be processing information evenly.</p>
+
+    <p>The four cases that follow represent four different kinds of neglect: a cyclical recovery, a long-term supply story, a valuation disconnect, and a change in market structure.</p>
+
+    <h2>II. Case One: Has the Capacity Cycle Actually Bottomed?</h2>
+
+    <div class="case-card">
+      <div class="case-lens">Lens: Energy storage and lithium battery</div>
+      <h3>What the data say</h3>
+      <p>Three independent signals are pointing the same direction.</p>
+      <p>Lithium iron phosphate (LFP) cathode utilization has recovered to approximately 94%, close to full capacity. Separator film — a key material — has seen price jumps, with one base film model rising 11% in a single week to RMB 0.91/m&sup2;. The supply-tightening signal is moving from implicit to explicit.</p>
+      <p>Production scheduling provides another dimension. Domestic July lithium battery production scheduling reached 283 GWh, with global scheduling approaching the 300 GWh level — refreshing historical peaks for consecutive months. Energy storage cell scheduling jumped to roughly 43% of the total, up about 13 percentage points year-on-year. In the first half of 2026, global energy storage lithium battery shipments grew over 80% year-on-year (per GGII). Energy storage has grown from an EV "accessory" into an independent demand pillar.</p>
+      <p>There's also a seemingly contradictory signal. Lithium carbonate prices have fallen from prior highs to the RMB 150,000/ton range, yet LFP output still reached 2.719 million tons, up 61% year-on-year (per Guosen Securities). Prices are lower, but output is still rising. That means demand hasn't contracted — it has accelerated as prices normalized.</p>
+    </div>
+
+    <h3>What matters</h3>
+    <p>The important lesson is not whether energy storage is currently attractive. It's the research method.</p>
+    <p>A single indicator can mislead. Capacity utilization can rise for temporary reasons. Production schedules can be revised. Prices can move because of inventory effects. But when utilization, production plans, and pricing data from different parts of the chain all point toward tighter conditions, confidence in the turning point should increase.</p>
+    <p><strong>When studying a cyclical industry, the question is not whether one indicator has improved. It is whether independent indicators are beginning to agree.</strong> That principle applies far beyond batteries.</p>
+
+    <h2>III. Case Two: Is the Long-Term Supply-Demand Story Still Intact?</h2>
+
+    <div class="case-card">
+      <div class="case-lens">Lens: Non-ferrous metals</div>
+      <h3>Gold: narrative intact, short-term pressured</h3>
+      <p>Gold's long-term narrative hasn't changed: global government debt continues to expand, the dollar's reserve status is weakening, central banks continue to buy.</p>
+      <p>But short-term pricing is pressured by dollar strength and rising real rates.</p>
+      <p>This is not a contradiction. A long-term thesis and a short-term price move can temporarily point in opposite directions. The mistake is to assume that a short-term price decline automatically invalidates the long-term structural argument. Understanding the durability of long-term logic while accepting the volatility of short-term pricing is basic literacy for rational investing.</p>
+    </div>
+
+    <div class="case-card">
+      <div class="case-lens">Lens: Copper</div>
+      <h3>A structural supply gap validated across dimensions</h3>
+      <p>Copper is more interesting because several independent datasets are pointing the same direction:</p>
+      <ul>
+        <li>Domestic copper inventory fell from 577,000 tons at the start of the year to 165,000 tons — a 71% drawdown, far exceeding seasonal patterns</li>
+        <li>Copper concentrate treatment charges (TC) dropped to a historic low of -$134/ton — negative processing fees are extremely rare, indicating smelters are competing for increasingly scarce concentrate</li>
+        <li>Chile, the world's largest copper producer, saw mine output decline 8% year-on-year in January–April 2026</li>
+        <li>State Grid investment completion grew 13% year-on-year in January–May 2026; per Dongfang Securities estimates, AI data centers alone could add 1.4 million tons of global copper demand by 2030</li>
+      </ul>
+      <p>Supply-side signals consistently point to "tight": inventory crashing, processing fees inverted, major producer output declining. Demand-side signals consistently point to "expanding": grid upgrades, EV adoption, and AI data center construction all unfolding simultaneously.</p>
+    </div>
+
+    <h3>What matters</h3>
+    <p>Again, the copper trade itself is not the main point. The method is.</p>
+    <p>Inventory data come from one part of the market. Treatment charges come from another. Mine production comes from another. Demand estimates come from yet another. When unrelated datasets converge on the same conclusion, the probability that the signal is genuine increases. <strong>That is why cross-validation is often more useful than any single "key indicator."</strong></p>
+
+    <h2>IV. Case Three: Is Cheap Actually Cheap?</h2>
+
+    <div class="case-card">
+      <div class="case-lens">Lens: Innovative pharma</div>
+      <h3>Watch what industry participants are willing to pay for</h3>
+      <p>International pharmaceutical companies have continued to pay substantial upfront fees to license Chinese innovative drug assets. In the first half of 2026, total China innovative pharma BD (business development) deal value approached or surpassed the full-year level of the prior year. Among the global top 10 BD deals, Chinese companies hold 8 seats (per PharmaCube and Dongmaiwang).</p>
+      <p>The deal details themselves aren't what matter. What matters is the signal: international pharma is using its own financial resources to price Chinese innovation R&amp;D capability. This pricing mechanism is more direct than any analyst report, more convincing than PE or PB multiples. Large pharmaceutical companies are committing real capital to Chinese innovation — they are, in effect, putting a price on the underlying R&amp;D capability.</p>
+    </div>
+
+    <h3>The interest-rate angle</h3>
+    <p>Innovative pharma also has long-duration cash-flow characteristics, making it highly sensitive to discount rates. When bond yields fall, the present value of distant cash flows rises. A change in the rate environment can create a valuation-recovery opportunity even without a dramatic change in the underlying business.</p>
+
+    <h3>What matters</h3>
+    <p>The interesting question is not whether innovative pharma is "cheap." It is whether market pricing and industry pricing are telling the same story.</p>
+    <p>Equity markets may assign low multiples. Strategic buyers may be paying high prices for assets. When those two forms of pricing diverge, the divergence itself contains information. It may indicate that market attention has migrated from innovative pharma to hotter themes faster than the underlying industry has deteriorated — the signal of fundamental improvement has been filtered out by cognitive bias.</p>
+
+    <h2>V. Case Four: Is Market Attention Structurally Over-Concentrated?</h2>
+
+    <div class="case-card">
+      <div class="case-lens">Lens: Non-bank financials</div>
+      <p>The first three cases examined overlooked fundamentals. This one asks a more foundational question: has the attention structure of the market itself changed?</p>
+    </div>
+
+    <div class="bubble-section">
+      <h3>Structural Market Indicators</h3>
+      <div class="bubble-row">
+        <div class="bubble-tag hot">46.5%</div>
+        <div class="bubble-desc">Top 5% of stocks account for total market turnover — historical extremes</div>
+      </div>
+      <div class="bubble-row">
+        <div class="bubble-tag cool">18.6%</div>
+        <div class="bubble-desc">Retail participation — an eight-year low</div>
+      </div>
+      <div class="bubble-row">
+        <div class="bubble-tag warm">38.7%</div>
+        <div class="bubble-desc">Quantitative trading accounts</div>
+      </div>
+      <div class="bubble-row">
+        <div class="bubble-tag hot">67.4%</div>
+        <div class="bubble-desc">Top 10 mutual fund positions as share of total portfolio holdings</div>
+      </div>
+    </div>
+
+    <p>Institutionalization and quant trading continue to rise. Retail influence is declining. Capital flows are increasingly concentrated in a few hot directions. This isn't a single-month anomaly — it's a structural trend persisting for years.</p>
+    <p>That changes how consensus is formed. When capital becomes concentrated in fewer names and more trading is driven by institutional and systematic strategies, the market may become increasingly efficient at processing information about consensus names while becoming less attentive to everything else.</p>
+    <p>The "neglected" opportunity is not necessarily another sector. It may simply be information that is not being given enough attention.</p>
+
+    <h2>VI. Building a "Beyond Consensus" Research Framework</h2>
+
+    <div class="principle-box">
+      <h3>Principle One: Separate "neglected" from "unchanged"</h3>
+      <p>An overlooked industry can be overlooked for a good reason. Some fundamentals simply haven't improved. Others have improved, but the market hasn't noticed. The research task is to separate the two.</p>
+      <p>The best way is through independent confirmation:</p>
+      <ol>
+        <li>For energy storage, utilization, production schedules, and pricing are beginning to tell the same story.</li>
+        <li>For copper, inventories, treatment charges, mine supply, and demand increments point toward a tighter market.</li>
+        <li>For innovative pharma, BD deal value and upfront fee structure provide evidence that strategic buyers see value even when listed-market valuations remain depressed.</li>
+      </ol>
+      <p>A single positive signal is easy to explain away. Several unrelated signals pointing the same direction are harder to ignore.</p>
+    </div>
+
+    <div class="principle-box">
+      <h3>Principle Two: Understand what phase a sector is actually in</h3>
+      <p>Not every industry should be judged by the same yardstick:</p>
+      <ul style="margin: 12px 0 0 20px; color: #dddddd; font-size: 0.9rem;">
+        <li>AI infrastructure is in a strong growth phase, but valuations are already demanding.</li>
+        <li>Energy storage appears closer to an early cyclical recovery.</li>
+        <li>Metals combine durable structural demand with different short-term macro sensitivities.</li>
+        <li>Innovative pharma sits at the intersection of low valuation and improving industry-level external validation.</li>
+      </ul>
+      <p style="margin-top: 14px;"><strong>The useful question is not "which sector is best?" but "what phase is this sector actually in?"</strong></p>
+    </div>
+
+    <div class="principle-box">
+      <h3>Principle Three: Stay probabilistic</h3>
+      <p>Thinking independently does not mean automatically betting against consensus. There are perfectly good reasons why unpopular industries may remain unpopular. The point is to make your own probability assessment. Sometimes that assessment will agree with consensus. Sometimes it won't. What matters is that the conclusion comes from evidence rather than from the psychological need to be different.</p>
+      <p><strong>Independent thinking is not the same as contrarian thinking.</strong></p>
+    </div>
+
+    <h3>The framework's boundaries</h3>
+
+    <p><strong>Fundamental turning points can take time.</strong> Cross-validation can increase confidence. It does not tell you exactly when a stock will move. An industry can improve for years before the market recognizes the change.</p>
+
+    <p><strong>Macro conditions can change the thesis.</strong> Global liquidity, geopolitics, trade policy, interest rates, and domestic policy can all alter the underlying assumptions. A good framework must be updated when the environment changes.</p>
+
+    <p><strong>Markets can stay mispriced for a long time.</strong> Being right about fundamentals does not guarantee a timely return. A market can ignore an improving industry longer than an investor expects. "The market can remain irrational longer than you can remain solvent." That is why valuation, position sizing, and time horizon remain separate questions from fundamental analysis.</p>
+
+    <h2>Closing</h2>
+
+    <p>The real takeaway is not lithium batteries, copper, innovative pharmaceuticals, or non-bank financials.</p>
+    <p>The next market cycle will have different stories. It may be robotics. It may be fusion. It may be biotechnology. It may be an industry that barely exists today. <strong>The sectors will change. The research problem will not.</strong></p>
+    <p>When consensus becomes concentrated, ask three questions:</p>
+    <ul>
+      <li>Is something fundamental changing?</li>
+      <li>Are multiple independent signals confirming it?</li>
+      <li>Has the market already priced it in?</li>
+    </ul>
+    <p>Being able to keep answering these three questions matters more than guessing the next hot theme right.</p>
+
+    <blockquote>
+      <p>The market's attention will always move toward what is exciting. That is not a flaw in the market. It is a feature of how attention works. For investors, the opportunity is not to avoid consensus altogether. It is to recognize when attention has become so concentrated that important information is being filtered out.</p>
+      <p>The neglected object is not necessarily a sector. It is a signal. The sector is simply where that signal happens to appear.</p>
+    </blockquote>
+
+    <p>Cases change. Data change. Narratives change. The method does not.</p>
+
+    <blockquote>
+      <p>The goal is not to predict markets, but to understand them.</p>
+    </blockquote>
+
+    <p class="article-signature">*Magic Econ · Common Sense Jack*</p>
+
+    <p class="article-disclaimer">This article is based on public market data and research (sources include GGII, Guosen Securities, Dongfang Securities, SMM, PharmaCube, and Dongmaiwang). It is intended to explore an analytical framework for market cognitive bias and fundamental examination, and does not constitute investment advice.</p>
+
+    <div class="subscribe-section">
+      <p>If this sharpened your research thinking, follow Magic Econ</p>
+      <img src="/images/wechat-scan.jpg" alt="Magic Econ" class="wechat-img">
+      <div class="wechat-hint">Scan to follow · WeChat</div>
+    </div>
+
+    <div class="article-nav">
+      <a href="/market/">&larr; Back to Market</a>
+      <a href="/market/zh/beyond-consensus/">中文版 →</a>
+    </div>
+
+  </div>
 </div>
 
 <footer class="site-footer">
