@@ -1,13 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case Study 01: Is Supply Constraint Still Dominating AI Industry? | Magic Econ</title>
-  <meta name="description" content="Three-layer signal framework applied to AI industry chain: supply signals, capital signals, and profitability signals. Where does AI really stand?">
+  <title>Case Study 01: Is Supply Still Driving the AI Cycle? | Magic Econ</title>
+  <meta name="description" content="Three-signal framework applied to the AI supply chain: is the bottleneck still there? Are companies still investing? Is commercialization materializing? Where is the AI industry in its cycle right now?">
   <meta name="author" content="Magic Econ · Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://www.magicecon.com/research/ai-industry-chain-supply-constraints/">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #111111; background: #ffffff; line-height: 1.8; }
@@ -41,6 +42,7 @@
     .article-title { font-size: clamp(24px, 5vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; color: #111111; margin-bottom: 16px; }
     .article-subtitle { font-size: 1rem; color: #555555; line-height: 1.7; font-weight: 400; margin-bottom: 8px; }
     .article-meta { display: flex; gap: 16px; margin-top: 24px; font-size: 0.8rem; color: #888888; flex-wrap: wrap; align-items: center; }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
     .article-divider { display: inline-block; width: 1px; height: 12px; background: #dddddd; }
 
     .article-body { padding: 60px 0 80px; }
@@ -49,6 +51,8 @@
     .article-lead { font-size: 1.05rem; color: #222222; line-height: 1.8; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid #f0f0f0; }
     .article-lead p { margin-bottom: 16px; }
     .article-lead strong { color: #111111; }
+    .article-lead ul { margin: 0 0 16px 20px; color: #333; font-size: 0.95rem; }
+    .article-lead li { margin-bottom: 8px; }
 
     h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; color: #111111; margin: 56px 0 20px; line-height: 1.3; }
     h3 { font-size: 1.05rem; font-weight: 700; color: #111111; margin: 32px 0 14px; line-height: 1.4; }
@@ -58,18 +62,14 @@
     strong { font-weight: 700; color: #111111; }
     em { color: #555555; font-style: italic; }
 
+    ul, ol { margin: 0 0 20px 20px; color: #333; font-size: 0.95rem; }
+    li { margin-bottom: 8px; }
+
     .signal-block { background: #f8f8f8; border-left: 4px solid #111111; padding: 20px 24px; margin: 24px 0; }
     .signal-block h4 { margin: 0 0 10px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #555555; }
     .signal-block p { margin-bottom: 0; font-size: 0.95rem; color: #222222; }
     .signal-block.positive h4 { color: #1a7a1a; }
     .signal-block.neutral h4 { color: #7a6a1a; }
-
-    .framework-list { margin: 20px 0 28px; padding: 0; list-style: none; }
-    .framework-list li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; font-size: 0.975rem; color: #222222; }
-    .framework-list li strong { color: #111111; min-width: 100px; flex-shrink: 0; }
-
-    blockquote { border-left: 3px solid #111111; padding: 16px 24px; margin: 32px 0; background: #fafafa; }
-    blockquote p { margin: 0; color: #333333; font-style: italic; font-size: 0.975rem; }
 
     .data-row { display: flex; gap: 16px; margin: 20px 0; padding: 16px 20px; background: #f8f8f8; border: 1px solid #e8e8e8; flex-wrap: wrap; }
     .data-item { flex: 1; min-width: 160px; }
@@ -97,8 +97,10 @@
     .bubble-tag.hot { background: #ff3b3b; color: #ffffff; }
     .bubble-tag.warm { background: #f5a623; color: #ffffff; }
     .bubble-tag.cool { background: #4a90d9; color: #ffffff; }
-    .bubble-tag.cold { background: #888888; color: #ffffff; }
     .bubble-desc { color: #444444; }
+
+    blockquote { border-left: 3px solid #111111; padding: 16px 24px; margin: 32px 0; background: #fafafa; }
+    blockquote p { margin: 0; color: #333333; font-style: italic; font-size: 0.975rem; }
 
     hr { border: none; border-top: 1px solid #eeeeee; margin: 48px 0; }
 
@@ -136,7 +138,8 @@
         <li><a href="/">Home</a></li>
         <li><a href="/research/">Research</a></li>
         <li><a href="/about/">About</a></li>
-        <li><button class="lang-toggle" id="lang-toggle">中文</button></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><button class="lang-toggle" id="lang-toggle">中</button></li>
       </ul>
     </div>
   </div>
@@ -144,10 +147,9 @@
 
 <article class="article-hero">
   <div class="container">
-    <div class="article-cat">Case Study · Research Framework</div>
-    <h1 class="article-title">Case Study 01 | AI Industry Chain: Are Supply Constraints Still Dominating the Cycle?</h1>
-    <p class="article-subtitle">The goal is not to predict markets, but to understand them.</p>
-    <p class="article-subtitle" style="color:#888; font-size:0.95rem;">Three-layer signal framework applied to the AI industry: where does it really stand?</p>
+    <div class="article-cat">Research</div>
+    <h1 class="article-title">Case Study 01: Is Supply Still Driving the AI Cycle?</h1>
+    <p class="article-subtitle">Applying the Three-Signal Framework to the AI Supply Chain</p>
     <div class="article-meta">
       <span>Magic Econ · Common Sense Jack</span>
       <span class="article-divider"></span>
@@ -160,123 +162,124 @@
   <div class="container">
 
     <div class="article-lead">
-      <p>In our previous article, we proposed a research framework for studying technology revolutions.</p>
-      <p>Unlike mature industries, technology revolutions are often first constrained by <strong>supply</strong>. Advanced fabs require 3-5 years to build, advanced packaging yields take multiple quarters to ramp, and core equipment lead times stretch to 2-3 years. No matter how strong the price signal, capacity cannot expand instantly.</p>
-      <p>Therefore, the research focus should shift from demand forecasting to <strong>supply analysis</strong>.</p>
-      <p>Based on this logic, we proposed the <strong>Three-Layer Signal Framework</strong>:</p>
-      <ul style="margin: 0 0 16px 20px; color: #333; font-size: 0.95rem;">
-        <li><strong>Supply signal</strong>: Is the supply bottleneck still present?</li>
-        <li><strong>Capital signal</strong>: Are companies still investing continuously?</li>
-        <li><strong>Profitability signal</strong>: Is commercialization actually delivering?</li>
+      <p>The previous article laid out a method for studying technology revolutions. Unlike mature industries, technology revolutions are supply-constrained first. Leading-edge fabs take three to five years to build. Advanced packaging yields need several quarters to ramp. Critical equipment has delivery lead times of two to three years. No matter how strong the price signal, capacity cannot expand instantly.</p>
+      <p>That shifts the research focus from forecasting demand to analyzing supply.</p>
+      <p>The framework has three layers:</p>
+      <ul>
+        <li><strong>Supply signal:</strong> is the bottleneck still there?</li>
+        <li><strong>Capital signal:</strong> are companies still investing?</li>
+        <li><strong>Earnings signal:</strong> is commercialization actually materializing?</li>
       </ul>
-      <p>This article applies the framework directly to the AI industry chain to answer one question: <strong>Which stage is the AI industry currently in?</strong></p>
+      <p>This article skips the framework introduction and applies it directly to the AI supply chain. One question: where is the AI industry actually in its cycle right now?</p>
     </div>
 
-    <h2>I. Layer One: Supply Signals — Is the Bottleneck Still There?</h2>
+    <h2>I. Layer One: Supply — Is the Bottleneck Still There?</h2>
 
-    <h3>Why Watch Supply First, Not Demand?</h3>
-    <p>In traditional industries, demand changes typically lead cyclical moves. More downstream orders → companies expand → upcycle begins. But in supply-constrained industries, this logic breaks down.</p>
-    <p>What truly determines cycle duration is not how strong demand is, but how fast supply can be released. When capacity cannot expand with price signals, even the strongest demand translates only into price increases, not output growth. Therefore, the research focus should start at the point in the supply chain closest to the bottleneck.</p>
+    <h3>Why look at supply first, not demand?</h3>
+    <p>In traditional industries, demand leads the cycle. Downstream orders rise, companies expand, the boom accelerates — a familiar chain.</p>
+    <p>In supply-rigid industries, that logic doesn't hold. What determines cycle duration is not how strong demand is, but how fast supply can release. When capacity can't expand with price signals, strong demand only translates into higher prices, not more output. So the first thing to watch is the point in the chain closest to the physical bottleneck.</p>
 
-    <h3>Why Memory Chips as the Bellwether?</h3>
-    <p>HBM and DRAM sit at the most upstream position in the AI supply chain. Their price changes typically reflect supply-demand dynamics across the entire chain first and fastest.</p>
-    <p>When demand consistently outpaces supply release, upstream prices rise first. Conversely, when supply constraints ease, upstream prices typically see the earliest turning point. So instead of watching GPU sales directly, start with memory prices. It's a "thermometer" for the entire industry chain.</p>
+    <h3>Why memory chips as the indicator?</h3>
+    <p>HBM and DRAM sit at the very top of the AI supply chain. Their price changes are the earliest reflection of the chain's supply-demand dynamics.</p>
+    <p>When demand runs ahead of supply release, upstream prices rise first. When supply constraints ease, prices typically turn first. So instead of tracking GPU shipments directly, watch memory prices. They function as the supply chain's thermometer.</p>
 
-    <h3>Latest Data</h3>
+    <h3>The latest data</h3>
 
     <div class="data-row">
       <div class="data-item">
-        <div class="data-label">DRAM Contract Price</div>
-        <div class="data-value">+13–18%</div>
-        <div class="data-note">QoQ in Q3 (TrendForce)</div>
+        <div class="data-label">DRAM Contract Prices</div>
+        <div class="data-value">+13%–18% QoQ</div>
+        <div class="data-note">Q3 2026 · TrendForce</div>
       </div>
       <div class="data-item">
-        <div class="data-label">HBM4 Forecast</div>
-        <div class="data-value">2x price</div>
-        <div class="data-note">Expected next year</div>
+        <div class="data-label">HBM4 Price Forecast</div>
+        <div class="data-value">Expected to double</div>
+        <div class="data-note">Next year</div>
       </div>
       <div class="data-item">
-        <div class="data-label">H100/H200 Lead Time</div>
-        <div class="data-value">2027+</div>
+        <div class="data-label">H100/H200 Lead Times</div>
+        <div class="data-value">Stretched to 2027</div>
         <div class="data-note">Spot market tight</div>
       </div>
     </div>
 
-    <p><strong>Memory prices continue rising.</strong> According to TrendForce, DRAM contract prices rose 13-18% QoQ in Q3, with HBM4 prices expected to double next year. The price slope has not yet flattened — this is a direct signal that supply cannot keep pace with demand.</p>
-    <p><strong>GPU delivery cycles extending.</strong> H100 and H200 models are tight in the spot market, with lead times already stretching into 2027. If demand had meaningfully cooled, companies would not accept wait times exceeding one year. Extended delivery times themselves signal that supply is still slower than demand.</p>
-    <p><strong>Compute rental prices at new highs.</strong> H100 one-year lease rates rose from $1.70/GPU/hour in October 2025 to $3.09 by end of June 2026 — an 80%+ increase. Lead time beats sales volume as a signal for supply constraint release, and price reflects the intensity of that constraint.</p>
+    <p><strong>Memory prices are still rising.</strong> Q3 DRAM contract prices are up 13%–18% sequentially, and HBM4 is expected to double next year. The important point is not whether every individual price forecast proves correct. It is that the upward slope has not yet clearly broken — a direct signal that supply still can't keep up with demand.</p>
+
+    <p><strong>GPU delivery timelines keep stretching.</strong> H100 and H200 spot supply is tight, with lead times pushed to 2027. If demand had clearly weakened, companies wouldn't accept wait times exceeding a year. The stretching lead time itself signals that supply still lags demand.</p>
+
+    <p><strong>Compute rental prices hit new highs.</strong> The one-year lease price for an H100 rose from $1.70/GPU/hour in October 2025 to $3.09 by end-June 2026 — an increase of over 80%. Lead times tell you whether the constraint has lifted; rental prices tell you how severe the constraint is.</p>
 
     <div class="signal-block positive">
       <h4>Layer One Conclusion</h4>
-      <p><strong>Supply signal clearly points to "tight":</strong> Memory prices continue rising, GPU delivery cycles extending, compute rental prices hitting new highs. Core bottlenecks at the upstream of the industry chain have not yet meaningfully eased. Cyclical strength has physical support.</p>
+      <p>The supply signal clearly points to <strong>Tight</strong>. Memory prices keep rising, GPU lead times are stretching, compute rental prices are at all-time highs. The core bottleneck upstream has not meaningfully eased. The AI cycle still has a physical foundation underneath it.</p>
     </div>
 
-    <h2>II. Layer Two: Capital Signals — Are Companies Still Betting?</h2>
+    <h2>II. Layer Two: Capital — Are Companies Still Betting?</h2>
 
-    <h3>Why CAPEX as the Second-Layer Key Indicator?</h3>
-    <p>Supply constraints only tell you "it's tight now" — not "it will stay tight." If companies stop investing, current supply tightness is merely a short-term phenomenon.</p>
-    <p>Capital expenditure (CAPEX) answers: are industry participants willing to continue bearing risk and expanding capacity?</p>
-    <p><strong>One key point often overlooked: CAPEX growth does not equal immediate supply release.</strong></p>
-    <p>In traditional manufacturing, increasing CAPEX typically means capacity rises within the next few quarters. But AI infrastructure is different — new supply must go through equipment procurement, installation, process validation, and yield ramp, with the entire cycle lasting years.</p>
-    <p>So CAPEX growth actually means future supply will increase — but in the short term, it reinforces cyclical strength instead. Capital investment creates new demand, while capacity release takes time.</p>
+    <h3>Why is CAPEX the second key indicator?</h3>
+    <p>Supply constraint only tells you things are tight right now. It doesn't tell you they'll stay tight. If companies stop investing, the current squeeze is a short-term phenomenon.</p>
+    <p>CAPEX answers a different question: are industry participants willing to keep taking risk and expanding capacity?</p>
+    <p>One easily overlooked point: capital investment growth does not equal immediate supply release.</p>
+    <p>In traditional manufacturing, higher capex usually means capacity arrives in a few quarters. AI infrastructure is different. New supply has to pass through equipment procurement, installation, process qualification, and yield ramp — a cycle measured in years.</p>
+    <p>So CAPEX growth actually means future supply will increase, but in the short term it reinforces the boom. Capital spending creates new demand for equipment, components, power infrastructure, and construction before the resulting capacity reaches the market.</p>
 
-    <h3>Latest Data: Capital Investment Accelerating</h3>
+    <h3>The latest data: capital investment is accelerating</h3>
 
     <div class="data-row">
       <div class="data-item">
-        <div class="data-label">Top-4 US Cloud CAPEX (2026)</div>
+        <div class="data-label">North American Top-4 Cloud CAPEX (2026)</div>
         <div class="data-value">~$725B</div>
-        <div class="data-note">+77% YoY; Amazon ~$200B, Microsoft ~$190B</div>
+        <div class="data-note">+77% YoY · Amazon ~$200B, Microsoft ~$190B</div>
       </div>
       <div class="data-item">
-        <div class="data-label">Top-5 Global CAPEX</div>
+        <div class="data-label">Global Top-5 CAPEX</div>
         <div class="data-value">~$769B</div>
-        <div class="data-note">Revised upward</div>
+        <div class="data-note">Guidance revised upward</div>
       </div>
       <div class="data-item">
-        <div class="data-label">Global Data Center Spend</div>
+        <div class="data-label">Global Data Center Quarterly Spend</div>
         <div class="data-value">>$300B</div>
-        <div class="data-note">First time exceeding $300B in a single quarter; +58% YoY</div>
+        <div class="data-note">First quarter to exceed $300B · +58% YoY</div>
       </div>
     </div>
 
-    <p>SEMI forecasts global wafer fab equipment spending to reach $138.1B in 2026, surpassing $150B in 2027. From 2026 to 2028, cumulative 300mm fab equipment spend globally will total ~$374B. Storage equipment investments over the next three years will exceed $175B.</p>
-    <p>Primary markets are also active: non-financial corporate IPO and SEO financing are at historical highs, with risk appetite spreading from a few leaders to broader AI assets.</p>
+    <p>SEMI's latest forecast puts 2026 global wafer fab equipment spending at $138.1 billion, rising above $150 billion in 2027. From 2026 to 2028, cumulative 300mm fab equipment spending will reach $374 billion. Memory equipment investment over the next three years will exceed $175 billion.</p>
+    <p>The primary market is equally active. IPO and SEO proceeds for non-financial corporates sit at historical highs. Risk appetite is spilling from a handful of leaders into a broader range of AI assets.</p>
 
-    <h3>What This Means</h3>
-    <p>Companies are not just maintaining investment — they are accelerating it. More importantly, these investments will not immediately convert to supply. A fab takes 3-5 years from groundbreaking to mass production, and equipment delivery cycles stretch to 2-3 years.</p>
-    <p>Current high CAPEX growth locks in supply increases for the next several years — not immediate capacity release. This means: current supply tightness is not a short-term phenomenon, but a structural result of sustained capital investment against slowly releasing capacity.</p>
+    <h3>What does this mean?</h3>
+    <p>Companies aren't pulling back — they're accelerating. More importantly, these investments won't translate into supply immediately. Fabs take three to five years from groundbreaking to volume production. Equipment delivery runs two to three years. Today's CAPEX surge locks in future supply additions, not current capacity release.</p>
+    <p>That means the current supply tightness is not a short-term phenomenon. It's the structural result of sustained capital investment meeting capacity that can't release quickly.</p>
 
     <div class="signal-block positive">
       <h4>Layer Two Conclusion</h4>
-      <p><strong>Capital signal clearly points to "expanding":</strong> Cloud CAPEX continuously revised upward, wafer fab equipment spending at new highs, primary market financing active. Companies are betting on AI's future with real capital. In the short term, these investments reinforce supply constraints rather than resolve them.</p>
+      <p>The capital signal clearly points to <strong>Expansion</strong>. Cloud CAPEX keeps getting revised up, fab equipment spending hits new highs, primary market financing is active. Companies are putting real money behind AI's future — and in the short term, that investment reinforces the supply constraint rather than relieving it.</p>
     </div>
 
-    <h2>III. Layer Three: Profitability Signals — Is Commercial Value Delivering?</h2>
+    <h2>III. Layer Three: Earnings — Is Commercial Value Materializing?</h2>
 
-    <h3>Why ARR as the Third-Layer Core Indicator?</h3>
-    <p>Capital investment can sustain, but if it never converts to commercial revenue, the industry chain is just a "burning cash game."</p>
-    <p>ARR (Annual Recurring Revenue) reflects not one-time revenue, but sustainable, predictable income streams. It is the key indicator for determining whether commercialization has genuinely landed.</p>
-    <p><strong>But it's important to note: profitability signals are still in the verification stage.</strong></p>
-    <p>Compared to infrastructure investment, AI application commercialization remains early. The more important question is not "does AI have revenue," but whether revenue growth can sustainably cover enormous capital investment over the long run.</p>
+    <h3>Why is ARR the core indicator for this layer?</h3>
+    <p>Capital investment can continue for a long time. But if it never converts into commercial revenue, the chain is just a cash-burning game.</p>
+    <p>ARR (annual recurring revenue) reflects not one-off sales but sustainable, predictable revenue streams. It's the key metric for whether commercialization is genuinely landing.</p>
+    <p>But note: the earnings signal is still in a validation phase.</p>
+    <p>Compared to infrastructure investment, AI application commercialization remains early. The more important question right now is not "does AI have revenue" but whether revenue growth can eventually cover the enormous capital investment.</p>
 
-    <h3>Latest Data: Commercialization Accelerating, But Still Early</h3>
-    <p>Leading model providers show strong ARR growth. Anthropic reported $47B ARR in May 2026, reflecting rapidly growing enterprise AI demand.</p>
-    <p>Major overseas cloud service providers' cloud business revenue is becoming a new growth engine. Cloud CAPEX is the most direct forward indicator of industry chain cyclicality; cloud revenue is the leading indicator for whether CAPEX is effective.</p>
-    <p>AI model token call volumes are exploding — weekly call volumes have hit historical records. AI coding and video generation are among the faster commercial exploration use cases currently.</p>
+    <h3>The latest data: commercialization is accelerating, but still early</h3>
+    <p>Leading model providers show strong ARR growth. Anthropic reported ARR of $47 billion as of May 2026, signaling that enterprise AI demand is growing fast.</p>
+    <p>Major overseas cloud providers' cloud revenue is becoming a new growth curve. CSP capex is the most direct forward-looking indicator of chain momentum; cloud revenue is the leading validation indicator of whether that capex is effective.</p>
+    <p>AI model token usage is exploding. Weekly call volumes have hit all-time highs. AI coding and video generation are among the scenarios where commercialization is advancing fastest.</p>
 
-    <h3>What This Means</h3>
-    <p>Commercialization is moving from expectation to delivery, but has not fully matured. ARR growth, cloud revenue expansion, and call volume explosions are all improving simultaneously — raising confidence in the reliability of profitability delivery.</p>
-    <p>But there is still distance from "self-sustaining and covering investment." Current profitability growth is largely driven by demand expansion fueled by capital investment, rather than supported by the maturation of an endogenous business model.</p>
+    <h3>What does this mean?</h3>
+    <p>Commercialization is moving from expectation to realization, but hasn't fully matured. ARR growth, cloud revenue expansion, and token usage acceleration are improving simultaneously — the reliability of earnings realization is rising.</p>
+    <p>But there's still a gap before self-sustaining cash flow that covers investment. Current earnings growth is driven more by capital-fueled demand expansion than by the maturation of intrinsic business models. The harder test comes later: can the economic value generated by AI eventually cover the cost of building the system?</p>
 
     <div class="signal-block neutral">
       <h4>Layer Three Conclusion</h4>
-      <p><strong>Profitability signal points to "improving, but still in verification":</strong> Commercialization is accelerating, but not yet fully mature. The industry has moved from pure investment phase to a parallel phase of investment and delivery — but whether profitability can sustainably cover CAPEX over the long run still requires ongoing observation.</p>
+      <p>The earnings signal clearly points to <strong>Improving, but still in validation</strong>. Commercialization is accelerating but not yet mature. The industry has moved from a pure investment phase into a phase where investment and realization run in parallel. Whether earnings can durably cover capital investment remains an open question.</p>
     </div>
 
-    <h2>IV. Cross-Validation: What Do All Three Layers Together Tell Us?</h2>
+    <h2>IV. Cross-Validation: What Do the Three Signals Combined Tell Us?</h2>
 
-    <p>Looking at each layer alone can lead to misjudgment. Only by combining them can we pinpoint the industry's true stage.</p>
+    <p>Each signal alone can mislead. Only combined do they locate the industry's true stage.</p>
 
     <table>
       <thead>
@@ -284,141 +287,130 @@
           <th>Stage</th>
           <th>Supply</th>
           <th>Capital</th>
-          <th>Profitability</th>
-          <th>Industry Characteristic</th>
+          <th>Earnings</th>
+          <th>Characteristics</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Early Investment</td>
+          <td>Early investment phase</td>
           <td>Tight</td>
           <td>Rising</td>
-          <td>Unproven</td>
-          <td>Capital pouring in, commercialization not yet begun</td>
+          <td>Unvalidated</td>
+          <td>Capital flooding in, commercialization not yet started</td>
         </tr>
         <tr>
           <td><strong>Current AI</strong></td>
           <td><strong>Tight</strong></td>
           <td><strong>Rising</strong></td>
           <td><strong>Improving</strong></td>
-          <td><strong>Supply constraints persist, capital expanding, commercialization accelerating but not yet mature</strong></td>
+          <td><strong>Supply constraint persists, capital expanding, commercialization accelerating but immature</strong></td>
         </tr>
         <tr>
-          <td>Mature Phase</td>
+          <td>Mature phase</td>
           <td>Easing</td>
           <td>Slowing</td>
           <td>Stable</td>
-          <td>Supply ample, growth moderating, profitability stable</td>
+          <td>Supply ample, growth decelerating, earnings stable</td>
         </tr>
       </tbody>
     </table>
 
-    <p>The current AI industry chain combination is: <strong>persistent supply constraints + expanding capital investment + gradual commercial delivery</strong>.</p>
-    <p>What does this combination indicate?</p>
-    <ul style="margin: 0 0 20px 20px; color: #333; font-size: 0.95rem;">
-      <li>Supply tightness → physical support for cyclical strength</li>
-      <li>Capital growth → funding-level continuity for the trend</li>
-      <li>Profitability improvement → basic-value validation, but not yet complete</li>
-    </ul>
-    <p>All three signals point positive simultaneously — but this is not the "golden phase." Because profitability has not fully matured, and commercialization is still in acceleration.</p>
-    <p>More precisely, this is the phase of <strong>transition from investment to delivery</strong>: supply constraints provide a time window, capital investment fills the capacity gap, and profitability delivery is validating the business model.</p>
+    <p>All three point positive — but this is not the "golden phase." Because earnings haven't fully matured and commercialization is still accelerating. The weak link is still the third signal.</p>
+    <p>More precisely, this is the <strong>transition from investment phase to realization phase</strong>: supply constraint provides the time window, capital investment fills the capacity gap, and earnings realization is validating the business model. That makes the current phase interesting — but also vulnerable to disappointment if earnings fail to accelerate further.</p>
 
     <div class="conclusion-box">
       <h3>Stage Assessment</h3>
-      <p><strong>Supply constraints persist + Capital investment expanding + Commercialization gradually delivering</strong></p>
-      <p>The AI industry is currently in a <strong>transition phase from investment to delivery</strong>, not the mature phase.</p>
-      <p>This is not a "golden phase" — it is a window where physical support, capital momentum, and early commercial validation coexist.</p>
+      <p><strong>Supply constraint persisting + capital investment expanding + commercialization gradually materializing.</strong></p>
+      <p>The AI industry is currently in the transition from investment phase to realization phase, not the mature phase. This is not the golden phase. It's a window where physical support, capital momentum, and early commercial validation coexist.</p>
     </div>
 
-    <h2>V. Bubble Assessment: Industry Cycles and Investment Returns Are Not the Same Question</h2>
+    <h2>V. Bubble Assessment: Industry Cycle and Investment Return Are Not the Same Question</h2>
 
-    <p>With the industry chain in high cyclicality, AI-related asset trading is unprecedentedly active in capital markets. The three-layer signal framework helps judge the industry stage, but cannot directly answer whether valuations are reasonable.</p>
-    <p>This requires supplementing with a bubble assessment dimension.</p>
+    <p>Against the backdrop of a booming chain, AI-related assets are seeing extraordinary trading activity in capital markets. The three-layer framework can locate the industry's stage, but it can't directly answer whether valuations are reasonable.</p>
+    <p>That requires a supplementary dimension: bubble assessment.</p>
 
-    <h3>Industry Investment Expansion: Clearly Warming, But Not Yet a Bubble</h3>
-    <p>IT equipment investment as % of GDP sits at the 80-100th percentile, but overall equipment investment as % of GDP is only at the 20-40th percentile, and corporate debt YoY is at the 0-20th percentile. The current boom has not been primarily sustained by broad corporate leverage expansion.</p>
-    <p>This is distinctly different from the internet bubble era, when telecom operators borrowed heavily to lay fiber at massive scale.</p>
+    <h3>Industry investment expansion: warming, but not yet a bubble</h3>
+    <p>IT equipment investment as a share of GDP sits at the 80th–100th percentile, but overall equipment investment as a share of GDP is only at the 20th–40th percentile. Corporate debt growth is at the 0th–20th percentile. The current boom is not yet primarily sustained by broad corporate leverage. This is a clear contrast with the dot-com era, when telecom carriers borrowed heavily to lay fiber.</p>
 
-    <h3>Capital and Sentiment: Active But Not Out of Control</h3>
-    <p>Primary market financing is at historical highs, but volatility indicators remain in neutral range — the market has not entered a state of widespread euphoria, retail-ization, or lottery-like trading behavior.</p>
+    <h3>Capital and sentiment: active but not out of control</h3>
+    <p>Primary market financing is at historical highs, but volatility indicators remain in neutral territory. The market has not yet entered a state of full euphoria, retail-ization, or lottery-ticket trading.</p>
 
-    <h3>Valuation: Clearly Elevated</h3>
-    <p>US equities, especially mega-cap technology, have already priced in years of future growth. The "margin of safety" for returns has materially narrowed.</p>
+    <h3>Valuation: clearly elevated</h3>
+    <p>U.S. equities — especially the tech giants — have already priced in years of future growth. The margin of safety on returns has narrowed significantly. As expectations move further into the future, the margin for error becomes smaller.</p>
 
     <div class="bubble-section">
-      <h3>Bubble Assessment Matrix</h3>
+      <h3>Bubble Assessment Summary</h3>
       <div class="bubble-row">
         <div class="bubble-tag warm">Warming</div>
-        <div class="bubble-desc"><strong>Industry investment expansion</strong> — Not yet a bubble. IT capex elevated but broad corporate leverage is not.</div>
+        <div class="bubble-desc">Industry investment expansion — IT capex high, but broad corporate leverage hasn't risen. Not yet a bubble.</div>
       </div>
       <div class="bubble-row">
-        <div class="bubble-tag cool">Active</div>
-        <div class="bubble-desc"><strong>Market sentiment</strong> — Not yet dangerous. Primary markets hot, but volatility indicators neutral.</div>
+        <div class="bubble-tag warm">Active</div>
+        <div class="bubble-desc">Market sentiment — primary market hot, but volatility indicators neutral. Not yet dangerous.</div>
       </div>
       <div class="bubble-row">
-        <div class="bubble-tag hot">Elevated</div>
-        <div class="bubble-desc"><strong>Valuation levels</strong> — Clearly expensive. Returns "margin of safety" has narrowed.</div>
+        <div class="bubble-tag hot">Expensive</div>
+        <div class="bubble-desc">Valuation — the margin of safety on returns has narrowed significantly. Return expectations need to come down.</div>
       </div>
     </div>
 
-    <p><strong>Comprehensive judgment:</strong> Industry investment expansion is in a warming phase (not yet a bubble), market sentiment is active but not out of control (not yet dangerous), but valuation is already elevated (return expectations need to be recalibrated).</p>
-    <p>The most prominent contradiction in current AI trading is not that the industry has reached its end — it's that <strong>prices have moved faster than fundamental diffusion</strong>.</p>
+    <p><strong>Overall assessment:</strong> industry investment expansion is in a warming phase (not yet a bubble), market sentiment is active but not out of control (not yet dangerous), but valuations are already elevated (return expectations need to come down).</p>
 
-    <h3>An Important Distinction</h3>
+    <h3>An important distinction</h3>
+    <p>Industry cycle and investment return are not the same question.</p>
+    <p>An industry moving in the right direction doesn't mean every entry point produces excess returns. The industrial trend determines direction. Valuation determines returns. An industry can continue to improve while future investment returns deteriorate. The technology can work, demand can rise, profits can increase — and the stock can still underperform because the valuation started too high.</p>
+    <p>The current state of the AI supply chain: industry fundamentals remain strong, but capital markets have already priced in that strength. That means even if the industry keeps improving, investment returns may be compressed by excessive valuations.</p>
+    <p>These are two questions. They need to be considered separately.</p>
 
-    <blockquote>
-      <p><strong>Industry cycles and investment returns are not the same question.</strong></p>
-      <p>A sector on the right structural trajectory does not guarantee excess returns at every entry point. Industry trends determine direction; valuation determines return.</p>
-    </blockquote>
+    <h2>VI. What the Case Study Tells Us</h2>
 
-    <p>The current AI industry chain state is: industry fundamentals are still strong, but capital markets have already front-loaded this strength in pricing. This means even if the industry continues to improve, investment returns may be compressed by elevated valuations.</p>
-    <p>These are two separate questions that require separate analysis.</p>
-
-    <h2>VI. What the Case Study Teaches Us</h2>
-
-    <p>Viewed through the three-layer signal framework, the AI industry chain currently exhibits:</p>
-    <p><strong>Persistent supply constraints + Capital investment expansion + Gradual commercial delivery</strong></p>
-    <p>This means the industry is still in the <strong>transition from investment to delivery phase</strong>, not the mature phase.</p>
-    <p>Why does this matter?</p>
-    <p>Without the three-layer framework, one might fall into two extremes: seeing memory price increases and declaring "AI is overheating," or seeing capital investment and assuming "the trend is eternal." The framework's value is that it forces simultaneous observation across three dimensions, avoiding misjudgment from any single signal.</p>
-    <ul style="margin: 0 0 20px 20px; color: #333; font-size: 0.95rem;">
-      <li>Supply constraints tell you: physical support for cyclical strength still exists.</li>
-      <li>Capital signals tell you: trend continuity still exists, and won't ease in the short term.</li>
-      <li>Profitability signals tell you: value delivery is occurring, but not yet complete.</li>
-    </ul>
-    <p>Only all three together yields the "transition phase" judgment — not simply answering "does AI have a bubble," but distinguishing two different questions: <strong>what are the industry fundamentals, and are valuations reasonable?</strong></p>
+    <p>Combining the three signals, the AI supply chain currently shows:</p>
 
     <div class="conclusion-box">
-      <h3>Bottom Line</h3>
-      <p>The industry is strong. Valuations are elevated.</p>
-      <p>These are two separate questions.</p>
+      <h3>Core Conclusion</h3>
+      <p><strong>The industry is strong. The valuation is expensive.</strong></p>
+      <p>Two questions. Separate them.</p>
+      <p>The first tells us what the industry is doing. The second tells us what investors may earn from owning it. Industry fundamentals determine direction. Valuation determines returns.</p>
     </div>
 
-    <hr>
-
-    <h2>Closing Thoughts</h2>
-
-    <p>AI is not the research target — it is the framework validation case.</p>
-    <p>What truly matters is not "how much longer can AI grow," but whether, the next time a technology revolution emerges — whether in new energy, biomedicine, or quantum computing — we have a method to understand it.</p>
-    <p>Through this three-layer signal framework, what we see in the AI industry is not a simple "bubble" or "golden track," but a complex system in the process of supply constraints, capital expansion, and commercial delivery.</p>
-    <p>Researching an industry is not about finding the hottest theme — it's about understanding how value flows along the industry chain.</p>
+    <p>Without the three-layer framework, you might fall into one of two extremes: seeing memory prices spike and calling "AI overheated," or seeing capital pour in and declaring "the trend is eternal." The framework's value is that it forces you to watch all three dimensions simultaneously, avoiding the misjudgments that come from any single signal.</p>
+    <ul>
+      <li>Supply constraint tells you: the physical support for the boom is still there.</li>
+      <li>Capital signal tells you: the trend's momentum is still there, and won't ease in the short term.</li>
+      <li>Earnings signal tells you: value realization is happening, but hasn't completed.</li>
+    </ul>
+    <p>Stacking the three produces the "transition phase" judgment. It's not a simple answer to "does AI have a bubble" — it's a separation of two different questions: how are the industry fundamentals, and is the valuation reasonable?</p>
 
     <blockquote>
-      <p><em>The goal is not to predict markets, but to understand the forces driving them.</em></p>
+      <p>Find the bottlenecks. Watch the capital. Wait for the earnings.</p>
     </blockquote>
 
-    <p class="article-signature">*Author: Magic Econ · Common Sense Jack*</p>
+    <h2>Closing</h2>
 
-    <p class="article-disclaimer">This article is based on publicly available market data and published research (sources include TrendForce, SEMI, Omdia, SIA, WSTS, and company financial reports). It aims to verify the validity of an industry research framework through case analysis, for learning and exchange purposes only. It does not constitute any investment advice.</p>
+    <p>AI is not the research objective. It's the test case for the framework.</p>
+    <p>The question that matters is not "how much longer can AI rise." It's whether, when the next technology revolution arrives — whether new energy, biotech, or quantum computing — we have a method for understanding it.</p>
+    <p>Through this three-layer signal framework, what we see in the AI industry is not a simple "bubble" or "golden track." It's a complex system in the middle of supply constraint, capital expansion, and commercial realization.</p>
+
+    <blockquote>
+      <p>The goal is not to predict markets, but to understand them.</p>
+    </blockquote>
+
+    <p>Studying an industry is not about chasing the hottest theme. It's about understanding how value moves through the supply chain.</p>
+
+    <p class="article-signature">*Magic Econ · Common Sense Jack*</p>
+
+    <p class="article-disclaimer">This article is based on public market data and publicly available research materials (sources include TrendForce, SEMI, Omdia, SIA, WSTS, and company filings). It is intended to validate the effectiveness of the industry research framework through case analysis and is for educational exchange only. It does not constitute investment advice.</p>
 
     <div class="subscribe-section">
-      <p>If this article added value to your research framework, consider following Magic Econ</p>
-      <img src="/images/wechat-scan.jpg" alt="Magic Econ WeChat" class="wechat-img">
-      <div class="wechat-hint">Scan to follow · WeChat ID: Magic Econ</div>
+      <p>If this case study sharpened your research framework, follow Magic Econ</p>
+      <img src="/images/wechat-scan.jpg" alt="Magic Econ" class="wechat-img">
+      <div class="wechat-hint">Scan to follow · WeChat</div>
     </div>
 
     <div class="article-nav">
-      <a href="/research/">← Back to Research</a>
+      <a href="/research/">&larr; Back to Research</a>
+      <a href="/research/zh/ai-industry-chain-supply-constraints/">中文版 →</a>
     </div>
 
   </div>
