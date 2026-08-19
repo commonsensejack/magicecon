@@ -153,8 +153,8 @@ function renderArticles(filter) {
       + '<div class="article-date">' + (a.date || '') + '</div>'
       + '<div class="article-body">'
       + '<div class="article-category-tag">' + (a.category || '') + '</div>'
-      + '<a class="article-title-link" href="' + (a.url || '#') + '">' + (a.title || 'Untitled') + '</a>'
-      + (a.summary ? '<div class="article-summary">' + a.summary + '</div>' : '')
+      + '<a class="article-title-link" href="' + (a.url || '#') + '">' + (currentLang === 'zh' ? (a.title || 'Untitled') : (a.title_en || a.title || 'Untitled')) + '</a>'
+      + (a.summary ? '<div class="article-summary">' + (currentLang === 'zh' ? a.summary : (a.summary_en || a.summary)) + '</div>' : '')
       + '</div></div>';
   });
   list.innerHTML = html;
