@@ -237,7 +237,7 @@
   }
 })();
 
-fetch('/research/articles.json')
+fetch('/research/articles.json?v=2')
   .then(function(r) { return r.json(); })
   .then(function(articles) {
     var list = document.getElementById('home-article-list');

@@ -223,7 +223,7 @@ function bindFilters() {
 // 判断语言并读取对应 JSON
 (function() {
   var isEn = window.location.pathname.indexOf('/zh/') === -1 && window.location.pathname !== '/zh';
-  var jsonUrl = isEn ? '/research/articles-en.json' : '/research/articles.json';
+  var jsonUrl = isEn ? '/research/articles-en.json?v=2' : '/research/articles.json?v=2';
 
   fetch(jsonUrl)
     .then(function(r) { return r.json(); })
