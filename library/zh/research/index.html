@@ -3,77 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>研究 | Magic Econ</title>
-  <meta name="description" content="深度研究：行业、企业与投资理念。">
+  <title>投资研究 | Magic Econ</title>
+  <meta name="description" content="Magic Econ 的投资研究——企业、行业与投资案例分析。">
   <meta name="author" content="Common Sense Jack">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.magicecon.com/research/zh/">
+  <link rel="canonical" href="https://www.magicecon.com/library/zh/research/">
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{font-size:16px;-webkit-font-smoothing:antialiased;}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;color:#111111;background:#ffffff;line-height:1.7;}
-    a{color:inherit;text-decoration:none;}
-    img{max-width:100%;}
-    .container{max-width:1200px;margin:0 auto;padding:0 40px;}
-    @media(max-width:768px){.container{padding:0 24px;}}
-    .site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid #eeeeee;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
-    .nav-logo{font-size:1rem;font-weight:700;letter-spacing:-0.01em;color:#111111;}
-    .nav-logo span{font-weight:400;color:#666666;margin-left:6px;font-size:0.85em;}
-    .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
-    .nav-links a{font-size:0.875rem;color:#444444;letter-spacing:0.02em;transition:color 0.15s;}
-    .nav-links a:hover{color:#111111;}
-    .lang-toggle{padding:6px 14px;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;color:#444444;background:transparent;border:1px solid #dddddd;cursor:pointer;font-family:inherit;transition:all 0.15s;}
-    .lang-toggle:hover{color:#111111;border-color:#999999;}
-    .nav-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:12px;margin:-12px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
-    .nav-menu-btn span{display:block;width:22px;height:2px;background:#111111;margin:5px 0;transition:0.3s;pointer-events:none;}
-    @media(max-width:640px){
-      .nav-menu-btn{display:block;}
-      .nav-links{position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,0.98);border-bottom:1px solid #eeeeee;flex-direction:column;gap:0;padding:16px 24px;transform:translateY(-100%);opacity:0;visibility:hidden;transition:all 0.3s ease;}
-      .nav-links.active{transform:translateY(0);opacity:1;visibility:visible;}
-      .nav-links li{width:100%;}
-      .nav-links a{display:block;padding:12px 0;font-size:0.9rem;border-bottom:1px solid #f0f0f0;}
-      .nav-links li:last-child a{border-bottom:none;}
-      .lang-toggle{margin-top:8px;width:100%;text-align:center;}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; color: #111111; background: #ffffff; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 24px; } }
+
+    .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid #eeeeee; backdrop-filter: blur(12px); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #111111; }
+    .nav-logo span { font-weight: 400; color: #666666; margin-left: 6px; font-size: 0.85em; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.875rem; color: #444444; letter-spacing: 0.02em; transition: color 0.15s; }
+    .nav-links a:hover { color: #111111; }
+    .lang-toggle { padding: 6px 14px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; color: #444444; background: transparent; border: 1px solid #dddddd; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+    .lang-toggle:hover { color: #111111; border-color: #999999; }
+    .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 12px; margin: -12px; }
+    .nav-menu-btn span { display: block; width: 22px; height: 2px; background: #111111; margin: 5px 0; transition: 0.3s; }
+    @media (max-width: 640px) {
+      .nav-menu-btn { display: block; }
+      .nav-links { position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eeeeee; flex-direction: column; gap: 0; padding: 16px 24px; transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+      .nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 0.9rem; border-bottom: 1px solid #f0f0f0; }
+      .lang-toggle { margin-top: 8px; width: 100%; text-align: center; }
     }
-    .page-header{padding:80px 0 60px;border-bottom:1px solid #eeeeee;}
-    .page-label{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#777777;margin-bottom:16px;}
-    .page-title{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-0.03em;color:#111111;line-height:1.1;margin-bottom:24px;}
-    .page-divider{width:40px;height:2px;background:#111111;margin-bottom:20px;}
-    .page-desc{font-size:1rem;color:#555555;line-height:1.7;max-width:540px;}
-    .article-list{padding:0 0 80px;}
-    .article-item{padding:36px 0;border-bottom:1px solid #eeeeee;}
-    .article-item:first-child{border-top:1px solid #eeeeee;}
-    .article-meta{display:flex;align-items:center;gap:16px;margin-bottom:12px;}
-    .article-cat{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:#777777;}
-    .article-date{font-size:0.8rem;color:#888888;}
-    .article-title{font-size:clamp(18px,2.5vw,24px);font-weight:600;color:#111111;letter-spacing:-0.015em;line-height:1.3;margin-bottom:12px;}
-    .article-title a{transition:color 0.15s;}
-    .article-title a:hover{color:#444444;}
-    .article-summary{font-size:0.9rem;color:#555555;line-height:1.75;}
-    .no-articles{padding:80px 0;color:#aaaaaa;font-size:0.95rem;}
-    .site-footer{padding:48px 0;border-top:1px solid #eeeeee;}
-    .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-    .footer-philosophy{font-size:0.8rem;color:#666666;font-style:italic;}
-    .footer-links{display:flex;gap:24px;list-style:none;}
-    .footer-links a{font-size:0.8rem;color:#555555;transition:color 0.15s;}
-    .footer-links a:hover{color:#111111;}
-    .footer-copy{font-size:0.75rem;color:#888888;margin-top:24px;}
+
+    .page-header { padding: 80px 0 60px; border-bottom: 1px solid #eeeeee; }
+    .page-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #777777; margin-bottom: 16px; }
+    .page-title { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -0.03em; color: #111111; line-height: 1.1; margin-bottom: 24px; }
+    .page-divider { width: 40px; height: 2px; background: #111111; margin-bottom: 20px; }
+    .page-desc { font-size: 1rem; color: #555555; line-height: 1.7; max-width: 540px; }
+
+    .article-list { padding: 0 0 80px; }
+    .article-item { padding: 36px 0; border-bottom: 1px solid #eeeeee; }
+    .article-item:first-child { border-top: 1px solid #eeeeee; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+    .article-cat { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; }
+    .article-date { font-size: 0.8rem; color: #888888; }
+    .article-title { font-size: clamp(18px, 2.5vw, 24px); font-weight: 600; color: #111111; letter-spacing: -0.015em; line-height: 1.3; margin-bottom: 12px; }
+    .article-title a { transition: color 0.15s; }
+    .article-title a:hover { color: #444444; }
+    .article-summary { font-size: 0.9rem; color: #555555; line-height: 1.75; }
+    .no-articles { padding: 80px 0; color: #aaaaaa; font-size: 0.95rem; }
+
+    .site-footer { padding: 48px 0; border-top: 1px solid #eeeeee; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-philosophy { font-size: 0.8rem; color: #666666; font-style: italic; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 0.8rem; color: #555555; transition: color 0.15s; }
+    .footer-links a:hover { color: #111111; }
+    .footer-copy { font-size: 0.75rem; color: #888888; margin-top: 24px; }
   </style>
 </head>
 <body>
+
 <nav class="site-nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="/zh/" class="nav-logo">Magic Econ<span>| Independent Research</span></a>
-      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="/zh/" class="nav-logo">Magic Econ<span>| 独立研究</span></a>
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="/zh/" class="nav-link-item" data-base="/zh/">Home</a></li>
-        <li><a href="/research/zh/" class="nav-link-item" data-base="/research/zh/" style="color:#111111;font-weight:600;">Research</a></li>
-        <li><a href="/about/zh/" class="nav-link-item" data-base="/about/zh/">About</a></li>
-        <li><a href="/contact/zh/" class="nav-link-item" data-base="/contact/zh/">Contact</a></li>
-        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
+        <li><a href="/zh/" class="nav-link-item" data-base="/">首页</a></li>
+        <li><a href="/research/zh/" class="nav-link-item" data-base="/research/">研究</a></li>
+        <li><a href="/about/zh/" class="nav-link-item" data-base="/about/">关于</a></li>
+        <li><a href="/contact/zh/" class="nav-link-item" data-base="/contact/">联系</a></li>
+        <li><button class="lang-toggle" id="lang-toggle">EN</button></li>
       </ul>
     </div>
   </div>
@@ -81,59 +87,50 @@
 
 <div class="page-header">
   <div class="container">
-    <div class="page-label">Magic Econ</div>
-    <h1 class="page-title">Magic Econ</h1>
+    <div class="page-label">Magic Econ 研究</div>
+    <h1 class="page-title">投资研究</h1>
     <div class="page-divider"></div>
-    <p class="page-desc">深度研究：行业、企业与投资理念。</p>
+    <p class="page-desc">深入探索企业、行业与投资案例，研究商业模式、竞争优势与估值方法。</p>
   </div>
 </div>
 
 <div class="container">
   <div class="article-list" id="article-list">
-    <article class="article-item">
+<div class="article-item">
   <div class="article-meta">
-    <span class="article-cat">研究框架</span>
-    <span class="article-date">2026年8月12日</span>
+    <span class="article-cat">Research</span>
+    <span class="article-date">2026-08-12</span>
   </div>
   <h2 class="article-title"><a href="https://www.magicecon.com/research/zh/ai-industry-chain-supply-constraints/">AI产业链研究：供给约束是否仍在主导周期?</a></h2>
   <p class="article-summary">三层信号框架应用于AI产业链实战：供给信号持续紧张，资本信号加速扩张，盈利信号改善中但尚未成熟——当前处于投入期向兑现期过渡的阶段。</p>
-</article>
-<article class="article-item">
+</div>
+<div class="article-item">
   <div class="article-meta">
-    <span class="article-cat">研究框架</span>
-    <span class="article-date">2026年7月23日</span>
+    <span class="article-cat">Research</span>
+    <span class="article-date">2026-07-23</span>
   </div>
-  <h2 class="article-title"><a href="https://www.magicecon.com/research/zh/tech-revolution-framework/">如何研究技术革命：以AI产业链为例的投资框架</a></h2>
+  <h2 class="article-title"><a href="https://www.magicecon.com/research/zh/tech-revolution-framework/">如何研究技术革命：以AI产业链为例的投资��架</a></h2>
   <p class="article-summary">从供给约束到商业化落地——以AI产业链为例，构建技术革命的产业研究框架，寻找供给约束，观察资本投入，等待盈利兑现。</p>
-</article>
-  </div>
+</div>
+</div>
 </div>
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-inner">
-      <span class="footer-philosophy">"The goal is not to predict markets, but to understand them."</span>
+      <div class="footer-philosophy"><em>我们的目标不是预测市场，而是理解驱动市场的力量。</em></div>
       <ul class="footer-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/zh/">About</a></li>
-        <li><a href="/contact/zh/">Contact</a></li>
+        <li><a href="/about/zh/">关于</a></li>
+        <li><a href="/research/zh/">研究</a></li>
+        <li><a href="/contact/zh/">联系</a></li>
+        <li><a href="mailto:jack@magicecon.com">邮件</a></li>
       </ul>
     </div>
-    <p class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</p>
+    <div class="footer-copy">&copy; 2026 Magic Econ. 独立投资研究平台。</div>
   </div>
 </footer>
 
-<script>
-document.getElementById('lang-toggle').addEventListener('click', function() {
-  var path = location.pathname;
-  var parts = path.split('/').filter(Boolean);
-  if (parts[1] === 'zh') { parts.splice(1, 1); }
-  else { parts.splice(1, 0, 'zh'); }
-  location.href = '/' + parts.join('/');
-});
-document.getElementById('nav-menu-btn').addEventListener('click', function() {
-  document.getElementById('nav-links').classList.toggle('active');
-});
-</script>
+
+
 </body>
 </html>
