@@ -314,7 +314,7 @@
     btn.addEventListener('click', function() {
       var path = window.location.pathname.replace(/\/$/, '');
       var parts = path.split('/').filter(Boolean);
-      var zhIdx = parts.indexOf('zh'); if (zhIdx !== -1) { parts.splice(zhIdx, 1); } else { parts.splice(1, 0, 'zh'); }
+      if (parts[0] === 'zh') { parts.splice(0, 1); } else if (parts[1] === 'zh') { parts.splice(1, 1); } else { parts.splice(1, 0, 'zh'); }
       window.location.href = '/' + parts.join('/') + '/';
     });
   }
