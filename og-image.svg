@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E3A5F"/>
+      <stop offset="100%" stop-color="#0F1F33"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- ME monogram, centered -->
+  <g transform="translate(440, 185)">
+    <!-- M -->
+    <rect x="0" y="0" width="200" height="260" fill="none" stroke="#F5F1E8" stroke-width="6"/>
+    <text x="100" y="200" font-family="Georgia, serif" font-size="180" font-weight="700" fill="#F5F1E8" text-anchor="middle">M</text>
+
+    <!-- E (overlapping right) -->
+    <rect x="120" y="0" width="200" height="260" fill="none" stroke="#F5F1E8" stroke-width="6"/>
+    <text x="220" y="200" font-family="Georgia, serif" font-size="180" font-weight="700" fill="#F5F1E8" text-anchor="middle">E</text>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="515" font-family="Georgia, serif" font-size="58" font-weight="400" fill="#F5F1E8" text-anchor="middle" letter-spacing="4">Magic Econ</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="565" font-family="Georgia, serif" font-size="22" font-style="italic" fill="#B8C5D6" text-anchor="middle" letter-spacing="2">Independent Research</text>
+
+  <!-- Domain -->
+  <text x="600" y="580" font-family="Arial, sans-serif" font-size="18" fill="#8A9BB0" text-anchor="middle" letter-spacing="3">WWW.MAGICECON.COM</text>
+</svg>
