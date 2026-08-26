@@ -306,13 +306,15 @@
       if (base) a.setAttribute('href', base[lang] || base.en);
     });
   }
-  applyLang('en');
+  // Auto-detect language from URL
+  var isZh = window.location.pathname.indexOf('/zh/') !== -1 || window.location.pathname === '/zh';
+  applyLang(isZh ? 'zh' : 'en');
   var btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.addEventListener('click', function() {
       var path = window.location.pathname.replace(/\/$/, '');
       var parts = path.split('/').filter(Boolean);
-      if (parts[1] === 'zh') { parts.splice(1, 1); } else { parts.splice(1, 0, 'zh'); }
+      var zhIdx = parts.indexOf('zh'); if (zhIdx !== -1) { parts.splice(zhIdx, 1); } else { parts.splice(1, 0, 'zh'); }
       window.location.href = '/' + parts.join('/') + '/';
     });
   }
