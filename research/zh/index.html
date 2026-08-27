@@ -1,184 +1,485 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>研究 | Magic Econ</title>
-  <meta name="description" content="Magic Econ 的全部研究成果，包括投资研究、市场观察与学习笔记。">
+
+  <title>研究资料库 | Magic Econ</title>
+
+  <meta name="description" content="Magic Econ 所有研究成果，按分类整理 — 投资研究、市场观察与学习笔记。">
+
   <meta name="author" content="Common Sense Jack">
+
   <meta name="theme-color" content="#ffffff">
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
   <link rel="canonical" href="https://www.magicecon.com/research/zh/">
+
   <style>
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; color: #111111; background: #ffffff; line-height: 1.7; }
+
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; }
+
     .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
     @media (max-width: 768px) { .container { padding: 0 24px; } }
 
+
+
     .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid #eeeeee; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+
     .nav-logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #111111; }
+
     .nav-logo span { font-weight: 400; color: #666666; margin-left: 6px; font-size: 0.85em; }
+
     .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+
     .nav-links a { font-size: 0.875rem; color: #444444; letter-spacing: 0.02em; transition: color 0.15s; }
-    .lang-toggle { padding: 6px 14px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; color: #444444; background: transparent; border: 1px solid #dddddd; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+
+    .nav-links a:hover { color: #111111; }
+
+    .lang-toggle { padding: 6px 14px; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #444444; background: transparent; border: 1px solid #dddddd; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+
     .lang-toggle:hover { color: #111111; border-color: #999999; }
-    .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 12px; }
-    .nav-menu-btn span { display: block; width: 22px; height: 2px; background: #111111; margin: 5px 0; }
-    @media (max-width: 768px) {
-      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 24px 40px; gap: 20px; border-bottom: 1px solid #eeeeee; }
-      .nav-links.active { display: flex; }
+
+    
+
+    .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 12px; margin: -12px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+    .nav-menu-btn span { display: block; width: 22px; height: 2px; background: #111111; margin: 5px 0; transition: 0.3s; pointer-events: none; }
+
+    @media (max-width: 640px) {
+
       .nav-menu-btn { display: block; }
+
+      .nav-links { position: fixed; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eeeeee; flex-direction: column; gap: 0; padding: 16px 24px; transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+
+      .nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
+
+      .nav-links li { width: 100%; }
+
+      .nav-links a { display: block; padding: 12px 0; font-size: 0.9rem; border-bottom: 1px solid #f0f0f0; }
+
+      .nav-links li:last-child a { border-bottom: none; }
+
+      .lang-toggle { margin-top: 8px; width: 100%; text-align: center; }
+
     }
 
-    .page-header { padding: 80px 0 60px; }
-    .page-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #888888; margin-bottom: 16px; }
-    .page-title { font-size: clamp(32px, 5vw, 52px); font-weight: 700; letter-spacing: -0.03em; color: #111111; line-height: 1.1; margin-bottom: 20px; }
-    .page-divider { width: 40px; height: 2px; background: #111111; margin-bottom: 20px; }
-    .page-desc { font-size: 1rem; color: #555555; max-width: 600px; line-height: 1.75; }
 
-    .article-list { padding: 0 0 80px; }
-    .article-item { padding: 36px 0; border-bottom: 1px solid #eeeeee; }
-    .article-item:first-child { border-top: 1px solid #eeeeee; }
-    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
-    .article-cat { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; }
-    .article-date { font-size: 0.8rem; color: #888888; }
-    .article-title { font-size: clamp(18px, 2.5vw, 24px); font-weight: 600; color: #111111; letter-spacing: -0.015em; line-height: 1.3; margin-bottom: 10px; }
-    .article-title a { transition: color 0.15s; }
-    .article-title a:hover { color: #444444; }
-    .article-summary { font-size: 0.9rem; color: #555555; line-height: 1.75; }
-    .no-articles { padding: 80px 0; color: #aaaaaa; font-size: 0.95rem; }
 
-    .site-footer { border-top: 1px solid #eeeeee; padding: 48px 0; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; }
-    @media (max-width: 640px) { .footer-inner { flex-direction: column; } }
-    .footer-philosophy { font-size: 0.9rem; color: #666666; font-style: italic; max-width: 360px; }
-    .footer-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.875rem; color: #888888; transition: color 0.15s; }
+    .page-library { max-width: 1200px; margin: 0 auto; padding: 80px 40px 120px; }
+
+    .library-header { margin-bottom: 72px; }
+
+    .library-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #aaaaaa; margin-bottom: 14px; }
+
+    .library-title { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -0.03em; color: #111111; line-height: 1.1; margin-bottom: 20px; }
+
+    .library-divider { width: 48px; height: 1.5px; background: #111111; margin-bottom: 24px; }
+
+    .library-desc { font-size: 1.05rem; color: #555555; line-height: 1.8; font-weight: 300; max-width: 600px; }
+
+
+
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid #eeeeee; }
+
+    .filter-btn { padding: 10px 20px; font-size: 0.8rem; letter-spacing: 0.05em; color: #666666; background: transparent; border: 1px solid #dddddd; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+
+    .filter-btn:hover { color: #111111; border-color: #999999; }
+
+    .filter-btn.active { color: #ffffff; background: #111111; border-color: #111111; }
+
+
+
+    .research-article-list { display: flex; flex-direction: column; }
+
+    .research-article-item { display: grid; grid-template-columns: 140px 1fr; gap: 32px; padding: 32px 0; border-bottom: 1px solid #eeeeee; }
+
+    .research-article-item:first-child { border-top: 1px solid #eeeeee; }
+
+    .article-date { font-size: 0.8rem; color: #888888; padding-top: 2px; }
+
+    .article-body { display: flex; flex-direction: column; gap: 8px; }
+
+    .article-category-tag { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; }
+
+    .article-title-link { font-size: clamp(17px, 2vw, 22px); font-weight: 600; color: #111111; letter-spacing: -0.015em; line-height: 1.4; transition: color 0.15s; }
+
+    .article-title-link:hover { color: #555555; }
+
+    .article-summary { font-size: 0.9rem; color: #777777; line-height: 1.7; font-weight: 300; margin-top: 4px; }
+
+
+
+    .no-articles { padding: 60px 0; text-align: center; color: #aaaaaa; font-size: 0.9rem; }
+
+
+
+    .site-footer { padding: 48px 0; border-top: 1px solid #eeeeee; }
+
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+
+    .footer-philosophy { font-size: 0.8rem; color: #666666; font-style: italic; }
+
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+
+    .footer-links a { font-size: 0.8rem; color: #555555; transition: color 0.15s; }
+
     .footer-links a:hover { color: #111111; }
-    .footer-copy { font-size: 0.8rem; color: #bbbbbb; }
 
-    @media (max-width: 640px) { .page-header { padding: 48px 0 40px; } }
+    .footer-copy { font-size: 0.75rem; color: #888888; margin-top: 24px; }
+
+
+
+    @media (max-width: 768px) {
+
+      .page-library { padding: 48px 24px 80px; }
+
+      .research-article-item { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
+
+      .article-date { font-size: 0.75rem; }
+
+    }
+
   </style>
-</head>
-<body>
-  <nav class="site-nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="/zh/" class="nav-logo">Magic Econ<span>| Independent Research</span></a>
-        <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="/zh/" class="nav-link-item">首页</a></li>
-          <li><a href="/research/zh/" class="nav-link-item" style="color:#111111;font-weight:600;">Research</a></li>
-          <li><a href="/about/zh/" class="nav-link-item">关于</a></li>
-          <li><a href="/contact/zh/" class="nav-link-item">联系</a></li>
-          <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <div class="page-header">
-    <div class="container">
-      <div class="page-label">Magic Econ 研究</div>
-      <h1 class="page-title">研究</h1>
-      <div class="page-divider"></div>
-      <p class="page-desc">Magic Econ 的全部研究成果，包括投资研究、市场观察与学习笔记。</p>
-    </div>
-  </div>
+</head>
+
+<body>
+
+
+
+<nav class="site-nav">
 
   <div class="container">
-    <div class="article-list" id="article-list">
-<div class="article-item">
-  <div class="article-meta">
-    <span class="article-cat">Market</span>
-    <span class="article-date">2026-08-18</span>
-  </div>
-  <h2 class="article-title"><a href="https://www.magicecon.com/market/zh/beyond-consensus/">超越市场共识：如何发现被忽视的投资机会</a></h2>
-  <p class="article-summary">当市场共识高度集中于一个方向时，如何系统性审视被共识遮蔽的基本面变化？以储能锂电、有色金属、创新药、非银金融四个案例，构建跨维度交叉验证的研究框架。</p>
-</div>
-<div class="article-item">
-  <div class="article-meta">
-    <span class="article-cat">Research</span>
-    <span class="article-date">2026-08-12</span>
-  </div>
-  <h2 class="article-title"><a href="https://www.magicecon.com/research/zh/ai-industry-chain-supply-constraints/">AI产业链研究：供给约束是否仍在主导周期?</a></h2>
-  <p class="article-summary">三层信号框架应用于AI产业链实战：供给信号持续紧张，资本信号加速扩张，盈利信号改善中但尚未成熟——当前处于投入期向兑现期过渡的阶段。</p>
-</div>
-<div class="article-item">
-  <div class="article-meta">
-    <span class="article-cat">Learning</span>
-    <span class="article-date">2026-07-30</span>
-  </div>
-  <h2 class="article-title"><a href="https://www.magicecon.com/learning/zh/framework-blindspots/">投资中的认知偏差：为什么正确的分析仍可能失败</a></h2>
-  <p class="article-summary">框架告诉你该看什么，但它无法保证你看到的就一定是真实的。三种认知偏差（可得性偏差、确认偏误、羊群效应）如何扭曲分析框架的输入、执行与输出。</p>
-</div>
-<div class="article-item">
-  <div class="article-meta">
-    <span class="article-cat">Research</span>
-    <span class="article-date">2026-07-23</span>
-  </div>
-  <h2 class="article-title"><a href="https://www.magicecon.com/research/zh/tech-revolution-framework/">如何研究技术革命：以AI产业链为例的投资框架</a></h2>
-  <p class="article-summary">从供给约束到商业化落地——以AI产业链为例，构建技术革命的产业研究框架，寻找供给约束，观察资本投入，等待盈利兑现。</p>
-</div>
-<div class="article-item">
-  <div class="article-meta">
-    <span class="article-cat">Market</span>
-    <span class="article-date">2026-07-16</span>
-  </div>
-  <h2 class="article-title"><a href="https://www.magicecon.com/market/zh/k-shaped-divergence/">K型分化：三股力量如何重塑市场与经济</a></h2>
-  <p class="article-summary">K型分化不是偶然波动。它是三股长期经济力量共同作用的结果：AI产业的供给约束、宏观政策框架的转型、以及全球产业分工的重构。</p>
-</div>
-<div class="article-item">
-  <div class="article-meta">
-    <span class="article-cat">Learning</span>
-    <span class="article-date">2026-07-13</span>
-  </div>
-  <h2 class="article-title"><a href="https://www.magicecon.com/learning/zh/historical-patterns-break/">历史市场规律何时失效：投资者为什么需要重构分析框架</a></h2>
-  <p class="article-summary">变化的是统计规律，不变的是盈利驱动的逻辑规律。AI供给刚性，资金结构错位、政策框架换挡，共同引发了市场底层结构重构。</p>
-</div>
+
+    <div class="nav-inner">
+
+      <a href="/zh/" class="nav-logo">Magic Econ<span>| Independent Research</span></a>
+
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+
+        <li><a href="/zh/" class="nav-link-item" data-base="/"><span data-i18n="en">Home</span><span data-i18n="zh">首页</span></a></li>
+
+        <li><a href="/research/zh/" class="nav-link-item" data-base="/research/" style="color:#111111;font-weight:600;"><span data-i18n="en">Research</span><span data-i18n="zh">研究</span></a></li>
+
+        <li><a href="/about/zh/" class="nav-link-item" data-base="/about/"><span data-i18n="en">About</span><span data-i18n="zh">关于</span></a></li>
+
+        <li><a href="/contact/zh/" class="nav-link-item" data-base="/contact/"><span data-i18n="en">Contact</span><span data-i18n="zh">联系</span></a></li>
+
+        <li><button class="lang-toggle" id="lang-toggle">EN / 中</button></li>
+
+      </ul>
+
     </div>
+
   </div>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-philosophy"><em>目标不是预测市场，而是理解市场。</em></div>
-        <ul class="footer-links">
-          <li><a href="/about/zh/">关于</a></li>
-          <li><a href="/research/zh/">Research</a></li>
-          <li><a href="/contact/zh/">联系</a></li>
-          <li><a href="mailto:jack@magicecon.com">Email</a></li>
-        </ul>
-      </div>
-      <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
-    </div>
-  </footer>
+</nav>
 
-  <script>
-    var btn = document.getElementById("lang-toggle");
-    if (btn) {
-      btn.addEventListener("click", function() {
-        var path = window.location.pathname.replace(/\/$/, "");
-        var parts = path.split("/").filter(Boolean);
-        if (parts[0] === "zh") {
-          parts.splice(0, 1);
-        } else if (parts[1] === "zh") {
-          parts.splice(1, 1);
-        } else {
-          parts.splice(1, 0, "zh");
-        }
-        window.location.href = "/" + parts.join("/") + "/";
+
+
+<main class="page-library">
+
+  <div class="library-header">
+
+    <div class="library-label"><span data-i18n="en">Research Library</span><span data-i18n="zh">研究资料库</span></div>
+
+    <h1 class="library-title"><span data-i18n="en">Research Library</span><span data-i18n="zh">研究资料库</span></h1>
+
+    <div class="library-divider"></div>
+
+    <p class="library-desc"><span data-i18n="en">Explore Magic Econ's independent research, including equity analysis, market perspectives, and investment frameworks.</span><span data-i18n="zh">探索 Magic Econ 的独立研究成果，涵盖公司分析、市场观点与投资框架。</span></p>
+
+  </div>
+
+
+
+  <div class="filter-bar" id="filter-bar">
+
+    <button class="filter-btn active" data-filter="all" data-label-en="All" data-label-zh="全部">全部</button>
+
+    <button class="filter-btn" data-filter="research" data-label-en="Research" data-label-zh="研究">研究</button>
+
+    <button class="filter-btn" data-filter="market" data-label-en="Market" data-label-zh="市场">市场</button>
+
+    <button class="filter-btn" data-filter="learning" data-label-en="Learning" data-label-zh="学习">学习</button>
+
+  </div>
+
+
+
+  <div class="research-article-list" id="article-list">
+<div class="research-article-item" data-cat="market"><div class="article-date">2026-08-18</div><div class="article-body"><div class="article-category-tag">Market</div><a class="article-title-link" href="https://www.magicecon.com/market/zh/beyond-consensus/">超越市场共识：如何发现被忽视的投资机会</a><div class="article-summary">当市场共识高度集中于一个方向时，如何系统性审视被共识遮蔽的基本面变化？以储能锂电、有色金属、创新药、非银金融四个案例，构建跨维度交叉验证的研究框架。</div></div></div>
+<div class="research-article-item" data-cat="research"><div class="article-date">2026-08-12</div><div class="article-body"><div class="article-category-tag">Research</div><a class="article-title-link" href="https://www.magicecon.com/research/zh/ai-industry-chain-supply-constraints/">AI产业链研究：供给约束是否仍在主导周期?</a><div class="article-summary">三层信号框架应用于AI产业链实战：供给信号持续紧张，资本信号加速扩张，盈利信号改善中但尚未成熟——当前处于投入期向兑现期过渡的阶段。</div></div></div>
+<div class="research-article-item" data-cat="learning"><div class="article-date">2026-07-30</div><div class="article-body"><div class="article-category-tag">Learning</div><a class="article-title-link" href="https://www.magicecon.com/learning/zh/framework-blindspots/">投资中的认知偏差：为什么正确的分析仍可能失败</a><div class="article-summary">框架告诉你该看什么，但它无法保证你看到的就一定是真实的。三种认知偏差（可得性偏差、确认偏误、羊群效应）如何扭曲分析框架的输入、执行与输出。</div></div></div>
+<div class="research-article-item" data-cat="research"><div class="article-date">2026-07-23</div><div class="article-body"><div class="article-category-tag">Research</div><a class="article-title-link" href="https://www.magicecon.com/research/zh/tech-revolution-framework/">如何研究技术革命：以AI产业链为例的投资框架</a><div class="article-summary">从供给约束到商业化落地——以AI产业链为例，构建技术革命的产业研究框架，寻找供给约束，观察资本投入，等待盈利兑现。</div></div></div>
+<div class="research-article-item" data-cat="market"><div class="article-date">2026-07-16</div><div class="article-body"><div class="article-category-tag">Market</div><a class="article-title-link" href="https://www.magicecon.com/market/zh/k-shaped-divergence/">K型分化：三股力量如何重塑市场与经济</a><div class="article-summary">K型分化不是偶然波动。它是三股长期经济力量共同作用的结果：AI产业的供给约束、宏观政策框架的转型、以及全球产业分工的重构。</div></div></div>
+<div class="research-article-item" data-cat="learning"><div class="article-date">2026-07-13</div><div class="article-body"><div class="article-category-tag">Learning</div><a class="article-title-link" href="https://www.magicecon.com/learning/zh/historical-patterns-break/">历史市场规律何时失效：投资者为什么需要重构分析框架</a><div class="article-summary">变化的是统计规律，不变的是盈利驱动的逻辑规律。AI供给刚性，资金结构错位、政策框架换挡，共同引发了市场底层结构重构。</div></div></div>
+</div>
+
+</main>
+
+
+
+<footer class="site-footer">
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div class="footer-philosophy"><em>我们的目标不是预测市场，而是理解驱动市场的力量。</em></div>
+
+      <ul class="footer-links">
+
+        <li><a href="/about/zh/">关于</a></li>
+
+        <li><a href="/research/zh/">研究</a></li>
+
+        <li><a href="/contact/zh/">联系</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="footer-copy">&copy; 2026 Magic Econ. Independent Research Platform.</div>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+var allArticles = [];
+
+var currentLang = 'zh';
+
+
+
+function renderArticles(filter) {
+
+  var list = document.getElementById('article-list');
+
+  if (!list) return;
+
+  var filtered = filter === 'all' ? allArticles : allArticles.filter(function(a) {
+
+    return (a.category_slug || '').toLowerCase() === filter;
+
+  });
+
+  if (filtered.length === 0) {
+
+    var noLabel = currentLang === 'zh' ? '暂无文章。' : 'No articles in this category yet.';
+
+    list.innerHTML = '<div class="no-articles">' + noLabel + '</div>';
+
+    return;
+
+  }
+
+  var html = '';
+
+  filtered.forEach(function(a) {
+
+    html += '<div class="research-article-item">'
+
+      + '<div class="article-date">' + (a.date || '') + '</div>'
+
+      + '<div class="article-body">'
+
+      + '<div class="article-category-tag">' + (a.category || '') + '</div>'
+
+      + '<a class="article-title-link" href="' + (a.url_zh || a.url || '#') + '">' + (a.title || 'Untitled') + '</a>'
+
+      + (a.summary ? '<div class="article-summary">' + a.summary + '</div>' : '')
+
+      + '</div></div>';
+
+  });
+
+  list.innerHTML = html;
+
+}
+
+
+
+function bindFilters() {
+
+  var btns = document.querySelectorAll('.filter-btn');
+
+  btns.forEach(function(btn) {
+
+    btn.addEventListener('click', function() {
+
+      btns.forEach(function(b) { b.classList.remove('active'); });
+
+      btn.classList.add('active');
+
+      renderArticles(btn.getAttribute('data-filter'));
+
+    });
+
+  });
+
+}
+
+
+
+(function() {
+
+  var KEY = 'magicecon-lang';
+
+  function applyLang(lang) {
+
+    currentLang = lang;
+
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+
+      el.style.display = (el.getAttribute('data-i18n') === lang) ? '' : 'none';
+
+    });
+
+    var langNav = {
+
+      '/': { en: '/', zh: '/zh/' },
+
+      '/research/': { en: '/research/', zh: '/research/zh/' },
+
+      '/about/': { en: '/about/', zh: '/about/zh/' },
+
+      '/contact/': { en: '/contact/', zh: '/contact/zh/' }
+
+    };
+
+    document.querySelectorAll('.nav-link-item').forEach(function(a) {
+
+      var base = a.getAttribute('data-base');
+
+      if (base && langNav[base]) a.setAttribute('href', langNav[base][lang] || langNav[base].en);
+
+    });
+
+    // 更新 filter 按钮文字
+
+    document.querySelectorAll('.filter-btn').forEach(function(b) {
+
+      b.textContent = lang === 'zh' ? b.getAttribute('data-label-zh') : b.getAttribute('data-label-en');
+
+    });
+
+    var btn = document.getElementById('lang-toggle');
+
+    if (btn) btn.textContent = lang === 'zh' ? 'EN / 中' : '中 / EN';
+
+  }
+
+  // 永远默认中文
+
+  applyLang('zh');
+
+  // 立即更新 filter 按钮文字
+
+  document.querySelectorAll('.filter-btn').forEach(function(b) {
+    b.textContent = b.getAttribute('data-label-zh');
+  });
+
+  var btn = document.getElementById('lang-toggle');
+
+  if (btn) {
+
+    btn.addEventListener('click', function() {
+
+      var path = window.location.pathname;
+
+      var isZh = path.indexOf('/zh/') !== -1 || path === '/zh';
+
+      if (isZh) {
+
+        window.location.href = path === '/zh/' || path === '/zh' ? '/' : path.replace('/zh/', '/');
+
+      } else {
+
+        window.location.href = path === '/' || path === '' ? '/zh/' : path + 'zh/';
+
+      }
+
+    });
+
+  }
+
+})();
+
+
+
+var allArticles = [{"title":"超越市场共识：如何发现被忽视的投资机会","title_en":"Beyond Market Consensus: How to Find Overlooked Investment Opportunities","date":"2026-08-18","category":"Market","category_zh":"市场","category_slug":"market","summary":"当市场共识高度集中于一个方向时，如何系统性审视被共识遮蔽的基本面变化？以储能锂电、有色金属、创新药、非银金融四个案例，构建跨维度交叉验证的研究框架。","url":"https://www.magicecon.com/market/beyond-consensus/","url_zh":"https://www.magicecon.com/market/zh/beyond-consensus/"},{"title":"AI产业链研究：供给约束是否仍在主导周期?","title_en":"Case: AI Supply Chain — Is the Supply-Driven Cycle Over?","date":"2026-08-12","category":"Research","category_zh":"研究框架","category_slug":"research","summary":"三层信号框架应用于AI产业链实战：供给信号持续紧张，资本信号加速扩张，盈利信号改善中但尚未成熟——当前处于投入期向兑现期过渡的阶段。","url":"https://www.magicecon.com/research/ai-industry-chain-supply-constraints/","url_zh":"https://www.magicecon.com/research/zh/ai-industry-chain-supply-constraints/"},{"title":"投资中的认知偏差：为什么正确的分析仍可能失败","title_en":"Behavioral Biases in Investing: Why Good Analysis Can Still Fail","date":"2026-07-30","category":"Learning","category_zh":"学习","category_slug":"learning","summary":"框架告诉你该看什么，但它无法保证你看到的就一定是真实的。三种认知偏差（可得性偏差、确认偏误、羊群效应）如何扭曲分析框架的输入、执行与输出。","url":"https://www.magicecon.com/learning/framework-blindspots/","url_zh":"https://www.magicecon.com/learning/zh/framework-blindspots/"},{"title":"如何研究技术革命：以AI产业链为例的投资框架","title_en":"How to Analyze Technology Revolutions: An AI Investment Framework","date":"2026-07-23","category":"Research","category_zh":"研究框架","category_slug":"research","summary":"从供给约束到商业化落地——以AI产业链为例，构建技术革命的产业研究框架，寻找供给约束，观察资本投入，等待盈利兑现。","url":"https://www.magicecon.com/research/tech-revolution-framework/","url_zh":"https://www.magicecon.com/research/zh/tech-revolution-framework/"},{"title":"K型分化：三股力量如何重塑市场与经济","title_en":"K-Shaped Divergence in Markets: Three Forces Reshaping the Economy","date":"2026-07-16","category":"Market","category_zh":"市场","category_slug":"market","summary":"K型分化不是偶然波动。它是三股长期经济力量共同作用的结果：AI产业的供给约束、宏观政策框架的转型、以及全球产业分工的重构。","url":"https://www.magicecon.com/market/k-shaped-divergence/","url_zh":"https://www.magicecon.com/market/zh/k-shaped-divergence/"},{"title":"历史市场规律何时失效：投资者为什么需要重构分析框架","title_en":"Historical Stock Market Patterns: When They Stop Working","date":"2026-07-13","category":"Learning","category_zh":"学习","category_slug":"learning","summary":"变化的是统计规律，不变的是盈利驱动的逻辑规律。AI供给刚性，资金结构错位、政策框架换挡，共同引发了市场底层结构重构。","url":"https://www.magicecon.com/learning/historical-patterns-break/","url_zh":"https://www.magicecon.com/learning/zh/historical-patterns-break/"}];
+  renderArticles('all');
+  bindFilters();
+
+
+
+  // 汉堡菜单
+
+  var menuBtn = document.getElementById('nav-menu-btn');
+
+  var navLinks = document.getElementById('nav-links');
+
+  if (menuBtn && navLinks) {
+
+    menuBtn.addEventListener('click', function(e) {
+
+      e.preventDefault();
+
+      e.stopPropagation();
+
+      navLinks.classList.toggle('active');
+
+    });
+
+    navLinks.querySelectorAll('a').forEach(function(link) {
+
+      link.addEventListener('click', function() {
+
+        navLinks.classList.remove('active');
+
       });
-    }
-    var menuBtn = document.getElementById("nav-menu-btn");
-    var navLinks = document.getElementById("nav-links");
-    if (menuBtn && navLinks) {
-      menuBtn.addEventListener("click", function() { navLinks.classList.toggle("active"); });
-    }
-  </script>
+
+    });
+
+  }
+
+</script>
+
+
+
 </body>
+
 </html>
+
