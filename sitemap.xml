@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated at 2026-08-27T02:14:12.459Z -->
+<!-- generated at 2026-08-27T02:21:10.408Z -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.magicecon.com/</loc>
@@ -50,12 +50,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.magicecon.com/learning/k-shaped-divergence/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.magicecon.com/learning/zh/framework-blindspots/</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -63,12 +57,6 @@
   </url>
   <url>
     <loc>https://www.magicecon.com/learning/zh/historical-patterns-break/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.magicecon.com/learning/zh/k-shaped-divergence/</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -146,12 +134,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.magicecon.com/research/framework-blindspots/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.magicecon.com/research/tech-revolution-framework/</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -165,12 +147,6 @@
   </url>
   <url>
     <loc>https://www.magicecon.com/research/zh/ai-industry-chain-supply-constraints/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.magicecon.com/research/zh/framework-blindspots/</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
